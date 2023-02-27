@@ -11,7 +11,7 @@ CREATE TABLE userID (
 --   note: we may need a password here, unsure ...
 );
 
-CREATE TABLE employees (
+CREATE TABLE cars (
   id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, 
   make VARCHAR(30) NOT NULL, 
   model VARCHAR(30) NOT NULL,
