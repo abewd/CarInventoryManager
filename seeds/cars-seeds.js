@@ -1,5 +1,8 @@
 const { cars } = require("../models");
 
+// TAG, CAN YOU PLEASE SIMILARLY ADD ANOTHER 10-15-20 EXAMPLES OF CARS
+// IF YOU DONT KNOW WHAT CARS TO CHOOSE,
+
 const carsData = [
   {
     id: "",
