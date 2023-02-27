@@ -1,0 +1,22 @@
+const { cars } = require("../models");
+
+const carsData = [
+  {
+    id: "",
+    make: "Toyota",
+    model: "Supra",
+    year: 1998,
+    price: 175000,
+    mileage: 105000,
+    fossil_fuel: true,
+    automatic: true,
+    engine_cylinders: 6,
+    color: "Yellow",
+    body_type: "Coupe",
+    car_description: "Great car, would recommend. Drive so NICE! :D",
+  },
+];
+
+const seedProducts = () => Product.bulkCreate(productData);
+
+module.exports = seedProducts;
