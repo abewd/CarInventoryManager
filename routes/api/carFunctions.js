@@ -7,7 +7,6 @@ const { Cars, User } = require("../../models");
 // Display all cars in our inventory
 
 router.get("/", async (req, res) => {
-  // Display all units on the car lott
   try {
     const carsOnLott = await Cars.findAll({
       include: [
@@ -37,8 +36,9 @@ router.get("/", async (req, res) => {
   }
 });
 
+// Display a car by its ID value
+
 router.get("/", async (req, res) => {
-  // Display a unit by its ID value
   try {
     const carsOnLott = await Cars.findByPk(req.params.id, {
       include: [
@@ -72,3 +72,48 @@ router.get("/", async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+// Adding a new car to the database
+router.post("/", async (req, res) => {
+  try {
+    const carsOnLott = await Category.create({
+      category_name: req.body.category_name,
+    });
+    res.status(200).json(carsOnLott);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+// Updating car details thats already in our DB
+
+router.put("/:id", async (req, res) => {
+  try {
+    const carsOnLott = await Category.update({ where: { id: req.params.id } });
+    if (!carsOnLott) {
+      res.status(404).json({ message: "No category found with this ID" });
+      return;
+    }
+    res.status(200).json(carsOnLott);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+// Remove a car from the inventory
+router.delete("/:id", async (req, res) => {
+  // delete a category by its `id` value
+  try {
+    const carsOnLott = await Category.destroy({
+      where: { id: req.params.id },
+    });
+    if (!carsOnLott) {
+      res.status(404).json({ message: "No cars with this ID P L A Y A " });
+      return;
+    }
+    res.status(200).json(carsOnLott);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+module.exports = router;
