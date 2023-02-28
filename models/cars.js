@@ -4,42 +4,64 @@ const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 
 // Initialize Product model (table) by extending off Sequelize's Model class
-class Product extends Model {}
+class Cars extends Model {}
 
 // set up fields and rules for Product model
-Product.init(
+Cars.init(
   {
+    // define columns
     id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
       autoIncrement: true,
     },
-    product_name: {
+    make: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    price: {
-      type: DataTypes.DECIMAL,
+    model: {
+      type: DataTypes.STRING,
       allowNull: false,
-      validate: {
-        isDecimal: true,
-      },
     },
-    stock: {
+    year: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      defaultValue: 10,
       validate: {
         isNumeric: true,
       },
     },
-    category_id: {
+    price: {
+      type: DataTypes.FLOAT,
+      allowNull: false,
+    },
+    mileage: {
       type: DataTypes.INTEGER,
-      references: {
-        model: "category",
-        key: "id",
-      },
+      allowNull: false,
+    },
+    fossil_fuel: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false,
+    },
+    automatic: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false,
+    },
+    engine_cylinders: {
+      type: DataTypes.FLOAT,
+      allowNull: false,
+    },
+    color: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    body_type: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    car_description: {
+      type: Datatypes.STRING,
+      allowNull: false,
     },
   },
   {
@@ -47,8 +69,8 @@ Product.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: "product",
+    modelName: "cars",
   }
 );
 
-module.exports = Product;
+module.exports = Cars;
