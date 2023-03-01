@@ -1,6 +1,7 @@
 // Router created for instance to define route for application
 const router = require("express").Router();
 
+const { Op } = require("sequelize");
 // Our cars command will require information from the models folder
 const { Cars, User } = require("../../models");
 
@@ -38,7 +39,7 @@ router.get("/", async (req, res) => {
 
 // Display a car by its ID value
 
-router.get("/", async (req, res) => {
+router.get("/:id", async (req, res) => {
   try {
     const carsOnLott = await Cars.findByPk(req.params.id, {
       include: [
@@ -76,7 +77,7 @@ router.get("/", async (req, res) => {
 // Adding a new car to the database
 router.post("/", async (req, res) => {
   try {
-    const carsOnLott = await Category.create({
+    const carsOnLott = await Cars.create({
       category_name: req.body.category_name,
     });
     res.status(200).json(carsOnLott);
@@ -89,7 +90,7 @@ router.post("/", async (req, res) => {
 
 router.put("/:id", async (req, res) => {
   try {
-    const carsOnLott = await Category.update({ where: { id: req.params.id } });
+    const carsOnLott = await Cars.update({ where: { id: req.params.id } });
     if (!carsOnLott) {
       res.status(404).json({ message: "No category found with this ID" });
       return;
@@ -104,7 +105,7 @@ router.put("/:id", async (req, res) => {
 router.delete("/:id", async (req, res) => {
   // delete a category by its `id` value
   try {
-    const carsOnLott = await Category.destroy({
+    const carsOnLott = await Cars.destroy({
       where: { id: req.params.id },
     });
     if (!carsOnLott) {
@@ -116,4 +117,81 @@ router.delete("/:id", async (req, res) => {
     res.status(500).json(err);
   }
 });
+module.exports = router;
+
+router.get("/search", async (req, res) => {
+  try {
+    const {
+      make,
+      model,
+      color,
+      year,
+      price,
+      mileage,
+      fossil_fuel,
+      automatic,
+      engine_cylinders,
+      body_type,
+    } = req.query;
+    const whereClause = {};
+    if (make) {
+      whereClause.make = {
+        [Op.eq]: make,
+      };
+    }
+    if (model) {
+      whereClause.model = {
+        [Op.eq]: model,
+      };
+    }
+    if (color) {
+      whereClause.color = {
+        [Op.eq]: color,
+      };
+    }
+    if (year) {
+      whereClause.year = {
+        [Op.eq]: year,
+      };
+    }
+    if (price) {
+      whereClause.price = {
+        [Op.eq]: price,
+      };
+    }
+    if (mileage) {
+      whereClause.mileage = {
+        [Op.eq]: mileage,
+      };
+    }
+    if (fossil_fuel) {
+      whereClause.fossil_fuel = {
+        [Op.eq]: fossil_fuel,
+      };
+    }
+    if (automatic) {
+      whereClause.automatic = {
+        [Op.eq]: automatic,
+      };
+    }
+    if (engine_cylinders) {
+      whereClause.engine_cylinders = {
+        [Op.eq]: engine_cylinders,
+      };
+    }
+    if (body_type) {
+      whereClause.body_type = {
+        [Op.eq]: body_type,
+      };
+    }
+    const cars = await Cars.findAll({
+      where: whereClause,
+    });
+    res.json(cars);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: "Internal Server Error" });
+  }
+});
+
 module.exports = router;
