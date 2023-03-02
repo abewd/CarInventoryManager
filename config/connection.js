@@ -1,9 +1,9 @@
+// Require sequelize package to assist in SQL practices
+const Sequelize = require("sequelize");
+
 // This is a package to load an environment which contains passwords and API keys which
 // we dont want to be public information on the repository
 require("dotenv").config();
-
-// Require sequelize package to assist in SQL practices
-const Sequelize = require("sequelize");
 
 let sequelize;
 
