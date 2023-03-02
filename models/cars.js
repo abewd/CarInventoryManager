@@ -60,7 +60,7 @@ Cars.init(
       allowNull: false,
     },
     car_description: {
-      type: Datatypes.STRING,
+      type: DataTypes.STRING,
       allowNull: false,
     },
   },

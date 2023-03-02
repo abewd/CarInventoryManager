@@ -1,120 +1,113 @@
-// Router created for instance to define route for application
 const router = require("express").Router();
-
 const { Op } = require("sequelize");
-// Our cars command will require information from the models folder
 const { Cars, User } = require("../../models");
 
 // Display all cars in our inventory
-
 router.get("/", async (req, res) => {
   try {
-    const carsOnLott = await Cars.findAll({
-      include: [
-        {
-          model: User,
-          attributes: [
-            "id",
-            "make",
-            "model",
-            "year",
-            "price",
-            "mileage",
-            "fossil_fuel",
-            "automatic",
-            "engine_cylinders",
-            "color",
-            "body_type",
-            "car_description",
-          ],
-        },
-      ],
+    const carsOnLot = await Cars.findAll({
+      include: {
+        model: User,
+        attributes: [
+          "id",
+          "make",
+          "model",
+          "year",
+          "price",
+          "mileage",
+          "fossil_fuel",
+          "automatic",
+          "engine_cylinders",
+          "color",
+          "body_type",
+          "car_description",
+        ],
+      },
     });
-
-    res.status(200).json(carsOnLott);
+    res.status(200).json(carsOnLot);
   } catch (err) {
-    res.status(500).json(err);
+    console.error(err);
+    res.status(500).json({ message: "Internal Server Error" });
   }
 });
 
 // Display a car by its ID value
-
 router.get("/:id", async (req, res) => {
   try {
-    const carsOnLott = await Cars.findByPk(req.params.id, {
-      include: [
-        {
-          model: User,
-          attributes: [
-            "id",
-            "make",
-            "model",
-            "year",
-            "price",
-            "mileage",
-            "fossil_fuel",
-            "automatic",
-            "engine_cylinders",
-            "color",
-            "body_type",
-            "car_description",
-          ],
-        },
-      ],
+    const carOnLot = await Cars.findByPk(req.params.id, {
+      include: {
+        model: User,
+        attributes: [
+          "id",
+          "make",
+          "model",
+          "year",
+          "price",
+          "mileage",
+          "fossil_fuel",
+          "automatic",
+          "engine_cylinders",
+          "color",
+          "body_type",
+          "car_description",
+        ],
+      },
     });
-    if (!carsOnLott) {
-      res
-        .status(404)
-        .json({ message: "Bro, we cant find the ID for this box on wheels" });
+    if (!carOnLot) {
+      res.status(404).json({ message: "Car not found" });
       return;
     }
-    res.status(200).json(carsOnLott);
+    res.status(200).json(carOnLot);
   } catch (err) {
-    res.status(500).json(err);
+    console.error(err);
+    res.status(500).json({ message: "Internal Server Error" });
   }
 });
 
-// Adding a new car to the database
+// Add a new car to the database
 router.post("/", async (req, res) => {
   try {
-    const carsOnLott = await Cars.create({
-      category_name: req.body.category_name,
-    });
-    res.status(200).json(carsOnLott);
+    const carOnLot = await Cars.create(req.body);
+    res.status(201).json(carOnLot);
   } catch (err) {
-    res.status(500).json(err);
+    console.error(err);
+    res.status(500).json({ message: "Internal Server Error" });
   }
 });
 
-// Updating car details thats already in our DB
-
+// Update car details that's already in our DB
 router.put("/:id", async (req, res) => {
   try {
-    const carsOnLott = await Cars.update({ where: { id: req.params.id } });
-    if (!carsOnLott) {
-      res.status(404).json({ message: "No category found with this ID" });
+    const [numRows, [updatedCar]] = await Cars.update(req.body, {
+      where: { id: req.params.id },
+      returning: true,
+    });
+    if (numRows === 0) {
+      res.status(404).json({ message: "Car not found" });
       return;
     }
-    res.status(200).json(carsOnLott);
+    res.status(200).json(updatedCar);
   } catch (err) {
-    res.status(500).json(err);
+    console.error(err);
+    res.status(500).json({ message: "Internal Server Error" });
   }
 });
 
 // Remove a car from the inventory
 router.delete("/:id", async (req, res) => {
-  // delete a category by its `id` value
   try {
-    const carsOnLott = await Cars.destroy({
+    const numCarsDeleted = await Cars.destroy({
       where: { id: req.params.id },
     });
-    if (!carsOnLott) {
-      res.status(404).json({ message: "No cars with this ID P L A Y A " });
+    if (numCarsDeleted === 0) {
+      res.status(404).json({ message: "Car not found" });
       return;
     }
-    res.status(200).json(carsOnLott);
+    res.sendStatus(204);
   } catch (err) {
-    res.status(500).json(err);
+    console.error(err);
+    res.status(500).json({ message: "Internal Server Error" });
   }
 });
+
 module.exports = router;
