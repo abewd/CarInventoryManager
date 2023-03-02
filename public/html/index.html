@@ -1,0 +1,472 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="/public/css/style.css">
+  <title>Care Dealership</title>
+</head>
+
+<body>
+  <!-- Nav Bar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light mb-4">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Brand</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/public/html/contact.html">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Side Bar -->
+  <div class="container-fluid">
+    <div class="row">
+      <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+        <div class="sidebar-sticky">
+          <ul class="nav flex-column">
+            <li class="nav-item">
+
+              <!-- Button trigger modal -->
+              <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#makeModal">
+                Make
+              </button>
+
+              <!-- Modal -->
+              <div class="modal fade" id="makeModal" tabindex="-1" role="dialog" aria-labelledby="makeModal"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="makeModalLabel">Make</h5>
+                      <button type="button" class="btn-close" data-ds-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                          <span class="toggle-btn">
+                            <input type="radio" id="item1" name="car-brand">
+                            <label for="item1"></label>
+                          </span>
+                          Aston Martin
+                        </li>
+                        <li class="list-group-item">
+                          <span class="toggle-btn">
+                            <input type="radio" id="item2" name="car-brand">
+                            <label for="item2"></label>
+                          </span>
+                          Bentley
+                        </li>
+                        <li class="list-group-item">
+                          <span class="toggle-btn">
+                            <input type="radio" id="item3" name="car-brand">
+                            <label for="item3"></label>
+                          </span>
+                          Ferrari
+                        </li>
+                        <li class="list-group-item">
+                          <span class="toggle-btn">
+                            <input type="radio" id="item4" name="car-brand">
+                            <label for="item4"></label>
+                          </span>
+                          Lamborghini
+                        </li>
+                        <li class="list-group-item">
+                          <span class="toggle-btn">
+                            <input type="radio" id="item5" name="car-brand">
+                            <label for="item5"></label>
+                          </span>
+                          Maserati
+                        </li>
+                        <li class="list-group-item">
+                          <span class="toggle-btn">
+                            <input type="radio" id="item6" name="car-brand">
+                            <label for="item6"></label>
+                          </span>
+                          McLaren
+                        </li>
+                        <li class="list-group-item">
+                          <span class="toggle-btn">
+                            <input type="radio" id="item7" name="car-brand">
+                            <label for="item7"></label>
+                          </span>
+                          Porsche
+                        </li>
+                        <li class="list-group-item">
+                          <span class="toggle-btn">
+                            <input type="radio" id="item8" name="car-brand">
+                            <label for="item8"></label>
+                          </span>
+                          Toyota
+                        </li>
+                      </ul>
+
+                    </div>
+                    <div class="modal-footer text-center">
+                      <button type="button" class="btn btn-primary">Search</button>
+                    </div>
+                  </div>
+                </div>
+
+            </li>
+            <li class="nav-item">
+
+              <!-- Button trigger modal -->
+              <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#yearModal">
+                Year
+              </button>
+
+              <!-- Modal -->
+              <div class="modal fade" id="yearModal" tabindex="-1" role="dialog" aria-labelledby="yearModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="yearModalLabel">Year</h5>
+                      <button type="button" class="btn-close" data-ds-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <div class="mb-3">
+                        <label for="from" class="form-label">From:</label>
+                        <select class="form-select" id="from">
+                          <option value="1998">1998</option>
+                          <option value="2000">2000</option>
+                          <option value="2003">2003</option>
+                          <option value="2006">2006</option>
+                          <option value="2007">2007</option>
+                          <option value="2011">2011</option>
+                          <option value="2012">2012</option>
+                          <option value="2014">2014</option>
+                          <option value="2015">2015</option>
+                          <option value="2017">2017</option>
+                          <option value="2018">2018</option>
+                          <option value="2019">2019</option>
+                          <option value="2020">2020</option>
+                          <option value="2021">2021</option>
+                        </select>
+                      </div>
+                      <div class="mb-3">
+                        <label for="to" class="form-label">To:</label>
+                        <select class="form-select" id="to">
+                          <option value="1998">1998</option>
+                          <option value="2000">2000</option>
+                          <option value="2003">2003</option>
+                          <option value="2006">2006</option>
+                          <option value="2007">2007</option>
+                          <option value="2011">2011</option>
+                          <option value="2012">2012</option>
+                          <option value="2014">2014</option>
+                          <option value="2015">2015</option>
+                          <option value="2017">2017</option>
+                          <option value="2018">2018</option>
+                          <option value="2019">2019</option>
+                          <option value="2020">2020</option>
+                          <option value="2021">2021</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-primary">Go</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+
+            </li>
+            <li class="nav-item">
+
+              <!-- Button trigger modal -->
+              <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#priceModal">
+                Price
+              </button>
+
+              <!-- Modal -->
+              <div class="modal fade" id="priceModal" tabindex="-1" role="dialog" aria-labelledby="priceModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="mileageModalLabel">Price</h5>
+                      <button type="button" class="btn-close" data-ds-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <div class="mb-3">
+                        <label for="from" class="form-label">Min:</label>
+                        <select class="form-select" id="from">
+                          <option value="min">Min</option>
+                          <option value="$100,000">$100,000</option>
+                          <option value="$200,000">$200,000</option>
+                          <option value="$300,000">$300,000</option>
+                          <option value="$700,000">$700,000</option>
+                          <option value="$1,000,000">$1,000,000</option>
+                        </select>
+                      </div>
+                      <div class="mb-3">
+                        <label for="to" class="form-label">Max:</label>
+                        <select class="form-select" id="to">
+                          <option value="$200,000">$200,000</option>
+                          <option value="$300,000">$300,000</option>
+                          <option value="$700,000">$700,000</option>
+                          <option value="$1,000,000">$1,000,000</option>
+                          <option value="max">Max</option>
+                          <option value="poa">POA</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-primary">Go</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </li>
+            <li class="nav-item">
+
+              <!-- Button trigger modal -->
+              <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#mileageModal">
+                Mileage
+              </button>
+
+              <!-- Modal -->
+              <div class="modal fade" id="mileageModal" tabindex="-1" role="dialog" aria-labelledby="mileageModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="mileageModalLabel">Mileage</h5>
+                      <button type="button" class="btn-close" data-ds-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <div class="mb-3">
+                        <label for="from" class="form-label">Min:</label>
+                        <select class="form-select" id="from">
+                          <option value="min">Min</option>
+                          <option value="1000km">1000 km</option>
+                          <option value="10000km">10,000 km</option>
+                          <option value="30000km">30,000 km</option>
+                          <option value="50000km">50,000 km</option>
+                          <option value="70000km">70,000 km</option>
+                          <option value="100000km">100,000 km</option>
+                        </select>
+                      </div>
+                      <div class="mb-3">
+                        <label for="to" class="form-label">Max:</label>
+                        <select class="form-select" id="to">
+                          <option value="10000km">10,000 km</option>
+                          <option value="30000km">30,000 km</option>
+                          <option value="50000km">50,000 km</option>
+                          <option value="70000km">70,000 km</option>
+                          <option value="100000km">100,000 km</option>
+                          <option value="max">Max</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-primary">Go</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </li>
+            <li class="nav-item">
+
+              <!-- Button trigger modal -->
+              <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#engingeModal">
+                Engine
+              </button>
+
+              <!-- Modal -->
+              <div class="modal fade" id="engingeModal" tabindex="-1" role="dialog" aria-labelledby="engingeModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="engingeModalLabel">Engine</h5>
+                      <button type="button" class="btn-close" data-ds-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="mb-3">
+                      <label for="from" class="form-label">Fuel Type</label>
+                      <select class="form-select" id="from">
+                        <option value="petrol">Petrol</option>
+                        <option value="electric">Electric</option>
+                      </select>
+                    </div>
+                    <div class="mb-3">
+                      <label for="to" class="form-label">Cylinders</label>
+                      <select class="form-select" id="to">
+                        <option value="6">6</option>
+                        <option value="8">8</option>
+                        <option value="12">12</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                  </div>
+                </div>
+              </div>
+
+            </li>
+            <li class="nav-item">
+
+              <!-- Button trigger modal -->
+              <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#transmissionModal">
+                Transmission
+              </button>
+
+              <!-- Modal -->
+              <div class="modal fade" id="transmissionModal" tabindex="-1" role="dialog" aria-labelledby="transmissionModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="transmissionModalLabel">Transmission</h5>
+                      <button type="button" class="btn-close" data-ds-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                  <div class="modal-body">
+                    <ul class="list-group list-group-flush">
+                      <li class="list-group-item">
+                        <span class="toggle-btn">
+                          <input type="radio" id="item1" name="car-brand">
+                          <label for="item1"></label>
+                        </span>
+                        Transmission
+                      </li>
+                      <li class="list-group-item">
+                        <span class="toggle-btn">
+                          <input type="radio" id="item2" name="car-brand">
+                          <label for="item2"></label>
+                        </span>
+                        Manual
+                      </li>
+                    </ul>
+
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                  </div>
+                </div>
+              </div>
+
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <main class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+        <div class="d-flex flex-row mb-4">
+          <div class="card me-3" style="width: 18rem;">
+            <img class="card-img-top" src="..." alt="Card image cap">
+            <div class="card-body">
+              <h5 id="car-title" class="card-title">2013 Mercedes-Benz E-Class E400 Auto</h5>
+              <h6 id="price" class="card-title">$48,950</h6>
+              <p id="description" class="card-text">Some quick example text to build on the card title and make up the
+                bulk of the card's
+                content.</p>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li id="mileage" class="list-group-item">76,533 km</li>
+              <li class="list-group-item">Autmatic</li>
+              <li class="list-group-item">Convertible</li>
+            </ul>
+            <div class="card-body">
+              <a href="#" class="card-link">Card link</a>
+              <a href="#" class="card-link">Another link</a>
+            </div>
+          </div>
+
+          <div class="card me-3" style="width: 18rem;">
+            <img class="card-img-top" src="..." alt="Card image cap">
+            <div class="card-body">
+              <h5 id="car-title" class="card-title">Card title</h5>
+              <h6 id="price" class="card-title">Card title</h6>
+              <p id="description" class="card-text">Some quick example text to build on the card title and make up the
+                bulk of the card's
+                content.</p>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li id="mileage" class="list-group-item">Cras justo odio</li>
+              <li class="list-group-item">Dapibus ac facilisis in</li>
+              <li class="list-group-item">Vestibulum at eros</li>
+            </ul>
+            <div class="card-body">
+              <a href="#" class="card-link">Card link</a>
+              <a href="#" class="card-link">Another link</a>
+            </div>
+          </div>
+
+          <div class="card me-3" style="width: 18rem;">
+            <img class="card-img-top" src="..." alt="Card image cap">
+            <div class="card-body">
+              <h5 id="car-title" class="card-title">Card title</h5>
+              <h6 id="price" class="card-title">Card title</h6>
+              <p id="description" class="card-text">Some quick example text to build on the card title and make up the
+                bulk of the card's
+                content.</p>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li id="mileage" class="list-group-item">Cras justo odio</li>
+              <li class="list-group-item">Dapibus ac facilisis in</li>
+              <li class="list-group-item">Vestibulum at eros</li>
+            </ul>
+            <div class="card-body">
+              <a href="#" class="card-link">Card link</a>
+              <a href="#" class="card-link">Another link</a>
+            </div>
+          </div>
+
+          <div class="card me-3" style="width: 18rem;">
+            <img class="card-img-top" src="..." alt="Card image cap">
+            <div class="card-body">
+              <h5 id="car-title" class="card-title">Card title</h5>
+              <h6 id="price" class="card-title">Card title</h6>
+              <p id="description" class="card-text">Some quick example text to build on the card title and make up the
+                bulk of the card's
+                content.</p>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li id="mileage" class="list-group-item">Cras justo odio</li>
+              <li class="list-group-item">Dapibus ac facilisis in</li>
+              <li class="list-group-item">Vestibulum at eros</li>
+            </ul>
+            <div class="card-body">
+              <a href="#" class="card-link">Card link</a>
+              <a href="#" class="card-link">Another link</a>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+  </div>
