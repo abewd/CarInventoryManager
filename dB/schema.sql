@@ -1,12 +1,12 @@
 USE carInventoryDB;
 DROP DATABASE IF EXISTS carInventoryDB;
 DROP TABLE IF EXISTS cars;
-DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS user;
 
 CREATE DATABASE carInventoryDB;
 USE carInventoryDB;
 
--- CREATE TABLE users (
+-- CREATE TABLE user (
 -- id INT NOT NULL AUTO_INCREMENT PRIMARY KEY
 -- );
 

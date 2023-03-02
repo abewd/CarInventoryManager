@@ -5,25 +5,7 @@ const { Cars, User } = require("../../models");
 // Display all cars in our inventory
 router.get("/", async (req, res) => {
   try {
-    const carsOnLot = await Cars.findAll({
-      include: {
-        model: User,
-        attributes: [
-          "id",
-          "make",
-          "model",
-          "year",
-          "price",
-          "mileage",
-          "fossil_fuel",
-          "automatic",
-          "engine_cylinders",
-          "color",
-          "body_type",
-          "car_description",
-        ],
-      },
-    });
+    const carsOnLot = await Cars.findAll({});
     res.status(200).json(carsOnLot);
   } catch (err) {
     console.error(err);

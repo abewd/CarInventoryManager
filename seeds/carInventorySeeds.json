@@ -6,7 +6,7 @@
     "price": 175000.0,
     "mileage": 105000,
     "fossil_fuel": true,
-    "automatic_trans": true,
+    "automatic": true,
     "engine_cylinders": 6,
     "color": "Yellow",
     "body_type": "Coupe",

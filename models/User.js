@@ -7,7 +7,7 @@ class User extends Model {
     return bcrypt.compareSync(loginPw, this.password);
   }
 }
-// youll need a table to save the users cars
+// youll need a table to save the user cars
 
 User.init(
   {
