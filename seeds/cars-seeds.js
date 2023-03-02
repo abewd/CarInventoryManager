@@ -9,7 +9,7 @@ const carsData = [
     make: "Toyota",
     model: "Supra",
     year: 1998,
-    price: 175000,
+    price: 175000.0,
     mileage: 105000,
     fossil_fuel: true,
     automatic: true,

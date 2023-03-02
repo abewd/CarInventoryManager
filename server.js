@@ -10,6 +10,8 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(routes);
 
+// add any middlewear if we need it
+
 // sync sequelize models to the database, then turn on the server
 // Not resetting databse
 // this is how we connect the database
