@@ -2,7 +2,7 @@ const router = require("express").Router();
 const { Op } = require("sequelize");
 const { Cars, User } = require("../../models");
 
-router.get("/body_types", async (req, res) => {
+router.get("/", async (req, res) => {
   try {
     const body_types = await Cars.findAll({
       attributes: [
