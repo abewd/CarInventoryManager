@@ -194,4 +194,66 @@ router.get("/search", async (req, res) => {
   }
 });
 
+router.get("/models", async (req, res) => {
+  try {
+    const models = await Cars.findAll({
+      attributes: [[sequelize.fn("DISTINCT", sequelize.col("model")), "model"]],
+    });
+    res.json(models);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: "Internal Server Error" });
+  }
+});
+
+router.get("/body_types", async (req, res) => {
+  try {
+    const body_types = await Cars.findAll({
+      attributes: [
+        [sequelize.fn("DISTINCT", sequelize.col("body_type")), "body_type"],
+      ],
+    });
+    res.json(body_types);
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ message: "Internal Server Eroor" });
+  }
+});
+
+router.get("/colors", async (req, res) => {
+  try {
+    const colors = await Cars.findAll({
+      attributes: [[sequelize.fn("DISTINCT", sequelize.col("color"), "color")]],
+    });
+    res.json(colors);
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ message: "Internal Server Error" });
+  }
+});
+
+router.get("/makes", async (req, res) => {
+  try {
+    const makes = await Cars.findAll({
+      attributes: [[sequelize.fn("DISTINCT", sequelize.col("make")), "make"]],
+    });
+    res.json(makes);
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ message: "Internal Server Eroor" });
+  }
+});
+
+router.get("/years", async (req, res) => {
+  try {
+    const years = await Cars.findAll({
+      attributes: [[sequelize.fn("DISTINCT", sequelize.col("year")), "year"]],
+    });
+    res.json(years);
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ message: "Internal Server Eroor" });
+  }
+});
+
 module.exports = router;
