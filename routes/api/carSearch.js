@@ -2,7 +2,7 @@ const router = require("express").Router();
 const { Op } = require("sequelize");
 const { Cars, User } = require("../../models");
 
-router.get("/search", async (req, res) => {
+router.get("/", async (req, res) => {
   try {
     const {
       make,

@@ -5,7 +5,6 @@ const { cars } = require("../models");
 
 const carsData = [
   {
-    id: "",
     make: "Toyota",
     model: "Supra",
     year: 1998,

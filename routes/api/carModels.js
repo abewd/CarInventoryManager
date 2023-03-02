@@ -2,7 +2,7 @@ const router = require("express").Router();
 const { Op } = require("sequelize");
 const { Cars, User } = require("../../models");
 
-router.get("/models", async (req, res) => {
+router.get("/", async (req, res) => {
   try {
     const models = await Cars.findAll({
       attributes: [[sequelize.fn("DISTINCT", sequelize.col("model")), "model"]],
