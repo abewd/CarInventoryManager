@@ -19,6 +19,7 @@ const loginFormHandler = async (event) => {
   }
 };
 
+// these will have to be changed to link to our html
 document
   .querySelector(".login-form")
   .addEventListener("submit", loginFormHandler);
