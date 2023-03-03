@@ -1,3 +1,4 @@
+// This will link the inventory and car functions to the server
 const router = require("express").Router();
 const inventory = require("./api/carFunctions");
 
