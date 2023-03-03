@@ -4,7 +4,7 @@ const { Cars, User } = require("../../models");
 const sequelize = require("sequelize");
 
 // Display all cars in our inventory
-router.get("/", async (req, res) => {
+router.get("/inventory", async (req, res) => {
   try {
     const carsOnLot = await Cars.findAll({});
     res.status(200).json(carsOnLot);
@@ -51,7 +51,7 @@ router.get("/:id", async (req, res) => {
 });
 
 // Add a new car to the database
-router.post("/", async (req, res) => {
+router.post("/inventory", async (req, res) => {
   try {
     const carOnLot = await Cars.create(req.body);
     res.status(201).json(carOnLot);
@@ -96,7 +96,7 @@ router.delete("/:id", async (req, res) => {
   }
 });
 
-// will get all of the unique makes within the database, example http request (http://localhost:3001/inventory/makes/all)
+// will get all of the unique makes within the database, example http request (http://localhost:3001/api/makes/all)
 
 router.get("/makes/all", async (req, res) => {
   try {
@@ -116,7 +116,7 @@ router.get("/makes/all", async (req, res) => {
   }
 });
 
-// will get all of the unique models within the database, example http request (http://localhost:3001/inventory/models/all)
+// will get all of the unique models within the database, example http request (http://localhost:3001/api/models/all)
 
 router.get("/models/all", async (req, res) => {
   try {
@@ -135,7 +135,7 @@ router.get("/models/all", async (req, res) => {
   }
 });
 
-// will get all unique years within the database, example http request (http://localhost:3001/inventory/years/all)
+// will get all unique years within the database, example http request (http://localhost:3001/api/years/all)
 
 router.get("/years/all", async (req, res) => {
   try {
@@ -152,7 +152,7 @@ router.get("/years/all", async (req, res) => {
   }
 });
 
-// gets all unique color options within database, example http request (http://localhost:3001/inventory/body_types/all)
+// gets all unique color options within database, example http request (http://localhost:3001/api/body_types/all)
 
 router.get("/colors/all", async (req, res) => {
   try {
@@ -171,7 +171,7 @@ router.get("/colors/all", async (req, res) => {
   }
 });
 
-// gets all unique body types within database, example http request (http://localhost:3001/inventory/body_types/all)
+// gets all unique body types within database, example http request (http://localhost:3001/api/body_types/all)
 
 router.get("/body_types/all", async (req, res) => {
   try {
@@ -190,7 +190,7 @@ router.get("/body_types/all", async (req, res) => {
   }
 });
 
-// will get by exact search parameters, example http req (http://localhost:3001/inventory/search/all?make=Toyota&year=1998&model=Supra)
+// will get by exact search parameters, example http req (http://localhost:3001/api/search/all?make=Toyota&year=1998&model=Supra)
 
 router.get("/search/all", async (req, res) => {
   try {
