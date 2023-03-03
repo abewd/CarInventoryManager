@@ -15,6 +15,7 @@ router.get("/", async (req, res) => {
 });
 
 // Display a car by its ID value
+// the attributes section is what you are displating from the model you are including, in this case user
 router.get("/:id", async (req, res) => {
   try {
     const carOnLot = await Cars.findByPk(req.params.id, {
@@ -22,17 +23,19 @@ router.get("/:id", async (req, res) => {
         model: User,
         attributes: [
           "id",
-          "make",
-          "model",
-          "year",
-          "price",
-          "mileage",
-          "fossil_fuel",
-          "automatic",
-          "engine_cylinders",
-          "color",
-          "body_type",
-          "car_description",
+          "name",
+          "email",
+          // "make",
+          // "model",
+          // "year",
+          // "price",
+          // "mileage",
+          // "fossil_fuel",
+          // "automatic",
+          // "engine_cylinders",
+          // "color",
+          // "body_type",
+          // "car_description",
         ],
       },
     });
