@@ -1,0 +1,10 @@
+.card-spacing {
+  margin-right: 100px;
+  margin-bottom: 45px;
+}
+
+#card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
