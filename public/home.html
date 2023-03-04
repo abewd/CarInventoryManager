@@ -78,7 +78,34 @@
 
                     </div>
                     <div class="modal-footer text-center">
-                      <button type="button" class="btn btn-primary">Search</button>
+                      <button type="button" class="btn btn-primary" id="make-search">Search</button>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="nav-item">
+                <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#modelModal">
+                  Model
+                </button>    
+  
+  
+            <!-- Modal -->
+                <div class="modal fade" id="modelModal" tabindex="-1" role="dialog" aria-labelledby="modelModal"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="makeModalLabel">Model</h5>
+                      <button type="button" class="btn-close" data-ds-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <ul class="list-group list-group-flush" id="model-list">
+                        
+                      </ul>
+
+                    </div>
+                    <div class="modal-footer text-center">
+                      <button type="button" class="btn btn-primary" id="model-search">Search</button>
                     </div>
                   </div>
                 </div>
@@ -103,19 +130,19 @@
                     <div class="modal-body">
                       <div class="mb-3">
                         <label for="from" class="form-label">From:</label>
-                        <select class="form-select year-form" id="from">
+                        <select class="form-select year-form" id="from-select">
                       
                         </select>
                       </div>
                       <div class="mb-3">
                         <label for="to" class="form-label">To:</label>
-                        <select class="form-select year-form" id="to">
+                        <select class="form-select year-form" id="to-select">
                 
                         </select>
                       </div>
                     </div>
                     <div class="modal-footer">
-                      <button type="button" class="btn btn-primary">Go</button>
+                      <button type="button" class="btn btn-primary" id="year-search">Go</button>
                     </div>
                   </div>
                 </div>
@@ -143,29 +170,29 @@
                     <div class="modal-body">
                       <div class="mb-3">
                         <label for="from" class="form-label">Min:</label>
-                        <select class="form-select" id="from">
+                        <select class="form-select" id="price-from">
                           <option value="min">Min</option>
-                          <option value="$100,000">$100,000</option>
-                          <option value="$200,000">$200,000</option>
-                          <option value="$300,000">$300,000</option>
-                          <option value="$700,000">$700,000</option>
-                          <option value="$1,000,000">$1,000,000</option>
+                          <option value="100000">$100,000</option>
+                          <option value="200000">$200,000</option>
+                          <option value="300000">$300,000</option>
+                          <option value="700000">$700,000</option>
+                          <option value="1000000">$1,000,000</option>
                         </select>
                       </div>
                       <div class="mb-3">
                         <label for="to" class="form-label">Max:</label>
-                        <select class="form-select" id="to">
-                          <option value="$200,000">$200,000</option>
-                          <option value="$300,000">$300,000</option>
-                          <option value="$700,000">$700,000</option>
-                          <option value="$1,000,000">$1,000,000</option>
+                        <select class="form-select" id="price-to">
+                          <option value="200000">$200,000</option>
+                          <option value="300000">$300,000</option>
+                          <option value="700000">$700,000</option>
+                          <option value="1000000">$1,000,000</option>
                           <option value="max">Max</option>
                           <option value="poa">POA</option>
                         </select>
                       </div>
                     </div>
                     <div class="modal-footer">
-                      <button type="button" class="btn btn-primary">Go</button>
+                      <button type="button" class="btn btn-primary" id="price-search">Go</button>
                     </div>
                   </div>
                 </div>
@@ -191,30 +218,30 @@
                     <div class="modal-body">
                       <div class="mb-3">
                         <label for="from" class="form-label">Min:</label>
-                        <select class="form-select" id="from">
+                        <select class="form-select" id="milage-from">
                           <option value="min">Min</option>
-                          <option value="1000km">1000 km</option>
-                          <option value="10000km">10,000 km</option>
-                          <option value="30000km">30,000 km</option>
-                          <option value="50000km">50,000 km</option>
-                          <option value="70000km">70,000 km</option>
-                          <option value="100000km">100,000 km</option>
+                          <option value="1000">1000 km</option>
+                          <option value="10000">10,000 km</option>
+                          <option value="30000">30,000 km</option>
+                          <option value="50000">50,000 km</option>
+                          <option value="70000">70,000 km</option>
+                          <option value="100000">100,000 km</option>
                         </select>
                       </div>
                       <div class="mb-3">
                         <label for="to" class="form-label">Max:</label>
-                        <select class="form-select" id="to">
-                          <option value="10000km">10,000 km</option>
-                          <option value="30000km">30,000 km</option>
-                          <option value="50000km">50,000 km</option>
-                          <option value="70000km">70,000 km</option>
-                          <option value="100000km">100,000 km</option>
-                          <option value="max">Max</option>
+                        <select class="form-select" id="milage-to">
+                          <option value="10000">10,000 km</option>
+                          <option value="30000">30,000 km</option>
+                          <option value="50000">50,000 km</option>
+                          <option value="70000">70,000 km</option>
+                          <option value="100000">100,000 km</option>
+                          <option value="8000000">Max</option>
                         </select>
                       </div>
                     </div>
                     <div class="modal-footer">
-                      <button type="button" class="btn btn-primary">Go</button>
+                      <button type="button" class="btn btn-primary" id="milage-search">Go</button>
                     </div>
                   </div>
                 </div>
@@ -304,6 +331,7 @@
               </div>
 
             </li>
+            <li class="nav-item"><button type="button" class="btn btn-primary" id="filter-search">Search</button></li>
           </ul>
         </div>
       </nav>

@@ -198,43 +198,73 @@ router.get("/search/all", async (req, res) => {
       make,
       model,
       color,
-      year,
-      price,
-      mileage,
+      year_min,
+      year_max,
+      price_min,
+      price_max,
+      mileage_min,
+      mileage_max,
       fossil_fuel,
       automatic,
       engine_cylinders,
       body_type,
     } = req.query;
+
     const whereClause = {};
+
     if (make) {
       whereClause.make = {
-        [Op.eq]: make,
+        [Op.in]: make.split(","),
       };
     }
     if (model) {
       whereClause.model = {
-        [Op.eq]: model,
+        [Op.in]: model.split(","),
       };
     }
     if (color) {
       whereClause.color = {
-        [Op.eq]: color,
+        [Op.in]: color.split(","),
       };
     }
-    if (year) {
+    if (year_min && year_max) {
       whereClause.year = {
-        [Op.eq]: year,
+        [Op.between]: [year_min, year_max],
+      };
+    } else if (year_min) {
+      whereClause.year = {
+        [Op.gte]: year_min,
+      };
+    } else if (year_max) {
+      whereClause.year = {
+        [Op.lte]: year_max,
       };
     }
-    if (price) {
+    if (price_min && price_max) {
+      // add price range filtering
       whereClause.price = {
-        [Op.eq]: price,
+        [Op.between]: [price_min, price_max],
+      };
+    } else if (price_min) {
+      whereClause.price = {
+        [Op.gte]: price_min,
+      };
+    } else if (price_max) {
+      whereClause.price = {
+        [Op.lte]: price_max,
       };
     }
-    if (mileage) {
+    if (mileage_min && mileage_max) {
       whereClause.mileage = {
-        [Op.eq]: mileage,
+        [Op.between]: [mileage_min, mileage_max],
+      };
+    } else if (mileage_min) {
+      whereClause.mileage = {
+        [Op.gte]: mileage_min,
+      };
+    } else if (mileage_max) {
+      whereClause.mileage = {
+        [Op.lte]: mileage_max,
       };
     }
     if (fossil_fuel) {
@@ -254,7 +284,7 @@ router.get("/search/all", async (req, res) => {
     }
     if (body_type) {
       whereClause.body_type = {
-        [Op.eq]: body_type,
+        [Op.in]: body_type.split(","),
       };
     }
     const cars = await Cars.findAll({
