@@ -49,6 +49,27 @@ function generateList(firstKey, data) {
   });
 }
 
+function generateBodyType(firstKey, data) {
+  data.forEach((element) => {
+    let makesListEl = document.querySelector(`#${firstKey}-list`);
+    let liEl = document.createElement("li");
+    let spanEl = document.createElement("span");
+    let inputEl = document.createElement("input");
+    let labelEl = document.createElement("label");
+    liEl.classList.add("list-group-item");
+    spanEl.classList.add("toggle-btn");
+    inputEl.setAttribute("type", "checkbox");
+    inputEl.setAttribute("id", `${element.body_type}`);
+    inputEl.setAttribute("name", `body_type`);
+    labelEl.setAttribute("for", `${element.body_type}`);
+    liEl.textContent = element.body_type;
+    spanEl.appendChild(inputEl);
+    spanEl.appendChild(labelEl);
+    liEl.appendChild(spanEl);
+    makesListEl.appendChild(liEl);
+  });
+}
+
 function generateModel(firstKey, data) {
   data.forEach((element) => {
     let makesListEl = document.querySelector(`#${firstKey}-list`);
@@ -73,6 +94,11 @@ function generateModel(firstKey, data) {
 //   const firstKey = Object.keys(data[0])[0];
 //   generateList(firstKey, data);
 // });
+
+getFilterEl("body_types").then((data) => {
+  const firstKey = Object.keys(data[0])[0];
+  generateList(firstKey, data);
+});
 
 // calls the getFilterEl function with years as the optional param. when the years are recieved, they are sorted in ascending order and a list of options is generated in both forms within the year option
 getFilterEl("years").then((data) => {
