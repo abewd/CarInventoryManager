@@ -4,6 +4,7 @@ let submitObj = {
   price: [],
   milage: [],
   year: [],
+  body_type: [],
 };
 // function gets filter options with the el being the variable route
 const getFilterEl = (el) =>
@@ -97,7 +98,7 @@ function generateModel(firstKey, data) {
 
 getFilterEl("body_types").then((data) => {
   const firstKey = Object.keys(data[0])[0];
-  generateList(firstKey, data);
+  generateBodyType(firstKey, data);
 });
 
 // calls the getFilterEl function with years as the optional param. when the years are recieved, they are sorted in ascending order and a list of options is generated in both forms within the year option
@@ -165,7 +166,7 @@ const generateCardTemplate = (data) => {
     const carMakeEl = document.createElement("h5");
     carMakeEl.id = `${element.make}`;
     carMakeEl.classList.add("card-title");
-    carMakeEl.textContent = `${element.make}`;
+    carMakeEl.textContent = `${element.make.toUpperCase()} ${element.model}`;
     cardBodyDiv.appendChild(carMakeEl);
 
     // Create a h6 element for the price, set its id and class attributes, and add it to the card body
@@ -264,6 +265,25 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
+  const makeSubmitEl = document.getElementById("body_type-search");
+
+  makeSubmitEl.addEventListener("click", function () {
+    submitObj.body_type = [];
+    const checkedInputs = document.querySelectorAll(
+      'input[name="body_type"]:checked'
+    );
+    checkedInputs.forEach((input) => {
+      if (submitObj.body_type.includes(input.id)) {
+        return;
+      }
+      submitObj.body_type.push(input.id);
+      console.log(input.id); // or whatever you want to do with the checked input
+    });
+    console.log(submitObj);
+  });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
   const makeSubmitEl = document.getElementById("year-search");
 
   makeSubmitEl.addEventListener("click", function () {
@@ -327,6 +347,7 @@ document.addEventListener("DOMContentLoaded", function () {
   makeSubmitEl.addEventListener("click", function () {
     var makeStr = submitObj.make ? submitObj.make.join(",") : "";
 
+    var bodyTypeStr = submitObj.body_type ? submitObj.body_type.join(",") : "";
     // Check if submitObj.model is defined before accessing its join() method
     var modelStr = submitObj.model ? submitObj.model.join(",") : "";
 
@@ -361,7 +382,7 @@ document.addEventListener("DOMContentLoaded", function () {
         : "";
 
     // Construct the API URL with the search query parameters
-    var apiUrl = `/api/search/all/?make=${makeStr}&model=${modelStr}&year_min=${minYear}&year_max=${maxYear}&mileage_min=${minMilage}&mileage_max=${maxMilage}&price_min=${minPrice}&price_max=${maxPrice}`;
+    var apiUrl = `/api/search/all/?make=${makeStr}&model=${modelStr}&year_min=${minYear}&year_max=${maxYear}&mileage_min=${minMilage}&mileage_max=${maxMilage}&price_min=${minPrice}&price_max=${maxPrice}&body_type=${bodyTypeStr}`;
     console.log(apiUrl);
     // Make the API request
     fetch(apiUrl, {

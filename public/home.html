@@ -56,6 +56,18 @@
         <div class="sidebar-sticky">
           <ul class="nav flex-column">
             <li class="nav-item">
+              <div class="input-group">
+                <div class="form-outline">
+                  <input type="search" id="form1" class="form-control" />
+                  <label class="form-label" for="form1">Search</label>
+                </div>
+                <button type="button" class="btn btn-primary">
+                  <i class="fas fa-search"></i>
+                </button>
+              </div>
+            </li>
+
+            <li class="nav-item">
 
               <!-- Button trigger modal -->
               <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#makeModal">
@@ -121,12 +133,12 @@
               </button>
 
               <!-- Modal -->
-              <div class="modal fade" id="makeModal" tabindex="-1" role="dialog" aria-labelledby="body_typeModal"
+              <div class="modal fade" id="body_typeModal" tabindex="-1" role="dialog" aria-labelledby="body_typeModal"
                 aria-hidden="true">
                 <div class="modal-dialog" role="document">
                   <div class="modal-content">
                     <div class="modal-header">
-                      <h5 class="modal-title" id="body_typeModalLabel">Make</h5>
+                      <h5 class="modal-title" id="body_typeModalLabel">Body Type</h5>
                       <button type="button" class="btn-close" data-ds-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
@@ -136,7 +148,7 @@
 
                     </div>
                     <div class="modal-footer text-center">
-                      <button type="button" class="btn btn-primary" id="make-search">Search</button>
+                      <button type="button" class="btn btn-primary" id="body_type-search">Search</button>
                     </div>
                   </div>
                 </div>
@@ -202,7 +214,9 @@
                       <div class="mb-3">
                         <label for="from" class="form-label">Min:</label>
                         <select class="form-select" id="price-from">
-                          <option value="min">Min</option>
+                          <option value="1">Min</option>
+                          <option value="25000">$25,000</option>
+                          <option value="50000">$50,000</option>
                           <option value="100000">$100,000</option>
                           <option value="200000">$200,000</option>
                           <option value="300000">$300,000</option>
@@ -213,12 +227,12 @@
                       <div class="mb-3">
                         <label for="to" class="form-label">Max:</label>
                         <select class="form-select" id="price-to">
+                          <option value="100000">$100,000</option>
                           <option value="200000">$200,000</option>
                           <option value="300000">$300,000</option>
                           <option value="700000">$700,000</option>
                           <option value="1000000">$1,000,000</option>
-                          <option value="max">Max</option>
-                          <option value="poa">POA</option>
+                          <option value="1000000000">Max</option>
                         </select>
                       </div>
                     </div>
