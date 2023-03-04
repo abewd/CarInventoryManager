@@ -119,7 +119,7 @@ const generateCard = () => {
         const priceEl = document.createElement("h6");
         priceEl.id = "price";
         priceEl.classList.add("card-title");
-        priceEl.textContent = `${element.price}`;
+        priceEl.textContent = `$${element.price.toLocaleString()}`;
         cardBodyDiv.appendChild(priceEl);
 
         // Create a p element for the description, set its id and class attributes, and add it to the card body

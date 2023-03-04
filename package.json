@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "seed": "node seeds/seed" 
+    "seed": "node seeds/seed"
   },
   "repository": {
     "type": "git",
@@ -23,8 +23,10 @@
   "homepage": "https://github.com/abewd/CarInventoryManager#readme",
   "dependencies": {
     "bcrypt": "^5.1.0",
+    "connect-session-sequelize": "^7.1.5",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
+    "express-session": "^1.17.3",
     "mysql2": "2.3.0",
     "sequelize": "^6.29.0"
   }

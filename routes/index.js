@@ -1,11 +1,22 @@
 // This will link the inventory and car functions to the server
 const router = require("express").Router();
-const inventory = require("./api/carFunctions");
+const withAuth = require("../utils/auth");
+const apiRoutes = require("./api");
 
-router.use("/api", inventory);
+const path = require("path");
 
-router.use((req, res) => {
-  res.send("<h1>Wrong Route!</h1>");
+router.use("/api", apiRoutes);
+
+router.get("/", withAuth, (req, res) => {
+  res.sendFile(path.join(__dirname, "../public/home.html"));
+});
+
+router.get("/login", (req, res) => {
+  res.sendFile(path.join(__dirname, "../public/html/login.html"));
+});
+
+router.get("/contact", (req, res) => {
+  res.sendFile(path.join(__dirname, "../public/html/contact.html"));
 });
 
 module.exports = router;
