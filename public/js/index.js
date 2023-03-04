@@ -1,3 +1,12 @@
+let searchObj = {
+  make: undefined,
+  year: undefined,
+  price: undefined,
+  mileage: undefined,
+  engine: undefined,
+  transmission: undefined,
+};
+
 // function gets filter options with the el being the variable route
 const getFilterEl = (el) =>
   fetch(`/api/${el}/all`, {
@@ -24,7 +33,7 @@ function generateList(firstKey, data) {
     spanEl.classList.add("toggle-btn");
     inputEl.setAttribute("type", "radio");
     inputEl.setAttribute("id", `${element.make}`);
-    inputEl.setAttribute("name", `${element.make}`);
+    inputEl.setAttribute("name", "make");
     labelEl.setAttribute("for", `${element.make}`);
     liEl.textContent = element.make;
     spanEl.appendChild(inputEl);
@@ -178,5 +187,24 @@ const generateCard = () => {
       });
     });
 };
+
+document.addEventListener("DOMContentLoaded", function () {
+  const makeSubmitEl = document.getElementById("make-search");
+
+  makeSubmitEl.addEventListener("click", function () {
+    console.log("clicked");
+    const checkedInputs = document.querySelectorAll(
+      'input[name="make"]:checked'
+    );
+    checkedInputs.forEach((input) => {
+      console.log(input.id); // or whatever you want to do with the checked input
+    });
+  });
+});
+
+// const checkedInputs = document.querySelectorAll('input[name="make"]:checked');
+// checkedInputs.forEach((input) => {
+//   console.log(input.id); // or whatever you want to do with the checked input
+// });
 
 generateCard();
