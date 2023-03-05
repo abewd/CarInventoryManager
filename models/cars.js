@@ -1,16 +1,19 @@
-// import important parts of sequelize library
+// Import parts of Sequelize library
 const { Model, DataTypes } = require("sequelize");
-// import our database connection from config.js
+
+// Import our database connection from config.js
 const sequelize = require("../config/connection");
+
+// Import the User model
 const User = require("./User");
 
-// Initialize Product model (table) by extending off Sequelize's Model class
+// Initialize cars model (table) by extending off Sequelize's Model class
 class Cars extends Model {}
 
-// set up fields and rules for Product model
+// Set up fields and rules for Product model
 Cars.init(
   {
-    // define columns
+    // Define columns for the cars table
     id: {
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -74,7 +77,8 @@ Cars.init(
   }
 );
 
-// added a link between user and cars
+// Establish a foreign key between user and cars
 Cars.belongsTo(User, { foreignKey: "user_id" });
 
+// Export the Cars model to be used in other parts of the codebase
 module.exports = Cars;

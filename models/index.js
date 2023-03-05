@@ -1,10 +1,11 @@
-// Import all models required
+// Import the Cars model
 const Cars = require("./Cars");
+
+// Import the User model
 const User = require("./User");
 
-// cars belongs to user
-// remember to use foreignt key
-//
+// Export the Cars and User model to be used in other parts of the codebase
+
 module.exports = {
   Cars,
   User,
