@@ -1,3 +1,5 @@
+// Declare an object called submitObj which will be used to hold car data from the
+// car seeds file
 let submitObj = {
   make: [],
   model: [],
@@ -5,7 +7,9 @@ let submitObj = {
   milage: [],
   year: [],
 };
-// function gets filter options with the el being the variable route
+// Define a function called getFilterE1 that takes an argument "el" and sends
+// a GET request to the server which retreives filter options for the element.
+// The function returns a promise which will resolve the response data
 const getFilterEl = (el) =>
   fetch(`/api/${el}/all`, {
     method: "GET",
@@ -14,6 +18,10 @@ const getFilterEl = (el) =>
     },
   }).then((response) => response.json());
 
+// Define a function called getFilteredSearch that takes an argument 'el'and sends
+// a GET request to the server to retrieve search results that match
+// the given filter options. The function returns a promise that will resolve to
+// the response data
 const getFilteredSearch = (el) =>
   fetch(`/api/search/all/${el}`, {
     method: "GET",
@@ -22,12 +30,18 @@ const getFilteredSearch = (el) =>
     },
   }).then((response) => response.json());
 
+// Call the getFilterEl function with the argument 'makes'. When the response is
+// received, retrieve the first key in the data object and call the generateList
+// function with the key and data
 getFilterEl("makes").then((data) => {
+  // Start at the initial data from array 0
   const firstKey = Object.keys(data[0])[0];
   generateList(firstKey, data);
 });
 
-// function loops through the fetched data and generates checklist items
+// Define a function called generateList that takes a key and data object as
+// arguments. The function generates a list of items based on the data object
+// and appends it to the DOM under the corresponding key
 function generateList(firstKey, data) {
   data.forEach((element) => {
     let makesListEl = document.querySelector(`#${firstKey}-list`);
@@ -49,6 +63,9 @@ function generateList(firstKey, data) {
   });
 }
 
+// Define a function called generateBodyType that takes a key and data object
+// as arguments. The function generates a list of items based on the data object
+//  and appends it to the DOM under the corresponding key
 function generateBodyType(firstKey, data) {
   data.forEach((element) => {
     let makesListEl = document.querySelector(`#${firstKey}-list`);
@@ -70,6 +87,9 @@ function generateBodyType(firstKey, data) {
   });
 }
 
+// Define a function called generateModel that takes a key and data object
+// as arguments. The function generates a list of items based on the data object
+//  and appends it to the DOM under the corresponding key
 function generateModel(firstKey, data) {
   data.forEach((element) => {
     let makesListEl = document.querySelector(`#${firstKey}-list`);
@@ -95,12 +115,14 @@ function generateModel(firstKey, data) {
 //   generateList(firstKey, data);
 // });
 
+// Filer the data for body_types and generate a list
 getFilterEl("body_types").then((data) => {
   const firstKey = Object.keys(data[0])[0];
   generateList(firstKey, data);
 });
 
-// calls the getFilterEl function with years as the optional param. when the years are recieved, they are sorted in ascending order and a list of options is generated in both forms within the year option
+// Gets filter data for years, sorts it in ascending order, and generates a
+// list of options for both forms within the year option
 getFilterEl("years").then((data) => {
   let yearArr = [];
   data.forEach((element) => {
@@ -142,6 +164,7 @@ getFilterEl("years").then((data) => {
           </div> */
 }
 
+// Generates the template for a card based on inventory data
 const generateCardTemplate = (data) => {
   data.forEach((element) => {
     // create card div
@@ -149,33 +172,36 @@ const generateCardTemplate = (data) => {
     cardDiv.classList.add("card", "me-3", "card-spacing");
     cardDiv.style.width = "18rem";
 
-    // create image el
+    // Create image el
     const imgEl = document.createElement("img");
     imgEl.classList.add("card-img-top");
     imgEl.src = "...";
     imgEl.alt = "Card image cap";
     cardDiv.appendChild(imgEl);
 
-    //create a div for card body
+    // Create a div for card body
     const cardBodyDiv = document.createElement("div");
     cardBodyDiv.classList.add("card-body");
     cardDiv.appendChild(cardBodyDiv);
 
-    // Create a h5 element for the car title, set its id and class attributes, and add it to the card body
+    // Create a h5 element for the car title, set its id and class attributes,
+    // and add it to the card body
     const carMakeEl = document.createElement("h5");
     carMakeEl.id = `${element.make}`;
     carMakeEl.classList.add("card-title");
     carMakeEl.textContent = `${element.make}`;
     cardBodyDiv.appendChild(carMakeEl);
 
-    // Create a h6 element for the price, set its id and class attributes, and add it to the card body
+    // Create a h6 element for the price, set its id and class attributes,
+    // and add it to the card body
     const priceEl = document.createElement("h6");
     priceEl.id = "price";
     priceEl.classList.add("card-title");
     priceEl.textContent = `$${element.price.toLocaleString()}`;
     cardBodyDiv.appendChild(priceEl);
 
-    // Create a p element for the description, set its id and class attributes, and add it to the card body
+    // Create a p element for the description, set its id and class attributes,
+    // and add it to the card body
     const descriptionEl = document.createElement("p");
     descriptionEl.id = "description";
     descriptionEl.classList.add("card-text");
@@ -187,13 +213,16 @@ const generateCardTemplate = (data) => {
     listGroupUl.classList.add("list-group", "list-group-flush");
     cardDiv.appendChild(listGroupUl);
 
-    // Create li elements for the list group, set their ids and class attributes, and add them to the list group
+    // Create li elements for the list group, set their ids and class attributes,
+    // and add them to the list group
     const mileageLi = document.createElement("li");
     mileageLi.id = "mileage";
     mileageLi.classList.add("list-group-item");
     mileageLi.textContent = `${element.mileage}`;
     listGroupUl.appendChild(mileageLi);
 
+    // Create li elements for the transmission group, set their ids and class attributes,
+    // and add them to the list group
     const automaticLi = document.createElement("li");
     automaticLi.classList.add("list-group-item");
     if (element.automatic) {
@@ -203,6 +232,8 @@ const generateCardTemplate = (data) => {
     }
     listGroupUl.appendChild(automaticLi);
 
+    // Create li elements for the body type group, set their ids and class attributes,
+    // and add them to the list group
     const bodyTypeLi = document.createElement("li");
     bodyTypeLi.classList.add("list-group-item");
     bodyTypeLi.textContent = `${element.body_type}`;
@@ -213,13 +244,15 @@ const generateCardTemplate = (data) => {
     cardBodyDiv2.classList.add("card-body");
     cardDiv.appendChild(cardBodyDiv2);
 
-    // Create two a elements for card links, set their class attributes, and add them to the card body
+    // Create two a elements for card links, set their class attributes,
+    // and add them to the card body
     const cardLink1 = document.createElement("a");
     cardLink1.href = "#";
     cardLink1.classList.add("card-link");
     cardLink1.textContent = "Card link";
     cardBodyDiv2.appendChild(cardLink1);
 
+    // Im not sure what this other link is meant to be, maybe a "contact seller" form
     const cardLink2 = document.createElement("a");
     cardLink2.href = "#";
     cardLink2.classList.add("card-link");
@@ -231,6 +264,8 @@ const generateCardTemplate = (data) => {
   });
 };
 
+// This function makes a GET request and generates a card template for the data
+// returned
 const generateCard = () => {
   fetch(`/api/inventory`, {
     method: "GET",
@@ -244,6 +279,8 @@ const generateCard = () => {
     });
 };
 
+// This function is an event listener that listens for clicks on the "make-search"
+// button and populates the "make" field of the search form
 document.addEventListener("DOMContentLoaded", function () {
   const makeSubmitEl = document.getElementById("make-search");
 
@@ -263,6 +300,8 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+// This function is an event listener that listens for clicks on the "year-search"
+//  button and populates the "year" field of the search form
 document.addEventListener("DOMContentLoaded", function () {
   const makeSubmitEl = document.getElementById("year-search");
 
@@ -276,6 +315,8 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+// This function is an event listener that listens for clicks on the
+// "price-search" button and populates the "price" field of the search form
 document.addEventListener("DOMContentLoaded", function () {
   const makeSubmitEl = document.getElementById("price-search");
 
@@ -289,6 +330,8 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+// This function is an event listener that listens for clicks on the
+// "mileage-search" button and populates the "mileage" field of the search form
 document.addEventListener("DOMContentLoaded", function () {
   const makeSubmitEl = document.getElementById("milage-search");
 
@@ -302,7 +345,8 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-document.addEventListener("DOMContentLoaded", function () {
+// This function is an event listener that listens for clicks on the
+// "model-search" button and populates the "model" field of the search formdocument.addEventListener("DOMContentLoaded", function () {
   const makeSubmitEl = document.getElementById("model-search");
 
   makeSubmitEl.addEventListener("click", function () {
@@ -321,6 +365,8 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+// This function is an event listener that listens for clicks on the
+// "filter-search" button and populates the "filter" field of the search form
 document.addEventListener("DOMContentLoaded", function () {
   const makeSubmitEl = document.getElementById("filter-search");
 
@@ -383,6 +429,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+// Returning a promise that based on a filter
 getFilterEl("models").then((data) => {
   const firstKey = Object.keys(data[0])[0];
   console.log(firstKey);
@@ -390,4 +437,5 @@ getFilterEl("models").then((data) => {
   generateModel(firstKey, data);
 });
 
+// Call the generateCard function you just spend almost 500 lines writing
 generateCard();
