@@ -1,14 +1,21 @@
+// Import Model and DataTypes from Sequelize
 const { Model, DataTypes } = require("sequelize");
+
+// Import bcrypt for password hashing
 const bcrypt = require("bcrypt");
+
+// Import the connection file
 const sequelize = require("../config/connection");
 
+// Initialise the User model and extend off the Sequelize Model class
 class User extends Model {
+  // Define a method for checking password against a hashed password
   checkPassword(loginPw) {
     return bcrypt.compareSync(loginPw, this.password);
   }
 }
-// youll need a table to save the user cars
-
+// Define allowable parameters for the id, name, password and email
+// Initialise the User parameters
 User.init(
   {
     id: {
@@ -39,6 +46,8 @@ User.init(
   },
   {
     hooks: {
+      // Define hooks to automatically hash passwords before creating
+      // and updating the user data
       beforeCreate: async (newUserData) => {
         newUserData.password = await bcrypt.hash(newUserData.password, 10);
         return newUserData;
@@ -59,4 +68,5 @@ User.init(
   }
 );
 
+// Export the User model to be used in other parts of the codebase
 module.exports = User;
