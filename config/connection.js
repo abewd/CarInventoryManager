@@ -27,5 +27,5 @@ if (process.env.JAWSDB_URL) {
   );
 }
 
-// Export Sequelize instance to be used in the server.js
+// Export Sequelize instance to be used in other parts of the codebase
 module.exports = sequelize;
