@@ -1,3 +1,4 @@
+// This code exports helper functions amongst the entire codebase
 module.exports = {
   format_date: (date) => {
     // Format date as MM/DD/YYYY
