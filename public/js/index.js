@@ -308,6 +308,10 @@ const generateCardTemplate = (data) => {
     button.addEventListener("click", function () {
       const modal = document.createElement("div");
       modal.classList.add("modal");
+    button.addEventListener("click", function() {
+      const modal = document.createElement('div');
+      modal.classList.add('modal');
+      modal.classList.add('viewMoreModal');
 
       // Creates a div to hold modal content
       const modalContent = document.createElement("div");
@@ -319,6 +323,10 @@ const generateCardTemplate = (data) => {
       closeBtn.innerHTML = "&times;";
 
       modalContent.appendChild(closeBtn);
+      const modalContent = document.createElement('div');
+      modalContent.classList.add('modal-content');
+      modalContent.classList.add('viewMoreContent');
+      modalContent.classList.add('center-content');
 
       // Displays the make on the modal
       const carMakeEl = document.createElement("h2");
