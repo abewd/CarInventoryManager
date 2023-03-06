@@ -300,12 +300,91 @@ const generateCardTemplate = (data) => {
     cardDiv.appendChild(cardBodyDiv2);
 
     // Create two a elements for card links, set their class attributes,
-    // and add them to the card body
-    const cardLink1 = document.createElement("a");
-    cardLink1.href = "#";
-    cardLink1.classList.add("card-link");
-    cardLink1.textContent = "Card link";
-    cardBodyDiv2.appendChild(cardLink1);
+    // Create a modal element
+    const button = document.createElement("button");
+    button.innerText = "View More";
+    button.setAttribute("class", "btn btn-link");
+    // Creates event listener to generate modal
+    button.addEventListener("click", function() {
+      const modal = document.createElement('div');
+      modal.classList.add('modal');
+
+      // Creates a div to hold modal content
+      const modalContent = document.createElement('div');
+      modalContent.classList.add('modal-content');
+      modalContent.classList.add('center-content');
+
+      const closeBtn = document.createElement('span');
+      closeBtn.classList.add('close');
+      closeBtn.innerHTML = '&times;';
+
+      modalContent.appendChild(closeBtn);
+
+      // Displays the make on the modal
+      const carMakeEl = document.createElement('h2');
+      carMakeEl.textContent = `${element.make.toUpperCase()} ${element.model}`;
+      modalContent.appendChild(carMakeEl);
+
+      // Displays the image on the modal
+      const carImageEl = document.createElement('img');
+      carImageEl.src = element.imageUrl;
+      carImageEl.alt = `${element.make} ${element.model} image`;
+      modalContent.appendChild(carImageEl);
+
+      // Creates a container
+      const infoContainer = document.createElement('div');
+      infoContainer.classList.add('info-container');
+      infoContainer.style.display = 'flex';
+      infoContainer.style.flexDirection = 'column';
+
+      // Displays the price on the modal
+      const carPriceEl = document.createElement('h3');
+      carPriceEl.textContent = `${element.price}`;
+      carPriceEl.style.display = 'block';
+      infoContainer.appendChild(carPriceEl);
+      
+      // Displays the mileage on the modal
+      const carMileageEl = document.createElement('p');
+      carMileageEl.textContent = `${element.mileage}km`;
+      carMileageEl.style.display = 'block';
+      infoContainer.appendChild(carMileageEl);
+
+      // Displays the fuel on the modal
+      const carFuelEl = document.createElement('p');
+      carFuelEl.textContent = `${element.fuel_type}`;
+      carFuelEl.style.display = 'block';
+      infoContainer.appendChild(carFuelEl);
+
+      // Displays the transmission on the modal
+      const carTransmissionEl = document.createElement('p');
+      carTransmissionEl.textContent = `${element.transmission}`;
+      carTransmissionEl.style.display = 'block';
+      infoContainer.appendChild(carTransmissionEl);
+
+      // Displays the cylinders on the modal
+      const carCylindersEl = document.createElement('p');
+      carCylindersEl.textContent = `${element.cylinders}`;
+      carCylindersEl.style.display = 'block';
+      infoContainer.appendChild(carCylindersEl);
+
+      modalContent.appendChild(infoContainer);
+
+      modal.appendChild(modalContent);
+      document.body.appendChild(modal);
+
+      modal.style.display = 'block';
+    });
+    
+    cardBodyDiv2.appendChild(button);
+    
+    document.addEventListener('click', function(event) {
+      if (event.target.classList.contains('close')) {
+        event.target.parentNode.parentNode.remove();
+      } else if (event.target.classList.contains('modal')) {
+        event.target.remove();
+      }
+    });
+
 
     // Im not sure what this other link is meant to be, maybe a "contact seller" form
     const cardLink2 = document.createElement("a");
