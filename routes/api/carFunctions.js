@@ -18,6 +18,8 @@ router.get("/inventory", async (req, res) => {
   }
 });
 
+//  Send user id
+
 // Display a car by its ID value
 // The attributes section is what you are displating from the model you are including, in this case user
 router.get("/:id", async (req, res) => {
