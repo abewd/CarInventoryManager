@@ -42,6 +42,12 @@ getFilterEl("makes").then((data) => {
   generateList(firstKey, data);
 });
 
+getFilterEl("models").then((data) => {
+  // Start at the initial data from array 0
+  const firstKey = Object.keys(data[0])[0];
+  generateModelListInit(firstKey, data);
+});
+
 // Define a function called generateList that takes a key and data object as
 // arguments. The function generates a list of items based on the data object
 // and appends it to the DOM under the corresponding key
@@ -98,8 +104,42 @@ function generateModel() {
   filteredModels = carInv[0]
     .filter((car) => submitObj.make.includes(car.make))
     .map((car) => car.model);
-  console.log(carInv[0]);
-  generateModelList("model", filteredModels);
+
+  console.log(filteredModels);
+  if (!filteredModels[0]) {
+    getFilterEl("models").then((data) => {
+      // Start at the initial data from array 0
+      const firstKey = Object.keys(data[0])[0];
+      generateModelListInit("model", data);
+    });
+    return;
+  } else {
+    generateModelList("model", filteredModels);
+  }
+}
+
+function generateModelListInit(firstKey, data) {
+  !document.querySelector("#model-list").innerHTML
+    ? console.log("empty")
+    : (document.querySelector("#model-list").innerHTML = "");
+  data.forEach((element) => {
+    let makesListEl = document.querySelector(`#${firstKey}-list`);
+    let liEl = document.createElement("li");
+    let spanEl = document.createElement("span");
+    let inputEl = document.createElement("input");
+    let labelEl = document.createElement("label");
+    liEl.classList.add("list-group-item");
+    spanEl.classList.add("toggle-btn");
+    inputEl.setAttribute("type", "checkbox");
+    inputEl.setAttribute("id", `${element.model}`);
+    inputEl.setAttribute("name", `model`);
+    labelEl.setAttribute("for", `${element.model}`);
+    liEl.textContent = element.model;
+    spanEl.appendChild(inputEl);
+    spanEl.appendChild(labelEl);
+    liEl.appendChild(spanEl);
+    makesListEl.appendChild(liEl);
+  });
 }
 
 function generateModelList(firstKey, data) {
@@ -126,10 +166,6 @@ function generateModelList(firstKey, data) {
     makesListEl.appendChild(liEl);
   });
 }
-// getFilterEl("models").then((data) => {
-//   const firstKey = Object.keys(data[0])[0];
-//   generateList(firstKey, data);
-// });
 
 // Filer the data for body_types and generate a list
 getFilterEl("body_types").then((data) => {
@@ -308,6 +344,15 @@ document.addEventListener("DOMContentLoaded", function () {
     const checkedInputs = document.querySelectorAll(
       'input[name="make"]:checked'
     );
+    console.log(checkedInputs[0]);
+    if (!checkedInputs[0]) {
+      getFilterEl("models").then((data) => {
+        console.log(data);
+        // Start at the initial data from array 0
+        const firstKey = Object.keys(data[0])[0];
+        generateModelListInit(firstKey, data);
+      });
+    }
     checkedInputs.forEach((input) => {
       if (submitObj.make.includes(input.id)) {
         return;
@@ -468,14 +513,6 @@ document.addEventListener("DOMContentLoaded", function () {
       });
   });
 });
-
-// Returning a promise that based on a filter
-// getFilterEl("models").then((data) => {
-//   const firstKey = Object.keys(data[0])[0];
-//   console.log(firstKey);
-//   console.log();
-//   generateModel(firstKey, data);
-// });
 
 const searchInput = document.querySelector("#search-input");
 const autofillContainer = document.querySelector("#autofill-container");
