@@ -75,6 +75,11 @@ Cars.init(
         key: "id",
       },
     },
+    // This is for the photos in the cards
+    image_url: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
   },
   {
     sequelize,
