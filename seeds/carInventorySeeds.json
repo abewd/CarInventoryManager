@@ -25,7 +25,9 @@
     "engine_cylinders": 6,
     "color": "white",
     "body_type": "convertible",
-    "car_description": "5 stars"
+    "car_description": "5 stars",
+    "user_id": 2,
+    "image_url": "https://logos-world.net/wp-content/uploads/2021/04/Porsche-Logo.png"
   },
   {
     "make": "porsche",

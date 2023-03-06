@@ -175,15 +175,38 @@ const generateCardTemplate = (data) => {
     cardDiv.classList.add("card", "me-3", "card-spacing");
     cardDiv.style.width = "18rem";
 
-    // Create image el
+    // // Create image el
+    // const imgEl = document.createElement("img");
+    // imgEl.classList.add("card-img-top");
+    // imgEl.src = `${element.image_url}`;
+    // // abewd: this is how we display the user id
+    // imgEl.alt = `${element.user_id}`;
+    // cardDiv.appendChild(imgEl);
+    // // testing user id
+    // user_id = element.user_id;
+
     const imgEl = document.createElement("img");
     imgEl.classList.add("card-img-top");
     imgEl.src = `${element.image_url}`;
-    // abewd: this is how we display the user id
-    imgEl.alt = `${element.user_id}`;
     cardDiv.appendChild(imgEl);
-    // testing user id
-    user_id = element.user_id;
+
+    // Add event listener to the image element
+    imgEl.addEventListener("click", function () {
+      const modal = document.createElement("div");
+      modal.classList.add("modal");
+      modal.classList.add("img");
+
+      const modalImg = document.createElement("img");
+      modalImg.src = imgEl.src;
+
+      modal.appendChild(modalImg);
+      document.body.appendChild(modal);
+
+      // Remove the modal when the user clicks outside of the image
+      modal.addEventListener("click", function () {
+        document.body.removeChild(modal);
+      });
+    });
 
     // Create a div for card body
     const cardBodyDiv = document.createElement("div");
