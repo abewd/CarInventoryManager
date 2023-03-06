@@ -2,7 +2,7 @@
 const router = require("express").Router();
 // Importing the Op operators from Sequelize framework
 const { Op } = require("sequelize");
-// Importing Cars and User models from the models directory
+// Importing the Sequelize framework
 const { Cars, User } = require("../../models");
 // Importing the Sequelize framework
 const sequelize = require("sequelize");

@@ -1,10 +1,10 @@
 // Import router from the express framework
 const router = require("express").Router();
 
-// Create a variable called userRoutes which uses the following routing
+// Create a module called userRoutes which uses the following routing
 const userRoutes = require("./userRoutes");
 
-// Create a variable called carRoutes which uses the following routing
+// Create a module called carRoutes which uses the following routing
 const carRoutes = require("./carFunctions");
 
 // Use userRoutes to handle requests to /users URL

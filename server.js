@@ -37,11 +37,11 @@ sequelize.sync({ force: false }).then(() => {
   });
 });
 
-// How To Run
+// How To Run //
+// npm i in server.js file
+// input root and pw into .env file
 // npm run seed -> for both json files
-// npm i in server.js
 // mysql -u root -p for schema.sql
 // source schema.sql
 // npm start || node server in server.js file
-
 // npm i express-session connect-session-sequelize
