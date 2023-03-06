@@ -11,8 +11,7 @@
     "color": "Yellow",
     "body_type": "Coupe",
     "car_description": "Great car, would recommend. Drive so NICE! :D",
-    "user_id": 1,
-    "image_url": "https://abewdsphotos.blob.core.windows.net/carinventory2/72868748_2452262941547167_4885348144683941888_n.jpg"
+    "image_url": "https://inentoryphotos.blob.core.windows.net/tagphotos/toyota supra 1998 yellow coupe.jpg"
   },
   {
     "make": "porsche",
@@ -25,7 +24,8 @@
     "engine_cylinders": 6,
     "color": "white",
     "body_type": "convertible",
-    "car_description": "5 stars"
+    "car_description": "5 stars!!!!",
+    "image_url": "https://inentoryphotos.blob.core.windows.net/tagphotos/porsche boxster 2022 white convertible.jpg"
   },
   {
     "make": "porsche",
@@ -38,7 +38,8 @@
     "engine_cylinders": 6,
     "color": "yellow",
     "body_type": "coupe",
-    "car_description": "very good car. Love it for my husband"
+    "car_description": "Very good car. I love it for my husband",
+    "image_url": "https://inentoryphotos.blob.core.windows.net/tagphotos/porsche carrera 2019 yellow coupe.jpg"
   },
   {
     "make": "porsche",
@@ -51,7 +52,8 @@
     "engine_cylinders": 6,
     "color": "black",
     "body_type": "coupe",
-    "car_description": "fantastic. great value!"
+    "car_description": "Fantastic. Great value!",
+    "image_url": "https://inentoryphotos.blob.core.windows.net/tagphotos/porsche gt 2 2018 black coupe.jpg"
   },
   {
     "make": "porsche",
@@ -64,7 +66,8 @@
     "engine_cylinders": 6,
     "color": "black",
     "body_type": "targa",
-    "car_description": "my friends are so jealous"
+    "car_description": "All my friends are so jealous. :)",
+    "image_url": "https://inentoryphotos.blob.core.windows.net/tagphotos/porsche targa 2015 black targa.jpg"
   },
   {
     "make": "porsche",
@@ -77,7 +80,8 @@
     "engine_cylinders": 6,
     "color": "grey",
     "body_type": "targa",
-    "car_description": "best targa model i've seen"
+    "car_description": "Best Targa model I've seen.",
+    "image_url": "https://inentoryphotos.blob.core.windows.net/tagphotos/porsche targa 2006 grey targa.jpg"
   },
   {
     "make": "porsche",
@@ -90,7 +94,8 @@
     "engine_cylinders": 8,
     "color": "grey",
     "body_type": "wagon",
-    "car_description": "wagon size perfect for driving the kids around"
+    "car_description": "The wagon size is perfect for driving the kids around.",
+    "image_url": "https://inentoryphotos.blob.core.windows.net/tagphotos/porsche cayenne 2018 grey wagon.jpg"
   },
 
   {
@@ -104,7 +109,8 @@
     "engine_cylinders": 6,
     "color": "silver",
     "body_type": "coupe",
-    "car_description": "The silver finish is amazing"
+    "car_description": "!The silver finish is amazing!",
+    "image_url": "https://inentoryphotos.blob.core.windows.net/tagphotos/porsche clubsport 2000 silver coupe.jpg"
   },
   {
     "make": "aston martin",
@@ -117,7 +123,8 @@
     "engine_cylinders": 12,
     "color": "silver",
     "body_type": "convertible",
-    "car_description": "so hot i feel like a movie star"
+    "car_description": "It's so hot! I feel like a movie star!",
+    "image_url": "https://inentoryphotos.blob.core.windows.net/tagphotos/aston martin volante 2011 silver convertible.jpg"
   },
   {
     "make": "aston martin",
@@ -130,7 +137,8 @@
     "engine_cylinders": 12,
     "color": "grey",
     "body_type": "coupe",
-    "car_description": "coupe is my favourite"
+    "car_description": "Coupe is my favourite.",
+    "image_url": "https://inentoryphotos.blob.core.windows.net/tagphotos/aston martin db9 2012 grey coupe.jpg"
   },
   {
     "make": "aston martin",
@@ -143,7 +151,8 @@
     "engine_cylinders": 12,
     "color": "white",
     "body_type": "coupe",
-    "car_description": "beautiful white, very stylish"
+    "car_description": "Beautiful white, very stylish.",
+    "image_url": "https://inentoryphotos.blob.core.windows.net/tagphotos/aston martin db11 2017 white coupe.jpg"
   },
   {
     "make": "bentley",
@@ -156,7 +165,8 @@
     "engine_cylinders": 8,
     "color": "black",
     "body_type": "sedan",
-    "car_description": "fantastic to drive. 5 stars"
+    "car_description": "Fantastic to drive. 10/10 :D",
+    "image_url": "https://inentoryphotos.blob.core.windows.net/tagphotos/bentley arnage 2003 black sedan.jpg"
   },
   {
     "make": "bentley",
@@ -169,7 +179,8 @@
     "engine_cylinders": 8,
     "color": "white",
     "body_type": "wagon",
-    "car_description": "this is a dream to drive. Try it out!"
+    "car_description": "This is a dream to drive. Try it out!",
+    "image_url": "https://inentoryphotos.blob.core.windows.net/tagphotos/bentley bentayga 2017 white wagon.jpg"
   },
   {
     "make": "bentley",
@@ -182,7 +193,8 @@
     "engine_cylinders": 8,
     "color": "onyx",
     "body_type": "sedan",
-    "car_description": "the unique color is beautiful"
+    "car_description": "The unique color is beautiful.",
+    "image_url": "https://inentoryphotos.blob.core.windows.net/tagphotos/bentley mulsanne 2015 onyx sedan.jpg"
   },
   {
     "make": "maserati",
@@ -195,7 +207,8 @@
     "engine_cylinders": 6,
     "color": "white",
     "body_type": "sedan",
-    "car_description": "great value for money! so glad I found my dream car here"
+    "car_description": "Great value for money! So glad I found my dream car here",
+    "image_url": "https://inentoryphotos.blob.core.windows.net/tagphotos/maserati gransport 2018 white sedan.jpg"
   },
   {
     "make": "mclaren",
@@ -208,7 +221,8 @@
     "engine_cylinders": 8,
     "color": "grey",
     "body_type": "coupe",
-    "car_description": "Take it for a test around the track"
+    "car_description": "Take it for a test around the track",
+    "image_url": "https://inentoryphotos.blob.core.windows.net/tagphotos/mclaren 675lt 2015 grey coupe.jpg"
   },
   {
     "make": "mclaren",
@@ -221,7 +235,8 @@
     "engine_cylinders": 8,
     "color": "yellow",
     "body_type": "coupe",
-    "car_description": "Always been looking for one if these"
+    "car_description": "Always been looking for one of these",
+    "image_url": "https://inentoryphotos.blob.core.windows.net/tagphotos/mclaren p1 2014 yellow coupe.jpg"
   },
   {
     "make": "mclaren",
@@ -234,7 +249,8 @@
     "engine_cylinders": 8,
     "color": "silver",
     "body_type": "coupe",
-    "car_description": "Drive away, no more to pay"
+    "car_description": "Drive away, no more to pay :)",
+    "image_url": "https://inentoryphotos.blob.core.windows.net/tagphotos/mclaren 620r 2021 silver coupe.jpg"
   },
   {
     "make": "mclaren",
@@ -247,7 +263,8 @@
     "engine_cylinders": 8,
     "color": "blue",
     "body_type": "convertible",
-    "car_description": "gorgeous color and love driving with the top down"
+    "car_description": "Gorgeous color and love driving with the top down",
+    "image_url": "https://inentoryphotos.blob.core.windows.net/tagphotos/mclaren spider 2019 blue convertible.jpg"
   },
   {
     "make": "lamborghini",
@@ -260,7 +277,8 @@
     "engine_cylinders": 12,
     "color": "grigio telesto",
     "body_type": "coupe",
-    "car_description": "beautiful signature paint"
+    "car_description": "Beautiful signature paint",
+    "image_url": "https://inentoryphotos.blob.core.windows.net/tagphotos/lamborghini aventador 2019 grigio telesto coupe.jpg"
   },
   {
     "make": "ferrari",
@@ -273,6 +291,7 @@
     "engine_cylinders": 12,
     "color": "rosso corse",
     "body_type": "coupe",
-    "car_description": "stunning, signatured red finish"
+    "car_description": "Stunning, signatured red finish",
+    "image_url": ""
   }
 ]
