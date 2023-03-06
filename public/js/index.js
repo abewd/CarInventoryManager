@@ -511,6 +511,8 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+const searchSuggestionEl = document.querySelector(".suggestion");
+
 // This function is an event listener that listens for clicks on the
 // "model-search" button and populates the "model" field of the search formdocument.addEventListener("DOMContentLoaded", function () {
 document.addEventListener("DOMContentLoaded", function () {
@@ -599,7 +601,8 @@ document.addEventListener("DOMContentLoaded", function () {
 const searchInput = document.querySelector("#search-input");
 const autofillContainer = document.querySelector("#autofill-container");
 
-searchInput.addEventListener("input", async (e) => {
+// This code adds an event listener to the search input field that listens for input changes. When a change occurs, the code attempts to perform a search using the value entered into the search input field. It does this by filtering through an array of car objects based on the entered search query. The code then sorts the filtered results by the make of the car and appends each filtered result to an autofill container as a suggestion.
+searchInput.addEventListener("input", (e) => {
   try {
     const query = event.target.value.toLowerCase();
     const cars = carInv[0];
@@ -617,13 +620,31 @@ searchInput.addEventListener("input", async (e) => {
       const suggestion = document.createElement("div");
       suggestion.classList.add("suggestion");
       suggestion.classList.add("dropdown-item");
+      suggestion.setAttribute("value", `${car.id}`);
       suggestion.textContent = `${car.make} ${car.model} (${car.year}) $${car.price}`;
       autofillContainer.appendChild(suggestion);
+
+      // Additionally, the code also attaches a click event listener to each suggestion element, which retrieves the selected car's id attribute value and filters through the entire car inventory object array to retrieve the complete object of the selected car. If the search query fails to execute or an error occurs, it logs an error message to the console and sets the response status to 500 with an error message of "Internal Server Error".
+      suggestion.addEventListener("click", function (event) {
+        let carId = event.target.getAttribute("value");
+        console.log(carInv[0]);
+        let filteredCar = carInv[0].filter((car) => {
+          return car.id == carId;
+        });
+        console.log(filteredCar);
+      });
     });
   } catch (err) {
     console.error(err);
     res.status(500).json({ message: "Internal Server Error" });
   }
+});
+
+document.addEventListener("click", function (event) {
+  const dropdown = document.getElementById("autofill-container");
+  console.log(event.target);
+  dropdown.innerHTML = "";
+  // }
 });
 
 // Call the generateCard function you just spend almost 500 lines writing
