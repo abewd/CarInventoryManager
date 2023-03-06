@@ -8,3 +8,13 @@
   flex-wrap: wrap;
   justify-content: space-around;
 }
+
+.dropdown-menu {
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.suggestion {
+  padding: 10px;
+  cursor: pointer;
+}

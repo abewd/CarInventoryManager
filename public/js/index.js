@@ -1,4 +1,6 @@
 // Declare an object called submitObj which will be used to hold car data from the
+
+const carInv = [];
 // car seeds file
 let submitObj = {
   make: [],
@@ -276,6 +278,8 @@ const generateCard = () => {
   })
     .then((response) => response.json())
     .then((data) => {
+      carInv.pop();
+      carInv.push(data);
       generateCardTemplate(data);
     });
 };
@@ -458,6 +462,36 @@ getFilterEl("models").then((data) => {
   console.log(firstKey);
   console.log();
   generateModel(firstKey, data);
+});
+
+const searchInput = document.querySelector("#search-input");
+const autofillContainer = document.querySelector("#autofill-container");
+
+searchInput.addEventListener("input", async (e) => {
+  try {
+    const query = event.target.value.toLowerCase();
+    const cars = carInv[0];
+    const filteredCars = cars.filter((car) => {
+      return Object.values(car).some((value) => {
+        return String(value).toLocaleLowerCase().includes(query);
+      });
+    });
+
+    filteredCars.sort((a, b) => {
+      return a.make.localeCompare(b.make);
+    });
+    autofillContainer.innerHTML = "";
+    filteredCars.forEach((car) => {
+      const suggestion = document.createElement("div");
+      suggestion.classList.add("suggestion");
+      suggestion.classList.add("dropdown-item");
+      suggestion.textContent = `${car.make} ${car.model} (${car.year}) ${car.price}`;
+      autofillContainer.appendChild(suggestion);
+    });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ message: "Internal Server Error" });
+  }
 });
 
 // Call the generateCard function you just spend almost 500 lines writing
