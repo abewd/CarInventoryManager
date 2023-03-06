@@ -6,6 +6,7 @@ let submitObj = {
   price: [],
   milage: [],
   year: [],
+  body_type: [],
 };
 // Define a function called getFilterE1 that takes an argument "el" and sends
 // a GET request to the server which retreives filter options for the element.
@@ -118,7 +119,7 @@ function generateModel(firstKey, data) {
 // Filer the data for body_types and generate a list
 getFilterEl("body_types").then((data) => {
   const firstKey = Object.keys(data[0])[0];
-  generateList(firstKey, data);
+  generateBodyType(firstKey, data);
 });
 
 // Gets filter data for years, sorts it in ascending order, and generates a
@@ -300,6 +301,27 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+// This function is an event listener that listens for clicks on the "body_type-search"
+//  button and populates the "year" field of the search form
+document.addEventListener("DOMContentLoaded", function () {
+  const makeSubmitEl = document.getElementById("body_type-search");
+
+  makeSubmitEl.addEventListener("click", function () {
+    submitObj.body_type = [];
+    const checkedInputs = document.querySelectorAll(
+      'input[name="body_type"]:checked'
+    );
+    checkedInputs.forEach((input) => {
+      if (submitObj.body_type.includes(input.id)) {
+        return;
+      }
+      submitObj.body_type.push(input.id);
+      console.log(input.id); // or whatever you want to do with the checked input
+    });
+    console.log(submitObj);
+  });
+});
+
 // This function is an event listener that listens for clicks on the "year-search"
 //  button and populates the "year" field of the search form
 document.addEventListener("DOMContentLoaded", function () {
@@ -347,6 +369,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // This function is an event listener that listens for clicks on the
 // "model-search" button and populates the "model" field of the search formdocument.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function () {
   const makeSubmitEl = document.getElementById("model-search");
 
   makeSubmitEl.addEventListener("click", function () {
@@ -364,7 +387,6 @@ document.addEventListener("DOMContentLoaded", function () {
     console.log(submitObj);
   });
 });
-
 // This function is an event listener that listens for clicks on the
 // "filter-search" button and populates the "filter" field of the search form
 document.addEventListener("DOMContentLoaded", function () {
@@ -373,6 +395,7 @@ document.addEventListener("DOMContentLoaded", function () {
   makeSubmitEl.addEventListener("click", function () {
     var makeStr = submitObj.make ? submitObj.make.join(",") : "";
 
+    var bodyTypeStr = submitObj.body_type ? submitObj.body_type.join(",") : "";
     // Check if submitObj.model is defined before accessing its join() method
     var modelStr = submitObj.model ? submitObj.model.join(",") : "";
 
@@ -407,7 +430,7 @@ document.addEventListener("DOMContentLoaded", function () {
         : "";
 
     // Construct the API URL with the search query parameters
-    var apiUrl = `/api/search/all/?make=${makeStr}&model=${modelStr}&year_min=${minYear}&year_max=${maxYear}&mileage_min=${minMilage}&mileage_max=${maxMilage}&price_min=${minPrice}&price_max=${maxPrice}`;
+    var apiUrl = `/api/search/all/?make=${makeStr}&model=${modelStr}&year_min=${minYear}&year_max=${maxYear}&mileage_min=${minMilage}&mileage_max=${maxMilage}&price_min=${minPrice}&price_max=${maxPrice}&body_type=${bodyTypeStr}`;
     console.log(apiUrl);
     // Make the API request
     fetch(apiUrl, {
