@@ -305,66 +305,66 @@ const generateCardTemplate = (data) => {
     button.innerText = "View More";
     button.setAttribute("class", "btn btn-link");
     // Creates event listener to generate modal
-    button.addEventListener("click", function() {
-      const modal = document.createElement('div');
-      modal.classList.add('modal');
+    button.addEventListener("click", function () {
+      const modal = document.createElement("div");
+      modal.classList.add("modal");
 
       // Creates a div to hold modal content
-      const modalContent = document.createElement('div');
-      modalContent.classList.add('modal-content');
-      modalContent.classList.add('center-content');
+      const modalContent = document.createElement("div");
+      modalContent.classList.add("modal-content");
+      modalContent.classList.add("center-content");
 
-      const closeBtn = document.createElement('span');
-      closeBtn.classList.add('close');
-      closeBtn.innerHTML = '&times;';
+      const closeBtn = document.createElement("span");
+      closeBtn.classList.add("close");
+      closeBtn.innerHTML = "&times;";
 
       modalContent.appendChild(closeBtn);
 
       // Displays the make on the modal
-      const carMakeEl = document.createElement('h2');
+      const carMakeEl = document.createElement("h2");
       carMakeEl.textContent = `${element.make.toUpperCase()} ${element.model}`;
       modalContent.appendChild(carMakeEl);
 
       // Displays the image on the modal
-      const carImageEl = document.createElement('img');
+      const carImageEl = document.createElement("img");
       carImageEl.src = element.imageUrl;
       carImageEl.alt = `${element.make} ${element.model} image`;
       modalContent.appendChild(carImageEl);
 
       // Creates a container
-      const infoContainer = document.createElement('div');
-      infoContainer.classList.add('info-container');
-      infoContainer.style.display = 'flex';
-      infoContainer.style.flexDirection = 'column';
+      const infoContainer = document.createElement("div");
+      infoContainer.classList.add("info-container");
+      infoContainer.style.display = "flex";
+      infoContainer.style.flexDirection = "column";
 
       // Displays the price on the modal
-      const carPriceEl = document.createElement('h3');
+      const carPriceEl = document.createElement("h3");
       carPriceEl.textContent = `${element.price}`;
-      carPriceEl.style.display = 'block';
+      carPriceEl.style.display = "block";
       infoContainer.appendChild(carPriceEl);
-      
+
       // Displays the mileage on the modal
-      const carMileageEl = document.createElement('p');
+      const carMileageEl = document.createElement("p");
       carMileageEl.textContent = `${element.mileage}km`;
-      carMileageEl.style.display = 'block';
+      carMileageEl.style.display = "block";
       infoContainer.appendChild(carMileageEl);
 
       // Displays the fuel on the modal
-      const carFuelEl = document.createElement('p');
+      const carFuelEl = document.createElement("p");
       carFuelEl.textContent = `${element.fuel_type}`;
-      carFuelEl.style.display = 'block';
+      carFuelEl.style.display = "block";
       infoContainer.appendChild(carFuelEl);
 
       // Displays the transmission on the modal
-      const carTransmissionEl = document.createElement('p');
+      const carTransmissionEl = document.createElement("p");
       carTransmissionEl.textContent = `${element.transmission}`;
-      carTransmissionEl.style.display = 'block';
+      carTransmissionEl.style.display = "block";
       infoContainer.appendChild(carTransmissionEl);
 
       // Displays the cylinders on the modal
-      const carCylindersEl = document.createElement('p');
+      const carCylindersEl = document.createElement("p");
       carCylindersEl.textContent = `${element.cylinders}`;
-      carCylindersEl.style.display = 'block';
+      carCylindersEl.style.display = "block";
       infoContainer.appendChild(carCylindersEl);
 
       modalContent.appendChild(infoContainer);
@@ -372,19 +372,18 @@ const generateCardTemplate = (data) => {
       modal.appendChild(modalContent);
       document.body.appendChild(modal);
 
-      modal.style.display = 'block';
+      modal.style.display = "block";
     });
-    
+
     cardBodyDiv2.appendChild(button);
-    
-    document.addEventListener('click', function(event) {
-      if (event.target.classList.contains('close')) {
+
+    document.addEventListener("click", function (event) {
+      if (event.target.classList.contains("close")) {
         event.target.parentNode.parentNode.remove();
-      } else if (event.target.classList.contains('modal')) {
+      } else if (event.target.classList.contains("modal")) {
         event.target.remove();
       }
     });
-
 
     // Im not sure what this other link is meant to be, maybe a "contact seller" form
     const cardLink2 = document.createElement("a");
@@ -627,11 +626,79 @@ searchInput.addEventListener("input", (e) => {
       // Additionally, the code also attaches a click event listener to each suggestion element, which retrieves the selected car's id attribute value and filters through the entire car inventory object array to retrieve the complete object of the selected car. If the search query fails to execute or an error occurs, it logs an error message to the console and sets the response status to 500 with an error message of "Internal Server Error".
       suggestion.addEventListener("click", function (event) {
         let carId = event.target.getAttribute("value");
-        console.log(carInv[0]);
         let filteredCar = carInv[0].filter((car) => {
           return car.id == carId;
         });
-        console.log(filteredCar);
+        filteredCar = filteredCar[0];
+
+        const modal = document.createElement("div");
+        modal.classList.add("modal");
+
+        const modalContent = document.createElement("div");
+        modalContent.classList.add("modal-content");
+        modalContent.classList.add("center-content");
+
+        const closeBtn = document.createElement("span");
+        closeBtn.classList.add("close");
+        closeBtn.innerHTML = "&times;";
+
+        modalContent.appendChild(closeBtn);
+
+        // Displays the make on the modal
+        const carMakeEl = document.createElement("h2");
+        carMakeEl.textContent = `${filteredCar.make.toUpperCase()} ${
+          filteredCar.model
+        }`;
+        modalContent.appendChild(carMakeEl);
+
+        // Displays the image on the modal
+        const carImageEl = document.createElement("img");
+        carImageEl.src = filteredCar.imageUrl;
+        carImageEl.alt = `${filteredCar.make} ${filteredCar.model} image`;
+        modalContent.appendChild(carImageEl);
+
+        // Creates a container
+        const infoContainer = document.createElement("div");
+        infoContainer.classList.add("info-container");
+        infoContainer.style.display = "flex";
+        infoContainer.style.flexDirection = "column";
+
+        // Displays the price on the modal
+        const carPriceEl = document.createElement("h3");
+        carPriceEl.textContent = `${filteredCar.price}`;
+        carPriceEl.style.display = "block";
+        infoContainer.appendChild(carPriceEl);
+
+        // Displays the mileage on the modal
+        const carMileageEl = document.createElement("p");
+        carMileageEl.textContent = `${filteredCar.mileage}km`;
+        carMileageEl.style.display = "block";
+        infoContainer.appendChild(carMileageEl);
+
+        // Displays the fuel on the modal
+        const carFuelEl = document.createElement("p");
+        carFuelEl.textContent = `${filteredCar.fuel_type}`;
+        carFuelEl.style.display = "block";
+        infoContainer.appendChild(carFuelEl);
+
+        // Displays the transmission on the modal
+        const carTransmissionEl = document.createElement("p");
+        carTransmissionEl.textContent = `${filteredCar.transmission}`;
+        carTransmissionEl.style.display = "block";
+        infoContainer.appendChild(carTransmissionEl);
+
+        // Displays the cylinders on the modal
+        const carCylindersEl = document.createElement("p");
+        carCylindersEl.textContent = `${filteredCar.cylinders}`;
+        carCylindersEl.style.display = "block";
+        infoContainer.appendChild(carCylindersEl);
+
+        modalContent.appendChild(infoContainer);
+
+        modal.appendChild(modalContent);
+        document.body.appendChild(modal);
+
+        modal.style.display = "block";
       });
     });
   } catch (err) {
@@ -642,7 +709,6 @@ searchInput.addEventListener("input", (e) => {
 
 document.addEventListener("click", function (event) {
   const dropdown = document.getElementById("autofill-container");
-  console.log(event.target);
   dropdown.innerHTML = "";
   // }
 });
