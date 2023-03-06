@@ -179,8 +179,10 @@ const generateCardTemplate = (data) => {
     const imgEl = document.createElement("img");
     imgEl.classList.add("card-img-top");
     imgEl.src = "...";
-    imgEl.alt = "Card image cap";
+    imgEl.alt = `${element.user_id}`;
     cardDiv.appendChild(imgEl);
+    // testing user id
+    user_id = element.user_id;
 
     // Create a div for card body
     const cardBodyDiv = document.createElement("div");

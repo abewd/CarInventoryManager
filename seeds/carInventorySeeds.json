@@ -10,7 +10,8 @@
     "engine_cylinders": 6,
     "color": "Yellow",
     "body_type": "Coupe",
-    "car_description": "Great car, would recommend. Drive so NICE! :D"
+    "car_description": "Great car, would recommend. Drive so NICE! :D",
+    "user_id": 1
   },
   {
     "make": "porsche",
