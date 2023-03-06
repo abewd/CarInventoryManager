@@ -93,9 +93,22 @@ function generateBodyType(firstKey, data) {
 // Define a function called generateModel that takes a key and data object
 // as arguments. The function generates a list of items based on the data object
 //  and appends it to the DOM under the corresponding key
-function generateModel(firstKey, data) {
+var filteredModels = "";
+function generateModel() {
+  filteredModels = carInv[0]
+    .filter((car) => submitObj.make.includes(car.make))
+    .map((car) => car.model);
+  console.log(carInv[0]);
+  generateModelList("model", filteredModels);
+}
+
+function generateModelList(firstKey, data) {
+  !document.querySelector("#model-list").innerHTML
+    ? console.log("empty")
+    : (document.querySelector("#model-list").innerHTML = "");
   data.forEach((element) => {
     let makesListEl = document.querySelector(`#${firstKey}-list`);
+
     let liEl = document.createElement("li");
     let spanEl = document.createElement("span");
     let inputEl = document.createElement("input");
@@ -103,10 +116,10 @@ function generateModel(firstKey, data) {
     liEl.classList.add("list-group-item");
     spanEl.classList.add("toggle-btn");
     inputEl.setAttribute("type", "checkbox");
-    inputEl.setAttribute("id", `${element.model}`);
+    inputEl.setAttribute("id", `${element}`);
     inputEl.setAttribute("name", `model`);
-    labelEl.setAttribute("for", `${element.model}`);
-    liEl.textContent = element.model;
+    labelEl.setAttribute("for", `${element}`);
+    liEl.textContent = element;
     spanEl.appendChild(inputEl);
     spanEl.appendChild(labelEl);
     liEl.appendChild(spanEl);
@@ -192,7 +205,7 @@ const generateCardTemplate = (data) => {
     const carMakeEl = document.createElement("h5");
     carMakeEl.id = `${element.make}`;
     carMakeEl.classList.add("card-title");
-    carMakeEl.textContent = `${element.make}`;
+    carMakeEl.textContent = `${element.make.toUpperCase()} ${element.model} `;
     cardBodyDiv.appendChild(carMakeEl);
 
     // Create a h6 element for the price, set its id and class attributes,
@@ -290,6 +303,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const makeSubmitEl = document.getElementById("make-search");
 
   makeSubmitEl.addEventListener("click", function () {
+    submitObj.model = [];
     submitObj.make = [];
     const checkedInputs = document.querySelectorAll(
       'input[name="make"]:checked'
@@ -299,9 +313,8 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
       }
       submitObj.make.push(input.id);
-      console.log(input.id); // or whatever you want to do with the checked input
+      generateModel(); // or whatever you want to do with the checked input
     });
-    console.log(submitObj);
   });
 });
 
@@ -457,12 +470,12 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // Returning a promise that based on a filter
-getFilterEl("models").then((data) => {
-  const firstKey = Object.keys(data[0])[0];
-  console.log(firstKey);
-  console.log();
-  generateModel(firstKey, data);
-});
+// getFilterEl("models").then((data) => {
+//   const firstKey = Object.keys(data[0])[0];
+//   console.log(firstKey);
+//   console.log();
+//   generateModel(firstKey, data);
+// });
 
 const searchInput = document.querySelector("#search-input");
 const autofillContainer = document.querySelector("#autofill-container");
@@ -485,7 +498,7 @@ searchInput.addEventListener("input", async (e) => {
       const suggestion = document.createElement("div");
       suggestion.classList.add("suggestion");
       suggestion.classList.add("dropdown-item");
-      suggestion.textContent = `${car.make} ${car.model} (${car.year}) ${car.price}`;
+      suggestion.textContent = `${car.make} ${car.model} (${car.year}) $${car.price}`;
       autofillContainer.appendChild(suggestion);
     });
   } catch (err) {

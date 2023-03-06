@@ -18,3 +18,10 @@
   padding: 10px;
   cursor: pointer;
 }
+
+.search-bar {
+  position: absolute;
+  margin-left: 70%;
+  margin-top: -70px;
+  z-index: 2;
+}
