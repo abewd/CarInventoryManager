@@ -606,7 +606,6 @@ searchInput.addEventListener("input", (e) => {
         return String(value).toLocaleLowerCase().includes(query);
       });
     });
-
     filteredCars.sort((a, b) => {
       return a.make.localeCompare(b.make);
     });
@@ -618,15 +617,67 @@ searchInput.addEventListener("input", (e) => {
       suggestion.setAttribute("value", `${car.id}`);
       suggestion.textContent = `${car.make} ${car.model} (${car.year}) $${car.price}`;
       autofillContainer.appendChild(suggestion);
-
       // Additionally, the code also attaches a click event listener to each suggestion element, which retrieves the selected car's id attribute value and filters through the entire car inventory object array to retrieve the complete object of the selected car. If the search query fails to execute or an error occurs, it logs an error message to the console and sets the response status to 500 with an error message of "Internal Server Error".
       suggestion.addEventListener("click", function (event) {
         let carId = event.target.getAttribute("value");
-        console.log(carInv[0]);
         let filteredCar = carInv[0].filter((car) => {
           return car.id == carId;
         });
-        console.log(filteredCar);
+        filteredCar = filteredCar[0];
+        const modal = document.createElement("div");
+        modal.classList.add("modal");
+        const modalContent = document.createElement("div");
+        modalContent.classList.add("modal-content");
+        modalContent.classList.add("center-content");
+        const closeBtn = document.createElement("span");
+        closeBtn.classList.add("close");
+        closeBtn.innerHTML = "&times;";
+        modalContent.appendChild(closeBtn);
+        // Displays the make on the modal
+        const carMakeEl = document.createElement("h2");
+        carMakeEl.textContent = `${filteredCar.make.toUpperCase()} ${
+          filteredCar.model
+        }`;
+        modalContent.appendChild(carMakeEl);
+        // Displays the image on the modal
+        const carImageEl = document.createElement("img");
+        carImageEl.src = filteredCar.imageUrl;
+        carImageEl.alt = `${filteredCar.make} ${filteredCar.model} image`;
+        modalContent.appendChild(carImageEl);
+        // Creates a container
+        const infoContainer = document.createElement("div");
+        infoContainer.classList.add("info-container");
+        infoContainer.style.display = "flex";
+        infoContainer.style.flexDirection = "column";
+        // Displays the price on the modal
+        const carPriceEl = document.createElement("h3");
+        carPriceEl.textContent = `${filteredCar.price}`;
+        carPriceEl.style.display = "block";
+        infoContainer.appendChild(carPriceEl);
+        // Displays the mileage on the modal
+        const carMileageEl = document.createElement("p");
+        carMileageEl.textContent = `${filteredCar.mileage}km`;
+        carMileageEl.style.display = "block";
+        infoContainer.appendChild(carMileageEl);
+        // Displays the fuel on the modal
+        const carFuelEl = document.createElement("p");
+        carFuelEl.textContent = `${filteredCar.fuel_type}`;
+        carFuelEl.style.display = "block";
+        infoContainer.appendChild(carFuelEl);
+        // Displays the transmission on the modal
+        const carTransmissionEl = document.createElement("p");
+        carTransmissionEl.textContent = `${filteredCar.transmission}`;
+        carTransmissionEl.style.display = "block";
+        infoContainer.appendChild(carTransmissionEl);
+        // Displays the cylinders on the modal
+        const carCylindersEl = document.createElement("p");
+        carCylindersEl.textContent = `${filteredCar.cylinders}`;
+        carCylindersEl.style.display = "block";
+        infoContainer.appendChild(carCylindersEl);
+        modalContent.appendChild(infoContainer);
+        modal.appendChild(modalContent);
+        document.body.appendChild(modal);
+        modal.style.display = "block";
       });
     });
   } catch (err) {
