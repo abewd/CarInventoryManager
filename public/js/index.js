@@ -194,7 +194,7 @@ const generateCardTemplate = (data) => {
     imgEl.addEventListener("click", function () {
       const modal = document.createElement("div");
       modal.classList.add("modal");
-      modal.classList.add("img");
+      modal.classList.add("modal-img");
 
       const modalImg = document.createElement("img");
       modalImg.src = imgEl.src;

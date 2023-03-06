@@ -23,7 +23,7 @@
   cursor: pointer;
 }
 
-.modal {
+.modal-img {
   position: fixed;
   top: 0;
   left: 0;
@@ -35,7 +35,7 @@
   align-items: center;
 }
 
-.img {
+.modal-img {
   max-width: 100%;
   max-height: 100%;
 }
