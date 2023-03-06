@@ -62,7 +62,7 @@
 }
 
 /* Hidden by default */
-.modal {
+.viewMoreModal {
   display: none;
   position: fixed;
   z-index: 1;
@@ -75,7 +75,7 @@
 }
 
 /* Modal Content/Box */
-.modal-content {
+.viewMoreContent{
   background-color: #fefefe;
   margin: 15% auto;
   padding: 20px;
@@ -83,18 +83,4 @@
   width: 80%;
 }
 
-/* Close Button */
-.close {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
-}
 
