@@ -8,24 +8,21 @@ require("dotenv").config();
 let sequelize;
 
 // Check if the JAWSDB_URL environment variable exists
+let sequelize;
+
 if (process.env.JAWSDB_URL) {
-  // If it does, initialise the Sequelize
-  // instance with this variable to connect to a remote database
   sequelize = new Sequelize(process.env.JAWSDB_URL);
 } else {
-  const config = {
-    database: process.env.DB_NAME,
-    user: process.env.DB_USER,
-    password: process.env.DB_PASSWORD,
-
-    host: "localhost",
-    dialect: "mysql",
-    port: 3306,
-  };
-
-  // If it doesnt, then initialise the Sequelize with the local
-  // database credentials specified in the .env file
-  sequelize = new Sequelize(config);
+  sequelize = new Sequelize(
+    process.env.DB_NAME,
+    process.env.DB_USER,
+    process.env.DB_PW,
+    {
+      host: "localhost",
+      dialect: "mysql",
+      port: 3306,
+    }
+  );
 }
 
 // Export Sequelize instance to be used in other parts of the codebase
