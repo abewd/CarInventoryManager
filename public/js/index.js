@@ -259,7 +259,6 @@ const generateCardTemplate = (data) => {
     // and add it to the card body
     const carMakeEl = document.createElement("h5");
     carMakeEl.id = `${element.make}`;
-    seller = `${element.user_id}`;
     carMakeEl.classList.add("card-title");
     carMakeEl.textContent = `${element.make.toUpperCase()} ${element.model} `;
     cardBodyDiv.appendChild(carMakeEl);

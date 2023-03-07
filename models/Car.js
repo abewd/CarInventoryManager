@@ -68,11 +68,11 @@ Cars.init(
       allowNull: false,
     },
     user_id: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
       allowNull: false,
       references: {
-        model: "name",
-        key: "email",
+        model: "user",
+        key: "id",
       },
     },
     // This is for the photos in the cards
