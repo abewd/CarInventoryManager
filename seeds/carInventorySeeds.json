@@ -11,7 +11,8 @@
     "color": "Yellow",
     "body_type": "Coupe",
     "car_description": "Rare collectible car",
-    "image_url": "https://inentoryphotos.blob.core.windows.net/tagphotos/toyota-supra-1998-yellow-coupe.jpg"
+    "image_url": "https://inentoryphotos.blob.core.windows.net/tagphotos/toyota-supra-1998-yellow-coupe.jpg",
+    "user_id": 1
   },
   {
     "make": "PORSCHE",
