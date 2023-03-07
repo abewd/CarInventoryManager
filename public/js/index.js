@@ -749,5 +749,12 @@ document.addEventListener("click", function (event) {
   // }
 });
 
-// Call the generateCard function you just spend almost 500 lines writing
+const editRedirect = async () => {
+  document.location.replace("/editInventory");
+};
+
+document
+  .querySelector("#edit-inventory")
+  .addEventListener("click", editRedirect);
+// // Call the generateCard function you just spend almost 500 lines writing
 generateCard();
