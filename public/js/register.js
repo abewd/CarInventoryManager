@@ -15,7 +15,7 @@ $(document).ready(function () {
     };
     console.log("testing" + newUser);
 
-    fetch("/api/register", {
+    fetch("/api/user/register", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(newUser),
