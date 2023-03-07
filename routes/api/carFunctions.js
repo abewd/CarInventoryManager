@@ -71,7 +71,7 @@ router.post("/inventory", async (req, res) => {
 // Update car details that's already in our DB
 router.put("/:id", async (req, res) => {
   try {
-    const [numRows, [updatedCar]] = await Cars.update(req.body, {
+    const [numRows, updatedCar] = await Cars.update(req.body, {
       where: { id: req.params.id },
       returning: true,
     });
@@ -79,6 +79,7 @@ router.put("/:id", async (req, res) => {
       res.status(404).json({ message: "Car not found" });
       return;
     }
+    console.log(updatedCar);
     res.status(200).json(updatedCar);
   } catch (err) {
     console.error(err);
