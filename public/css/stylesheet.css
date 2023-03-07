@@ -98,7 +98,7 @@
 }
 /* Abewd modal css styling, enlarge by 90% */
 .modalimg {
-  max-width: 90%;
-  max-height: 90%;
+  max-width: 200%;
+  max-height: 200%;
   cursor: pointer;
 }
