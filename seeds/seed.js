@@ -12,7 +12,7 @@ const carData = require("./carInventorySeeds.json");
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
 
-  // Insert test user data into User table
+  // Insert test user data into User table.
   await User.bulkCreate(userData, {
     individualHooks: true,
     returning: true,
