@@ -30,8 +30,12 @@ $(document).ready(function () {
         var carBodyType = data.body_type;
         var carImg = data.image_url;
         var carDescription = data.car_description;
+        var carUserName = data.user.name;
+        var carUserEmail = data.user.email;
 
         console.log(data);
+        console.log(carUserName);
+        console.log(carUserEmail);
 
         loadCarData(
           carId,
@@ -45,6 +49,8 @@ $(document).ready(function () {
           carEngineCylinder,
           carColor,
           carBodyType,
+          carUserName,
+          carUserEmail,
           carImg,
           carDescription
         );
@@ -74,6 +80,8 @@ $(document).ready(function () {
     carEngineCylinder,
     carColor,
     carBodyType,
+    carUserName,
+    carUserEmail,
     carImgUrl,
     carDescription
   ) {
@@ -96,6 +104,8 @@ $(document).ready(function () {
     modal.find("#bodyTypeInput").val(carBodyType);
     modal.find("#descriptionInput").val(carDescription);
     modal.find("#imageUrlInput").val(carImgUrl);
+    modal.find("#emailInput").val(carUserEmail);
+    modal.find("#nameInput").val(carUserName);
   }
 
   // Handle the save button for the edit car modal
@@ -128,6 +138,7 @@ $(document).ready(function () {
       body_type: carBodyType,
       image_url: carImageUrl,
       car_description: carDescription,
+      user_id: localStorage.getItem("user_id"),
     };
 
     console.log(carId);
@@ -216,10 +227,9 @@ $(document).ready(function () {
       color: carColor,
       body_type: carBodyType,
       image_url: carImage,
+      user_id: localStorage.getItem("user_id"),
       car_description: carDescription,
     };
-
-    console.log(newCar);
 
     fetch("/api/inventory", {
       method: "POST",

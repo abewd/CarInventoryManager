@@ -18,6 +18,9 @@ const loginFormHandler = async (event) => {
 
     // If the response is successful, go to the homepage
     if (response.ok) {
+      const data = await response.json();
+      console.log(data);
+      localStorage.setItem("user_id", data.user.id);
       document.location.replace("/");
     } else {
       // If unsuccessful, display an alert
