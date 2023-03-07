@@ -102,3 +102,11 @@
   max-height: 200%;
   cursor: pointer;
 }
+
+/* Resizing images */
+img {
+  float: left;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
