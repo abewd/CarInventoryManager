@@ -311,12 +311,12 @@ const generateCardTemplate = (data) => {
     const bodyTypeLi = document.createElement("li");
     bodyTypeLi.classList.add("list-group-item");
     bodyTypeLi.textContent = `${element.body_type}`;
-
     listGroupUl.appendChild(bodyTypeLi);
+
     const userDetailsli = document.createElement("li");
     userDetailsli.classList.add("list-group-item");
-    // bodyTypeLi.textContent = `${userName}`;
-    // listGroupUl.appendChild(userDetailsli);
+    userDetailsli.textContent = `${userName}: ${userEmail}`;
+    listGroupUl.appendChild(userDetailsli);
     // Create a div element for the card body and set its class attribute
     const cardBodyDiv2 = document.createElement("div");
     cardBodyDiv2.classList.add("card-body");
