@@ -56,6 +56,7 @@ router.post("/logout", (req, res) => {
 
 // Add a new user to the database
 router.post("/register", async (req, res) => {
+  console.log("req : " + req);
   try {
     const userNewName = await User.create(req.body);
     res.status(201).json(userNewName);
