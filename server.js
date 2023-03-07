@@ -5,7 +5,7 @@ const routes = require("./routes");
 const sequelize = require("./config/connection");
 const app = express();
 const PORT = process.env.PORT || 3001;
-// we are creating a place to store our sessions
+// we are creating a place to store our sessions.
 const sequelizeStore = require("connect-session-sequelize")(session.Store);
 
 // create new variable
