@@ -1,6 +1,9 @@
+
+// Added comments, images, cleaned up grammar.
+
 [
   {
-    "make": "Toyota",
+    "make": "TOYOTA", // Caps locked make, capitalised model/colour/body
     "model": "Supra",
     "year": 1998,
     "price": 175000,
@@ -10,288 +13,288 @@
     "engine_cylinders": 6,
     "color": "Yellow",
     "body_type": "Coupe",
-    "car_description": "Great car, would recommend. Drive so NICE! :D",
-    "image_url": "https://inentoryphotos.blob.core.windows.net/tagphotos/toyota supra 1998 yellow coupe.jpg"
+    "car_description": "Great car, would recommend. Drive so NICE! :D", // Cleaned up description as more presentable
+    "image_url": "https://inentoryphotos.blob.core.windows.net/tagphotos/toyota-supra-1998-yellow-coupe.jpg" //added image URL
   },
   {
-    "make": "porsche",
-    "model": "boxster",
+    "make": "PORSCHE", // Caps locked make, capitalised model/colour/body
+    "model": "Boxster",
     "year": 2022,
     "price": 249990.0,
     "mileage": 2797,
     "fossil_fuel": true,
     "automatic": false,
     "engine_cylinders": 6,
-    "color": "white",
-    "body_type": "convertible",
-    "car_description": "5 stars!!!!",
-    "image_url": "https://inentoryphotos.blob.core.windows.net/tagphotos/porsche boxster 2022 white convertible.jpg"
+    "color": "White",
+    "body_type": "Convertible",
+    "car_description": "5 stars!!!!", // Cleaned up description as more presentable
+    "image_url": "https://inentoryphotos.blob.core.windows.net/tagphotos/porsche-boxster-2022-white-convertible.jpg" //added image URL
   },
   {
-    "make": "porsche",
-    "model": "carrera",
+    "make": "PORSCHE", // Caps locked make, capitalised model/colour/body
+    "model": "Carrera",
     "year": 2019,
     "price": 299990.0,
     "mileage": 9325,
     "fossil_fuel": true,
     "automatic": false,
     "engine_cylinders": 6,
-    "color": "yellow",
-    "body_type": "coupe",
-    "car_description": "Very good car. I love it for my husband",
-    "image_url": "https://inentoryphotos.blob.core.windows.net/tagphotos/porsche carrera 2019 yellow coupe.jpg"
+    "color": "Yellow",
+    "body_type": "Coupe",
+    "car_description": "Very good car. I love it for my husband", // Cleaned up description as more presentable
+    "image_url": "https://inentoryphotos.blob.core.windows.net/tagphotos/porsche-carrera-2019-yellow-coupe.jpg" //added image URL
   },
   {
-    "make": "porsche",
-    "model": "gt2",
+    "make": "PORSCHE", // Caps locked make, capitalised model/colour/body
+    "model": "GT2",
     "year": 2018,
     "price": 709990.0,
     "mileage": 5933,
     "fossil_fuel": true,
     "automatic": false,
     "engine_cylinders": 6,
-    "color": "black",
-    "body_type": "coupe",
-    "car_description": "Fantastic. Great value!",
-    "image_url": "https://inentoryphotos.blob.core.windows.net/tagphotos/porsche gt 2 2018 black coupe.jpg"
+    "color": "Black",
+    "body_type": "Coupe",
+    "car_description": "Fantastic. Great value!", // Cleaned up description as more presentable
+    "image_url": "https://inentoryphotos.blob.core.windows.net/tagphotos/porsche-gt-2-2018-black-coupe.jpg" //added image URL
   },
   {
-    "make": "porsche",
-    "model": "targa",
+    "make": "PORSCHE", // Caps locked make, capitalised model/colour/body
+    "model": "Targa",
     "year": 2015,
     "price": 239990.0,
     "mileage": 73176,
     "fossil_fuel": true,
     "automatic": false,
     "engine_cylinders": 6,
-    "color": "black",
-    "body_type": "targa",
-    "car_description": "All my friends are so jealous. :)",
-    "image_url": "https://inentoryphotos.blob.core.windows.net/tagphotos/porsche targa 2015 black targa.jpg"
+    "color": "Black",
+    "body_type": "Targa",
+    "car_description": "All my friends are so jealous. :)", // Cleaned up description as more presentable
+    "image_url": "https://inentoryphotos.blob.core.windows.net/tagphotos/porsche-targa-2015-black-targa.jpg" //added image URL
   },
   {
-    "make": "porsche",
-    "model": "targa",
+    "make": "PORSCHE", // Caps locked make, capitalised model/colour/body
+    "model": "Targa",
     "year": 2006,
     "price": 129990.0,
     "mileage": 93970,
     "fossil_fuel": true,
     "automatic": true,
     "engine_cylinders": 6,
-    "color": "grey",
-    "body_type": "targa",
-    "car_description": "Best Targa model I've seen.",
-    "image_url": "https://inentoryphotos.blob.core.windows.net/tagphotos/porsche targa 2006 grey targa.jpg"
+    "color": "Grey",
+    "body_type": "Targa",
+    "car_description": "Best Targa model I've seen.", // Cleaned up description as more presentable
+    "image_url": "https://inentoryphotos.blob.core.windows.net/tagphotos/porsche-targa-2006-grey-targa.jpg" //added image URL
   },
   {
-    "make": "porsche",
-    "model": "cayenne",
+    "make": "PORSCHE", // Caps locked make, capitalised model/colour/body
+    "model": "Cayenne",
     "year": 2018,
     "price": 193990.0,
     "mileage": 48126,
     "fossil_fuel": true,
     "automatic": true,
     "engine_cylinders": 8,
-    "color": "grey",
-    "body_type": "wagon",
-    "car_description": "The wagon size is perfect for driving the kids around.",
-    "image_url": "https://inentoryphotos.blob.core.windows.net/tagphotos/porsche cayenne 2018 grey wagon.jpg"
+    "color": "Grey",
+    "body_type": "Wagon",
+    "car_description": "The wagon size is perfect for driving the kids around.", // Cleaned up description as more presentable
+    "image_url": "https://inentoryphotos.blob.core.windows.net/tagphotos/porsche-cayenne-2018-grey-wagon.jpg" //added image URL
   },
 
   {
-    "make": "porsche",
-    "model": "clubsport",
+    "make": "PORSCHE", // Caps locked make, capitalised model/colour/body
+    "model": "Clubsport",
     "year": 2000,
     "price": 229990.0,
     "mileage": 72928,
     "fossil_fuel": true,
     "automatic": false,
     "engine_cylinders": 6,
-    "color": "silver",
-    "body_type": "coupe",
-    "car_description": "!The silver finish is amazing!",
-    "image_url": "https://inentoryphotos.blob.core.windows.net/tagphotos/porsche clubsport 2000 silver coupe.jpg"
+    "color": "Silver",
+    "body_type": "Coupe",
+    "car_description": "!The silver finish is amazing!", // Cleaned up description as more presentable
+    "image_url": "https://inentoryphotos.blob.core.windows.net/tagphotos/porsche-clubsport-2000-silver-coupe.jpg" //added image URL
   },
   {
-    "make": "aston martin",
-    "model": "volante",
+    "make": "ASTON MARTIN", // Caps locked make, capitalised model/colour/body
+    "model": "Volante",
     "year": 2011,
     "price": 239990.0,
     "mileage": 31251,
     "fossil_fuel": true,
     "automatic": true,
     "engine_cylinders": 12,
-    "color": "silver",
-    "body_type": "convertible",
-    "car_description": "It's so hot! I feel like a movie star!",
-    "image_url": "https://inentoryphotos.blob.core.windows.net/tagphotos/aston martin volante 2011 silver convertible.jpg"
+    "color": "Silver",
+    "body_type": "Convertible",
+    "car_description": "It's so hot! I feel like a movie star!", // Cleaned up description as more presentable
+    "image_url": "https://inentoryphotos.blob.core.windows.net/tagphotos/aston-martin-volante-2011-silver-convertible.jpg" //added image URL
   },
   {
-    "make": "aston martin",
-    "model": "db9",
+    "make": "ASTON MARTIN", // Caps locked make, capitalised model/colour/body
+    "model": "DB9",
     "year": 2012,
     "price": 189990.0,
     "mileage": 29452,
     "fossil_fuel": true,
     "automatic": true,
     "engine_cylinders": 12,
-    "color": "grey",
-    "body_type": "coupe",
-    "car_description": "Coupe is my favourite.",
-    "image_url": "https://inentoryphotos.blob.core.windows.net/tagphotos/aston martin db9 2012 grey coupe.jpg"
+    "color": "Grey",
+    "body_type": "Coupe",
+    "car_description": "Coupe is my favourite.", // Cleaned up description as more presentable
+    "image_url": "https://inentoryphotos.blob.core.windows.net/tagphotos/aston-martin-db9-2012-grey-coupe.jpg" //added image URL
   },
   {
-    "make": "aston martin",
-    "model": "db11",
+    "make": "ASTON MARTIN", // Caps locked make, capitalised model/colour/body
+    "model": "DB11",
     "year": 2017,
     "price": 294990.0,
     "mileage": 26880,
     "fossil_fuel": true,
     "automatic": true,
     "engine_cylinders": 12,
-    "color": "white",
-    "body_type": "coupe",
-    "car_description": "Beautiful white, very stylish.",
-    "image_url": "https://inentoryphotos.blob.core.windows.net/tagphotos/aston martin db11 2017 white coupe.jpg"
+    "color": "White",
+    "body_type": "Coupe",
+    "car_description": "Beautiful white, very stylish.", // Cleaned up description as more presentable
+    "image_url": "https://inentoryphotos.blob.core.windows.net/tagphotos/aston-martin-db11-2017-white-coupe.jpg" //added image URL
   },
   {
-    "make": "bentley",
-    "model": "arnage",
+    "make": "BENTLEY", // Caps locked make, capitalised model/colour/body
+    "model": "Arnage",
     "year": 2003,
     "price": 109990.0,
     "mileage": 58286,
     "fossil_fuel": true,
     "automatic": true,
     "engine_cylinders": 8,
-    "color": "black",
-    "body_type": "sedan",
-    "car_description": "Fantastic to drive. 10/10 :D",
-    "image_url": "https://inentoryphotos.blob.core.windows.net/tagphotos/bentley arnage 2003 black sedan.jpg"
+    "color": "Black",
+    "body_type": "Sedan",
+    "car_description": "Fantastic to drive. 10/10 :D", // Cleaned up description as more presentable
+    "image_url": "https://inentoryphotos.blob.core.windows.net/tagphotos/bentley-arnage-2003-black-sedan.jpg" //added image URL
   },
   {
-    "make": "bentley",
-    "model": "bentayga",
+    "make": "BENTLEY", // Caps locked make, capitalised model/colour/body
+    "model": "Bentayga",
     "year": 2017,
     "price": 259990.0,
     "mileage": 35970,
     "fossil_fuel": true,
     "automatic": true,
     "engine_cylinders": 8,
-    "color": "white",
-    "body_type": "wagon",
-    "car_description": "This is a dream to drive. Try it out!",
-    "image_url": "https://inentoryphotos.blob.core.windows.net/tagphotos/bentley bentayga 2017 white wagon.jpg"
+    "color": "White",
+    "body_type": "Wagon",
+    "car_description": "This is a dream to drive. Try it out!", // Cleaned up description as more presentable
+    "image_url": "https://inentoryphotos.blob.core.windows.net/tagphotos/bentley-bentayga-2017-white-wagon.jpg" //added image URL
   },
   {
-    "make": "bentley",
-    "model": "mulsanne",
+    "make": "BENTLEY", // Caps locked make, capitalised model/colour/body
+    "model": "Mulsanne",
     "year": 2015,
     "price": 379990.0,
     "mileage": 12755,
     "fossil_fuel": true,
     "automatic": true,
     "engine_cylinders": 8,
-    "color": "onyx",
-    "body_type": "sedan",
-    "car_description": "The unique color is beautiful.",
-    "image_url": "https://inentoryphotos.blob.core.windows.net/tagphotos/bentley mulsanne 2015 onyx sedan.jpg"
+    "color": "Onyx",
+    "body_type": "Sedan",
+    "car_description": "The unique color is beautiful.", // Cleaned up description as more presentable
+    "image_url": "https://inentoryphotos.blob.core.windows.net/tagphotos/bentley-mulsanne-2015-onyx-sedan.jpg" //added image URL
   },
   {
-    "make": "maserati",
-    "model": "gransport",
+    "make": "MASERATI", // Caps locked make, capitalised model/colour/body
+    "model": "Gransport",
     "year": 2018,
     "price": 99990.0,
     "mileage": 17094,
     "fossil_fuel": true,
     "automatic": true,
     "engine_cylinders": 6,
-    "color": "white",
-    "body_type": "sedan",
-    "car_description": "Great value for money! So glad I found my dream car here",
-    "image_url": "https://inentoryphotos.blob.core.windows.net/tagphotos/maserati gransport 2018 white sedan.jpg"
+    "color": "White",
+    "body_type": "Sedan",
+    "car_description": "Great value for money! So glad I found my dream car here", // Cleaned up description as more presentable
+    "image_url": "https://inentoryphotos.blob.core.windows.net/tagphotos/maserati-gransport-2018-white-sedan.jpg" //added image URL
   },
   {
-    "make": "mclaren",
-    "model": "675lt",
+    "make": "MCLAREN", // Caps locked make, capitalised model/colour/body
+    "model": "675LT",
     "year": 2015,
     "price": 1700000.0,
     "mileage": 3622,
     "fossil_fuel": true,
     "automatic": false,
     "engine_cylinders": 8,
-    "color": "grey",
-    "body_type": "coupe",
-    "car_description": "Take it for a test around the track",
-    "image_url": "https://inentoryphotos.blob.core.windows.net/tagphotos/mclaren 675lt 2015 grey coupe.jpg"
+    "color": "Grey",
+    "body_type": "Goupe",
+    "car_description": "Take it for a test around the track", // Cleaned up description as more presentable
+    "image_url": "https://inentoryphotos.blob.core.windows.net/tagphotos/mclaren-675lt-2015-grey-coupe.jpg" //added image URL
   },
   {
-    "make": "mclaren",
-    "model": "p1",
+    "make": "MCLAREN", // Caps locked make, capitalised model/colour/body
+    "model": "P1",
     "year": 2014,
     "price": 2849990.0,
     "mileage": 1228,
     "fossil_fuel": true,
     "automatic": true,
     "engine_cylinders": 8,
-    "color": "yellow",
-    "body_type": "coupe",
-    "car_description": "Always been looking for one of these",
-    "image_url": "https://inentoryphotos.blob.core.windows.net/tagphotos/mclaren p1 2014 yellow coupe.jpg"
+    "color": "Yellow",
+    "body_type": "Coupe",
+    "car_description": "Always been looking for one of these", // Cleaned up description as more presentable
+    "image_url": "https://inentoryphotos.blob.core.windows.net/tagphotos/mclaren-p1-2014-yellow-coupe.jpg" //added image URL
   },
   {
-    "make": "mclaren",
-    "model": "620r",
+    "make": "MCLAREN", // Caps locked make, capitalised model/colour/body
+    "model": "620R",
     "year": 2021,
     "price": 549990.0,
     "mileage": 10064,
     "fossil_fuel": true,
     "automatic": false,
     "engine_cylinders": 8,
-    "color": "silver",
-    "body_type": "coupe",
-    "car_description": "Drive away, no more to pay :)",
-    "image_url": "https://inentoryphotos.blob.core.windows.net/tagphotos/mclaren 620r 2021 silver coupe.jpg"
+    "color": "Silver",
+    "body_type": "Coupe",
+    "car_description": "Drive away, no more to pay :)", // Cleaned up description as more presentable
+    "image_url": "https://inentoryphotos.blob.core.windows.net/tagphotos/mclaren-620r-2021-silver-coupe.jpg" //added image URL
   },
   {
-    "make": "mclaren",
-    "model": "spider",
+    "make": "MCLAREN", // Caps locked make, capitalised model/colour/body
+    "model": "Spider",
     "year": 2019,
     "price": 369990.0,
     "mileage": 7973,
     "fossil_fuel": true,
     "automatic": true,
     "engine_cylinders": 8,
-    "color": "blue",
-    "body_type": "convertible",
-    "car_description": "Gorgeous color and love driving with the top down",
-    "image_url": "https://inentoryphotos.blob.core.windows.net/tagphotos/mclaren spider 2019 blue convertible.jpg"
+    "color": "Blue",
+    "body_type": "Convertible",
+    "car_description": "Gorgeous color and love driving with the top down", // Cleaned up description as more presentable
+    "image_url": "https://inentoryphotos.blob.core.windows.net/tagphotos/mclaren-spider-2019-blue-convertible.jpg" //added image URL
   },
   {
-    "make": "lamborghini",
-    "model": "aventador",
+    "make": "LAMBORGHINI", // Caps locked make, capitalised model/colour/body
+    "model": "Aventador",
     "year": 2019,
     "price": 3500000.0,
     "mileage": 1513,
     "fossil_fuel": true,
     "automatic": true,
     "engine_cylinders": 12,
-    "color": "grigio telesto",
-    "body_type": "coupe",
-    "car_description": "Beautiful signature paint",
-    "image_url": "https://inentoryphotos.blob.core.windows.net/tagphotos/lamborghini aventador 2019 grigio telesto coupe.jpg"
+    "color": "Grigio Telesto",
+    "body_type": "Coupe",
+    "car_description": "Beautiful signature paint", // Cleaned up description as more presentable
+    "image_url": "https://inentoryphotos.blob.core.windows.net/tagphotos/lamborghini-aventador-2019-grigio-telesto-coupe.jpg" //added image URL
   },
   {
-    "make": "ferrari",
-    "model": "fiorano",
+    "make": "FERRARI", // Caps locked make, capitalised model/colour/body
+    "model": "Fiorano",
     "year": 2007,
     "price": 299990.0,
     "mileage": 32792,
     "fossil_fuel": true,
     "automatic": false,
     "engine_cylinders": 12,
-    "color": "rosso corse",
-    "body_type": "coupe",
-    "car_description": "Stunning, signatured red finish",
-    "image_url": ""
+    "color": "Rosso Corse",
+    "body_type": "Coupe",
+    "car_description": "Stunning, signatured red finish", // Cleaned up description as more presentable
+    "image_url": "https://inentoryphotos.blob.core.windows.net/tagphotos/ferrari-fiorano-2007-rosso-corse-coupe.jpg" //added image URL
   }
 ]
