@@ -229,7 +229,7 @@ const generateCardTemplate = (data) => {
     imgEl.classList.add("card-img-top");
     imgEl.src = `${element.image_url}`;
     // abewd: this is how we display the user id
-    imgEl.alt = `${element.user_id}`;
+    // imgEl.alt = `${element.user_id}`;
     cardDiv.appendChild(imgEl);
     // testing user id
     user_id = element.user_id;

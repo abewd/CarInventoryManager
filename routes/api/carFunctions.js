@@ -10,7 +10,12 @@ const sequelize = require("sequelize");
 // Display all cars in the inventory
 router.get("/inventory", async (req, res) => {
   try {
-    const carsOnLot = await Cars.findAll({});
+    const carsOnLot = await Cars.findAll({
+      include: {
+        model: User,
+      },
+    });
+
     res.status(200).json(carsOnLot);
   } catch (err) {
     console.error(err);
