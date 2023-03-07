@@ -102,11 +102,12 @@
   max-height: 200%;
   cursor: pointer;
 }
-
-/* Resizing images */
-img {
-  float: left;
-  width: 100px;
-  height: 150px;
-  object-fit: cover;
+.modalimg img {
+  width: 700px;
 }
+/* Resizing images .card-img-top {
+  float: left !important;
+  width: 150px !important;
+  height: 100px !important;
+  object-fit: cover !important;
+} */

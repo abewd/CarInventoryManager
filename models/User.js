@@ -46,13 +46,13 @@ User.init(
   },
   {
     hooks: {
-      // test
+      // tst
       // Define hooks to automatically hash passwords before creating
       // and updating the user data
-      // beforeCreate: async (newUserData) => {
-      //   newUserData.password = await bcrypt.hash(newUserData.password, 10);
-      //   return newUserData;
-      // },
+      beforeCreate: async (newUserData) => {
+        newUserData.password = await bcrypt.hash(newUserData.password, 10);
+        return newUserData;
+      },
       beforeUpdate: async (updatedUserData) => {
         updatedUserData.password = await bcrypt.hash(
           updatedUserData.password,

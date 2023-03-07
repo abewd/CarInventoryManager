@@ -780,4 +780,12 @@ document
   .querySelector("#edit-inventory")
   .addEventListener("click", editRedirect);
 // // Call the generateCard function you just spend almost 500 lines writing
+
+// document.querySelector("#closeModal").addEventListener("click", function () {
+//   var myModal = new bootstrap.Modal(document.getElementById("makeModal"), {
+//     keyboard: false,
+//   });
+//   console.log(myModal);
+//   myModal.delete();
+// });
 generateCard();
