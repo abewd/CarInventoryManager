@@ -17,6 +17,7 @@ $(document).ready(function () {
       body: JSON.stringify(newUser),
     })
       .then(function (response) {
+        console.log("testing" + response);
         if (response.status === 201) {
           alert("New user has been registered");
         } else {
