@@ -1,5 +1,5 @@
 // Import the Cars model
-const Cars = require("./Cars");
+const Cars = require("./Car");
 // Import the User model.....
 const User = require("./User");
 
