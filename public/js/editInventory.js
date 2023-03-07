@@ -1,9 +1,13 @@
-$(document).ready(async function () {
+$(document).ready(function () {
   // Handle the submit button for the edit car ID modal
-  await $("#editCarIdButton").click(async function () {
-    var carId = $("#carIdInput").val();
-
-    await fetch(`/api/${carId}`, {
+  $("#editCarIdButton").click(function () {
+    var carId = $("#carIdEditInput").val();
+    if (!carId) {
+      alert("Please enter a car ID");
+      return;
+    }
+    // Fetch the data from the server using the car ID
+    fetch(`/api/${carId}`, {
       method: "GET",
       headers: { "Content-Type": "application/json" },
     })
@@ -12,43 +16,47 @@ $(document).ready(async function () {
       })
       .then((data) => {
         console.log(data);
+        // Load the car data into the edit modal
+        var carMake = data.make;
+        var carModel = data.model;
+        var carYear = data.year;
+        var carPrice = data.price;
+        var carMileage = data.mileage;
+        var carFuel = data.fossil_fuel;
+        var carTransmission = data.automatic;
+        var carEngineCylinder = data.engine_cylinders;
+        var carColor = data.color;
+        var carBodyType = data.body_type;
+        var carDescription = data.car_description;
+
+        loadCarData(
+          carId,
+          carMake,
+          carModel,
+          carYear,
+          carPrice,
+          carMileage,
+          carFuel,
+          carTransmission,
+          carEngineCylinder,
+          carColor,
+          carBodyType,
+          carDescription
+        );
+        // Hide the edit car ID modal
+        $("#editCarModal").modal("hide");
+        // Show the edit car modal
+        $("#editModal").modal("show");
+      })
+      .catch((error) => {
+        console.error(error);
+        alert("Failed to fetch car data. Please try again later.");
       });
-    // TODO: Use car ID to load car data into edit modal
-    // For now, just manually set some car data
-    var carMake = "Honda";
-    var carModel = "Civic";
-    var carYear = "2022";
-    var carPrice = "$25,000";
-    var carMileage = "10,000";
-    var carFuel = "petrol";
-    var carTransmission = "manual";
-    var carEngineCylinder = "4";
-    var carColor = "blue";
-    var carBodyType = "sedan";
-    var carDescription = "This is a great car!";
-
-    // Load the car data into the edit modal
-    loadCarData(
-      carId,
-      carMake,
-      carModel,
-      carYear,
-      carPrice,
-      carMileage,
-      carFuel,
-      carTransmission,
-      carEngineCylinder,
-      carColor,
-      carBodyType,
-      carDescription
-    );
-
-    // Hide the edit car ID modal
-    $("#editCarModal").modal("hide");
-
-    // Show the edit car modal
-    $("#editModal").modal("show");
   });
+  // TODO: Use car ID to load car data into edit modal
+  // For now, just manually set some car data
+
+  // Load the car data into the edit modal
 
   // Function to load car data into edit modal
   function loadCarData(
@@ -130,6 +138,7 @@ $("#saveButton").click(function () {
 $(document).ready(function () {
   $("#deleteButton").click(function () {
     var carId = $("#carIdInput").val();
+    console.log(carId);
     // Code to delete car from inventory using the carId goes here
     alert("Car with ID " + carId + " has been deleted.");
     $("#deleteModal").modal("hide");
