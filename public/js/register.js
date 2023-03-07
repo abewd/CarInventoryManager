@@ -4,12 +4,16 @@ $(document).ready(function () {
     var email = $("#email").val();
     var password = $("#password").val();
     var confirmPassword = $("#confirm_password").val();
+    console.log("testing" + name);
+    console.log("testing" + email);
+    console.log("testing" + password);
 
     var newUser = {
       name: name,
       email: email,
       password: password,
     };
+    console.log("testing" + newUser);
 
     fetch("/api/register", {
       method: "POST",
