@@ -229,7 +229,10 @@ const generateCardTemplate = (data) => {
     imgEl.classList.add("card-img-top");
     imgEl.src = `${element.image_url}`;
     // abewd: this is how we display the user id
-    // imgEl.alt = `${element.user_id}`;
+    let userEmail = element.user.email;
+    let userName = element.user.name;
+    // console.log(userEmail);
+    // console.log(userName);
     cardDiv.appendChild(imgEl);
     // testing user id
     user_id = element.user_id;
@@ -308,8 +311,12 @@ const generateCardTemplate = (data) => {
     const bodyTypeLi = document.createElement("li");
     bodyTypeLi.classList.add("list-group-item");
     bodyTypeLi.textContent = `${element.body_type}`;
-    listGroupUl.appendChild(bodyTypeLi);
 
+    listGroupUl.appendChild(bodyTypeLi);
+    const userDetailsli = document.createElement("li");
+    userDetailsli.classList.add("list-group-item");
+    // bodyTypeLi.textContent = `${userName}`;
+    // listGroupUl.appendChild(userDetailsli);
     // Create a div element for the card body and set its class attribute
     const cardBodyDiv2 = document.createElement("div");
     cardBodyDiv2.classList.add("card-body");
