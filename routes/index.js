@@ -7,6 +7,7 @@ const withAuth = require("../utils/auth");
 // Create a module called apiRoutes which uses the following routing
 const apiRoutes = require("./api");
 const path = require("path");
+const { route } = require("./api");
 router.use("/api", apiRoutes);
 
 // Handle GET requests to the "/" URL
@@ -22,6 +23,10 @@ router.get("/login", (req, res) => {
 // Handle GET requests to the "/contact" URL
 router.get("/contact", (req, res) => {
   res.sendFile(path.join(__dirname, "../public/html/contact.html"));
+});
+
+router.get("/editInventory", (req, res) => {
+  res.sendFile(path.join(__dirname, "../public/html/editInventory.html"));
 });
 
 // Export this data so it can be used in other parts of the codebase

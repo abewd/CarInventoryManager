@@ -100,7 +100,6 @@
     "car_description": "The wagon size is perfect for driving the kids around.", // Cleaned up description as more presentable
     "image_url": "https://inentoryphotos.blob.core.windows.net/tagphotos/porsche-cayenne-2018-grey-wagon.jpg" //added image URL
   },
-
   {
     "make": "PORSCHE", // Caps locked make, capitalised model/colour/body
     "model": "Clubsport",

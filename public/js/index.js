@@ -233,6 +233,22 @@ const generateCardTemplate = (data) => {
     cardDiv.appendChild(imgEl);
     // testing user id
     user_id = element.user_id;
+    // Add event listener to the image element
+    imgEl.addEventListener("click", function () {
+      const modal = document.createElement("div");
+      modal.classList.add("modalimg");
+      modal.classList.add("modalimg");
+      const modalImg = document.createElement("img");
+      modalImg.src = imgEl.src;
+      modal.appendChild(modalImg);
+      document.body.appendChild(modal);
+      // Remove the modal when the user clicks outside of the image
+      modal.addEventListener("click", function () {
+        document.body.removeChild(modal);
+      });
+    });
+
+    // Create image el
 
     // Create a div for card body
     const cardBodyDiv = document.createElement("div");
@@ -273,7 +289,7 @@ const generateCardTemplate = (data) => {
     const mileageLi = document.createElement("li");
     mileageLi.id = "mileage";
     mileageLi.classList.add("list-group-item");
-    mileageLi.textContent = `${element.mileage}`;
+    mileageLi.textContent = `${element.mileage} km`;
     listGroupUl.appendChild(mileageLi);
 
     // Create li elements for the transmission group, set their ids and class attributes,
@@ -304,63 +320,71 @@ const generateCardTemplate = (data) => {
     const button = document.createElement("button");
     button.innerText = "View More";
     button.setAttribute("class", "btn btn-link");
+    button.setAttribute("value", element.id);
     // Creates event listener to generate modal
-    button.addEventListener("click", function() {
-      const modal = document.createElement('div');
-      modal.classList.add('modal');
-      modal.classList.add('viewMoreModal');
+    button.addEventListener("click", function () {
+      const modalId = button.value;
+      const modal = document.createElement("div");
+      modal.classList.add("modal");
+      modal.classList.add("modal-c");
+      modal.classList.add("viewMoreModal");
 
       // Creates a div to hold modal content
-      const modalContent = document.createElement('div');
-      modalContent.classList.add('modal-content');
-      modalContent.classList.add('viewMoreContent');
-      modalContent.classList.add('center-content');
+      const modalContent = document.createElement("div");
+      modalContent.classList.add("modal-content");
+      modalContent.classList.add("viewMoreContent");
+      modalContent.classList.add("center-content");
+
+      const closeBtn = document.createElement("span");
+      closeBtn.classList.add("close");
+      closeBtn.innerHTML = "&times;";
+      modalContent.appendChild(closeBtn);
 
       // Displays the make on the modal
-      const carMakeEl = document.createElement('h2');
+      const carMakeEl = document.createElement("h2");
       carMakeEl.textContent = `${element.make.toUpperCase()} ${element.model}`;
       modalContent.appendChild(carMakeEl);
 
       // Displays the image on the modal
-      const carImageEl = document.createElement('img');
+      const carImageEl = document.createElement("img");
       carImageEl.src = element.imageUrl;
       carImageEl.alt = `${element.make} ${element.model} image`;
       modalContent.appendChild(carImageEl);
 
       // Creates a container
-      const infoContainer = document.createElement('div');
-      infoContainer.classList.add('info-container');
-      infoContainer.style.display = 'flex';
-      infoContainer.style.flexDirection = 'column';
+      const infoContainer = document.createElement("div");
+      infoContainer.classList.add("info-container");
+      infoContainer.style.display = "flex";
+      infoContainer.style.flexDirection = "column";
 
       // Displays the price on the modal
-      const carPriceEl = document.createElement('h3');
+      const carPriceEl = document.createElement("h3");
       carPriceEl.textContent = `${element.price}`;
-      carPriceEl.style.display = 'block';
+      carPriceEl.style.display = "block";
       infoContainer.appendChild(carPriceEl);
-      
+
       // Displays the mileage on the modal
-      const carMileageEl = document.createElement('p');
+      const carMileageEl = document.createElement("p");
       carMileageEl.textContent = `${element.mileage}km`;
-      carMileageEl.style.display = 'block';
+      carMileageEl.style.display = "block";
       infoContainer.appendChild(carMileageEl);
 
       // Displays the fuel on the modal
-      const carFuelEl = document.createElement('p');
+      const carFuelEl = document.createElement("p");
       carFuelEl.textContent = `${element.fuel_type}`;
-      carFuelEl.style.display = 'block';
+      carFuelEl.style.display = "block";
       infoContainer.appendChild(carFuelEl);
 
       // Displays the transmission on the modal
-      const carTransmissionEl = document.createElement('p');
+      const carTransmissionEl = document.createElement("p");
       carTransmissionEl.textContent = `${element.transmission}`;
-      carTransmissionEl.style.display = 'block';
+      carTransmissionEl.style.display = "block";
       infoContainer.appendChild(carTransmissionEl);
 
       // Displays the cylinders on the modal
-      const carCylindersEl = document.createElement('p');
+      const carCylindersEl = document.createElement("p");
       carCylindersEl.textContent = `${element.cylinders}`;
-      carCylindersEl.style.display = 'block';
+      carCylindersEl.style.display = "block";
       infoContainer.appendChild(carCylindersEl);
 
       modalContent.appendChild(infoContainer);
@@ -368,19 +392,24 @@ const generateCardTemplate = (data) => {
       modal.appendChild(modalContent);
       document.body.appendChild(modal);
 
-      modal.style.display = 'block';
+      modal.style.display = "block";
     });
-    
+
     cardBodyDiv2.appendChild(button);
-    
-    document.addEventListener('click', function(event) {
-      if (event.target.classList.contains('close')) {
+
+    document.addEventListener("click", function (event) {
+      if (
+        event.target.classList.contains("close") &&
+        event.target.parentNode.parentNode.classList.contains("modal-c")
+      ) {
         event.target.parentNode.parentNode.remove();
-      } else if (event.target.classList.contains('modal')) {
+      } else if (
+        event.target.classList.contains("modal") &&
+        event.target.classList.contains("modal-c")
+      ) {
         event.target.remove();
       }
     });
-
 
     // Im not sure what this other link is meant to be, maybe a "contact seller" form
     const cardLink2 = document.createElement("a");
@@ -607,7 +636,6 @@ searchInput.addEventListener("input", (e) => {
         return String(value).toLocaleLowerCase().includes(query);
       });
     });
-
     filteredCars.sort((a, b) => {
       return a.make.localeCompare(b.make);
     });
@@ -619,15 +647,109 @@ searchInput.addEventListener("input", (e) => {
       suggestion.setAttribute("value", `${car.id}`);
       suggestion.textContent = `${car.make} ${car.model} (${car.year}) $${car.price}`;
       autofillContainer.appendChild(suggestion);
-
-      // Additionally, the code also attaches a click event listener to each suggestion element, which retrieves the selected car's id attribute value and filters through the entire car inventory object array to retrieve the complete object of the selected car. If the search query fails to execute or an error occurs, it logs an error message to the console and sets the response status to 500 with an error message of "Internal Server Error".
       suggestion.addEventListener("click", function (event) {
         let carId = event.target.getAttribute("value");
-        console.log(carInv[0]);
         let filteredCar = carInv[0].filter((car) => {
           return car.id == carId;
         });
+        filteredCar = filteredCar[0];
+
+        let transmission = filteredCar.automatic ? "Automatic" : "manual";
+        let petrol = filteredCar.fossil_fuel ? "Petrol" : "Electric";
         console.log(filteredCar);
+        const modalId = `modal-${carId}`;
+        const existingModal = document.getElementById(modalId);
+        if (existingModal) {
+          existingModal.style.display = "block";
+        } else {
+          const modal = document.createElement("div");
+          modal.classList.add("modal");
+          modal.classList.add("viewMoreModal");
+          modal.setAttribute("id", modalId);
+
+          const modalContent = document.createElement("div");
+          modalContent.classList.add("modal-content");
+          modalContent.classList.add("viewMoreContent");
+          modalContent.classList.add("center-content");
+
+          const closeBtn = document.createElement("span");
+          closeBtn.classList.add("close");
+          closeBtn.innerHTML = "&times;";
+          modalContent.appendChild(closeBtn);
+
+          // Displays the make on the modal
+          const carMakeEl = document.createElement("h2");
+          carMakeEl.textContent = `${filteredCar.make.toUpperCase()} ${
+            filteredCar.model
+          }`;
+          modalContent.appendChild(carMakeEl);
+
+          // Displays the image on the modal
+          const carImageEl = document.createElement("img");
+          carImageEl.src = filteredCar.imageUrl;
+          carImageEl.alt = `${filteredCar.make} ${filteredCar.model} image`;
+          modalContent.appendChild(carImageEl);
+
+          // Creates a container
+          const infoContainer = document.createElement("div");
+          infoContainer.classList.add("info-container");
+          infoContainer.style.display = "flex";
+          infoContainer.style.flexDirection = "column";
+
+          // Displays the price on the modal
+          const carPriceEl = document.createElement("h3");
+          carPriceEl.textContent = `${filteredCar.price}`;
+          carPriceEl.style.display = "block";
+          infoContainer.appendChild(carPriceEl);
+
+          // Displays the mileage on the modal
+          const carMileageEl = document.createElement("p");
+          carMileageEl.textContent = `${filteredCar.mileage}km`;
+          carMileageEl.style.display = "block";
+          infoContainer.appendChild(carMileageEl);
+
+          // Displays the fuel on the modal
+          const carFuelEl = document.createElement("p");
+          carFuelEl.textContent = `${petrol}`;
+          carFuelEl.style.display = "block";
+          infoContainer.appendChild(carFuelEl);
+
+          // Displays the transmission on the modal
+          const carTransmissionEl = document.createElement("p");
+          carTransmissionEl.textContent = `${transmission}`;
+          carTransmissionEl.style.display = "block";
+          infoContainer.appendChild(carTransmissionEl);
+
+          // Displays the cylinders on the modal
+          const carCylindersEl = document.createElement("p");
+          carCylindersEl.textContent = `${filteredCar.engine_cylinders} Cylinders`;
+          carCylindersEl.style.display = "block";
+          infoContainer.appendChild(carCylindersEl);
+
+          // Displays the description on the modal
+          const carDescriptionEl = document.createElement("p");
+          carDescriptionEl.textContent = `${filteredCar.car_description}`;
+          carDescriptionEl.style.display = "block";
+          infoContainer.appendChild(carDescriptionEl);
+
+          modalContent.appendChild(infoContainer);
+          modal.appendChild(modalContent);
+          document.body.appendChild(modal);
+          modal.style.display = "block";
+        }
+        document.addEventListener("click", function (event) {
+          if (
+            event.target.classList.contains("close") &&
+            event.target.parentNode.parentNode.id === modalId
+          ) {
+            event.target.parentNode.parentNode.remove();
+          } else if (
+            event.target.classList.contains("modal") &&
+            event.target.id === modalId
+          ) {
+            event.target.remove();
+          }
+        });
       });
     });
   } catch (err) {
@@ -638,10 +760,17 @@ searchInput.addEventListener("input", (e) => {
 
 document.addEventListener("click", function (event) {
   const dropdown = document.getElementById("autofill-container");
-  console.log(event.target);
+  // console.log(event.target);
   dropdown.innerHTML = "";
   // }
 });
 
-// Call the generateCard function you just spend almost 500 lines writing
+const editRedirect = async () => {
+  document.location.replace("/editInventory");
+};
+
+document
+  .querySelector("#edit-inventory")
+  .addEventListener("click", editRedirect);
+// // Call the generateCard function you just spend almost 500 lines writing
 generateCard();
