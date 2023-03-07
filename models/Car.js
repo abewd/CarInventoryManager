@@ -90,8 +90,10 @@ Cars.init(
   }
 );
 
+
 // // Establish a foreign key between user and cars
 Cars.belongsTo(User, { foreignKey: "user_id" });
+
 
 // Export the Cars model to be used in other parts of the codebase
 module.exports = Cars;

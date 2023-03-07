@@ -2,6 +2,7 @@ $(document).ready(function () {
   // Handle the submit button for the edit car ID modal
   $("#editCarIdButton").click(function () {
     var carId = $("#carIdEditInput").val();
+    console.log(carId);
     if (!carId) {
       alert("Please enter a car ID");
       return;
@@ -24,11 +25,13 @@ $(document).ready(function () {
         var carMileage = data.mileage;
         var carFuel = data.fossil_fuel ? "Petrol" : "EV";
         var carTransmission = data.automatic ? "Automatic" : "Manual";
-
         var carEngineCylinder = data.engine_cylinders;
         var carColor = data.color;
         var carBodyType = data.body_type;
+        var carImg = data.image_url;
         var carDescription = data.car_description;
+
+        console.log(data);
 
         loadCarData(
           carId,
@@ -42,6 +45,7 @@ $(document).ready(function () {
           carEngineCylinder,
           carColor,
           carBodyType,
+          carImg,
           carDescription
         );
         $("#fuelSelect").val(carFuel.toLowerCase());
@@ -56,10 +60,6 @@ $(document).ready(function () {
         alert("Failed to fetch car data. Please try again later.");
       });
   });
-  // TODO: Use car ID to load car data into edit modal
-  // For now, just manually set some car data
-
-  // Load the car data into the edit modal
 
   // Function to load car data into edit modal
   function loadCarData(
@@ -74,6 +74,7 @@ $(document).ready(function () {
     carEngineCylinder,
     carColor,
     carBodyType,
+    carImgUrl,
     carDescription
   ) {
     var modal = $("#editModal");
@@ -94,6 +95,7 @@ $(document).ready(function () {
     modal.find("#colorInput").val(carColor);
     modal.find("#bodyTypeInput").val(carBodyType);
     modal.find("#descriptionInput").val(carDescription);
+    modal.find("#imageUrlInput").val(carImgUrl);
   }
 
   // Handle the save button for the edit car modal
@@ -110,6 +112,7 @@ $(document).ready(function () {
     var carColor = $("#colorInput").val();
     var carBodyType = $("#bodyTypeInput").val();
     var carDescription = $("#descriptionInput").val();
+    var carImageUrl = $("#imageUrlInput").val();
 
     var updatedCar = {
       id: carId,
@@ -123,6 +126,7 @@ $(document).ready(function () {
       engine_cylinders: carEngineCylinder,
       color: carColor,
       body_type: carBodyType,
+      image_url: carImageUrl,
       car_description: carDescription,
     };
 
@@ -151,8 +155,6 @@ $(document).ready(function () {
       });
   });
 });
-
-// Handle the save button for the edit car modal
 
 $(document).ready(function () {
   $("#deleteButton").click(function () {
@@ -198,6 +200,9 @@ $(document).ready(function () {
     var carColor = $("#colorInput2").val();
     var carBodyType = $("#bodyTypeInput2").val();
     var carDescription = $("#descriptionInput2").val();
+    var carImage = $("#imageUrlInput2").val();
+
+    console.log(carImage);
 
     var newCar = {
       make: carMake,
@@ -210,6 +215,7 @@ $(document).ready(function () {
       engine_cylinders: carEngineCylinder,
       color: carColor,
       body_type: carBodyType,
+      image_url: carImage,
       car_description: carDescription,
     };
 
