@@ -233,6 +233,22 @@ const generateCardTemplate = (data) => {
     cardDiv.appendChild(imgEl);
     // testing user id
     user_id = element.user_id;
+    // Add event listener to the image element
+    imgEl.addEventListener("click", function () {
+      const modal = document.createElement("div");
+      modal.classList.add("modalimg");
+      modal.classList.add("modalimg");
+      const modalImg = document.createElement("img");
+      modalImg.src = imgEl.src;
+      modal.appendChild(modalImg);
+      document.body.appendChild(modal);
+      // Remove the modal when the user clicks outside of the image
+      modal.addEventListener("click", function () {
+        document.body.removeChild(modal);
+      });
+    });
+
+    // Create image el
 
     // Create a div for card body
     const cardBodyDiv = document.createElement("div");
