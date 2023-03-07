@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Car Inventory Options</title>
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Car Inventory Options</h1>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Delete Car</h5>
+              <p class="card-text">
+                Click here to delete a car from the inventory.
+              </p>
+              <a
+                href="#"
+                class="btn btn-danger"
+                data-toggle="modal"
+                data-target="#deleteModal"
+                >Delete</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Edit Car</h5>
+              <p class="card-text">
+                Click here to edit an existing car in the inventory.
+              </p>
+              <a
+                href="#"
+                class="btn btn-primary"
+                data-toggle="modal"
+                data-target="#editModal"
+                >Edit</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Add Car</h5>
+              <p class="card-text">
+                Click here to add a new car to the inventory.
+              </p>
+              <a
+                href="#"
+                class="btn btn-success"
+                data-toggle="modal"
+                data-target="#addModal"
+                >Add</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Delete Modal -->
+    <div
+      class="modal fade"
+      id="deleteModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="deleteModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="deleteModalLabel">Delete Car</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>Enter the ID of the car you would like to delete:</p>
+            <input type="text" class="form-control" id="carIdInput" />
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="button" class="btn btn-danger" id="deleteButton">
+              Delete
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Edit Modal -->
+    <!-- Edit Modal -->
+    <div
+      class="modal fade"
+      id="editModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="editModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="editModalLabel">Edit Car</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="makeInput">Make:</label>
+                <input type="text" class="form-control" id="makeInput" />
+              </div>
+              <div class="form-group">
+                <label for="modelInput">Model:</label>
+                <input type="text" class="form-control" id="modelInput" />
+              </div>
+              <div class="form-group">
+                <label for="yearInput">Year:</label>
+                <input type="text" class="form-control" id="yearInput" />
+              </div>
+              <div class="form-group">
+                <label for="priceInput">Price:</label>
+                <input type="text" class="form-control" id="priceInput" />
+              </div>
+              <div class="form-group">
+                <label for="mileageInput">Mileage:</label>
+                <input type="text" class="form-control" id="mileageInput" />
+              </div>
+              <div class="form-group">
+                <label for="fuelSelect">Fuel:</label>
+                <select class="form-control" id="fuelSelect">
+                  <option value="petrol">Petrol</option>
+                  <option value="ev">EV</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="transmissionSelect">Transmission:</label>
+                <select class="form-control" id="transmissionSelect">
+                  <option value="manual">Manual</option>
+                  <option value="auto">Automatic</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="engineCylinderInput">Engine Cylinder:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="engineCylinderInput"
+                />
+              </div>
+              <div class="form-group">
+                <label for="colorInput">Color:</label>
+                <input type="text" class="form-control" id="colorInput" />
+              </div>
+              <div class="form-group">
+                <label for="bodyTypeInput">Body Type:</label>
+                <input type="text" class="form-control" id="bodyTypeInput" />
+              </div>
+              <div class="form-group">
+                <label for="descriptionInput">Description:</label>
+                <textarea
+                  class="form-control"
+                  id="descriptionInput"
+                  rows="5"
+                ></textarea>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="button" class="btn btn-primary" id="saveButton">
+              Save changes
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="modal fade"
+      id="addModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="addModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="addModalLabel">Add Car</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="makeInput">Make:</label>
+                <input type="text" class="form-control" id="makeInput" />
+              </div>
+              <div class="form-group">
+                <label for="modelInput">Model:</label>
+                <input type="text" class="form-control" id="modelInput" />
+              </div>
+              <div class="form-group">
+                <label for="yearInput">Year:</label>
+                <input type="text" class="form-control" id="yearInput" />
+              </div>
+              <div class="form-group">
+                <label for="priceInput">Price:</label>
+                <input type="text" class="form-control" id="priceInput" />
+              </div>
+              <div class="form-group">
+                <label for="mileageInput">Mileage:</label>
+                <input type="text" class="form-control" id="mileageInput" />
+              </div>
+              <div class="form-group">
+                <label for="fuelSelect">Fuel:</label>
+                <select class="form-control" id="fuelSelect">
+                  <option value="petrol">Petrol</option>
+                  <option value="ev">EV</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="transmissionSelect">Transmission:</label>
+                <select class="form-control" id="transmissionSelect">
+                  <option value="manual">Manual</option>
+                  <option value="auto">Automatic</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="engineCylinderInput">Engine Cylinder:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="engineCylinderInput"
+                />
+              </div>
+              <div class="form-group">
+                <label for="colorInput">Color:</label>
+                <input type="text" class="form-control" id="colorInput" />
+              </div>
+              <div class="form-group">
+                <label for="bodyTypeInput">Body Type:</label>
+                <input type="text" class="form-control" id="bodyTypeInput" />
+              </div>
+              <div class="form-group">
+                <label for="descriptionInput">Description:</label>
+                <textarea
+                  class="form-control"
+                  id="descriptionInput"
+                  rows="5"
+                ></textarea>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="button" class="btn btn-primary" id="addButton">
+              Add Car
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.min.js"></script>
+
+    <script src="../js/editInventory.js"></script>
+  </body>
+</html>
