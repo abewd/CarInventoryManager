@@ -8,7 +8,6 @@ require("dotenv").config();
 let sequelize;
 
 // Check if the JAWSDB_URL environment variable exists
-let sequelize;
 
 if (process.env.JAWSDB_URL) {
   sequelize = new Sequelize(process.env.JAWSDB_URL);
@@ -25,5 +24,5 @@ if (process.env.JAWSDB_URL) {
   );
 }
 
-// Export Sequelize instance to be used in other parts of the codebase
+// Export Sequelize instance to be used in other parts of the codebase..
 module.exports = sequelize;
