@@ -1,6 +1,6 @@
 $(document).ready(function () {
   $("#addButton").click(function () {
-      registerHandler();
+    registerHandler();
   });
 });
 
@@ -16,39 +16,37 @@ const registerHandler = async (event) => {
   console.log("testing" + password);
 
   if (name == "") {
-      alert("Name is empty");
+    alert("Name is empty");
   } else if (email == "") {
-      alert("Email is empty");
+    alert("Email is empty");
   } else if (password == "") {
-      alert("Password is empty");
+    alert("Password is empty");
   } else if (confirmPassword == "") {
-      alert("Confirm password is empty");
+    alert("Confirm password is empty");
   } else if (password != confirmPassword) {
-      alert("Password and Confirm password is not matched.");
+    alert("Password and Confirm password is not matched.");
   } else {
-      var newUser = {
-          name: name,
-          email: email,
-          password: password,
-      };
+    var newUser = {
+      name: name,
+      email: email,
+      password: password,
+    };
 
-      const response = await fetch("/api/user/register", {
-          method: "POST",
-          headers: {"Content-Type": "application/json"},
-          body: JSON.stringify(newUser),
-      });
-      if (response.ok) {
-          const data = await response.json();
-          console.log(data);
-          if (data.status === 201) {
-              alert("New user has been registered");
-          } else {
-              throw new Error("Error adding new user.");
-          }
+    const response = await fetch("/api/user/register", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(newUser),
+    });
+    if (response.ok) {
+      const data = await response.json();
+      console.log(data);
+      if (data.status === 201) {
+        alert("New user has been registered");
       } else {
-          alert("Unable to register the user");
+        throw new Error("Error adding new user.");
       }
+    } else {
+      alert("Unable to register the user");
+    }
   }
-}
-register.js
-2 KB
+};
