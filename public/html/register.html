@@ -20,50 +20,55 @@
           <form>
             <div class="row">
               <div class="col-md-6 mb-3">
-                <label for="first-name" class="form-label">Name</label>
+                <label for="name" class="form-label">Name</label>
                 <input
                   type="text"
                   class="form-control"
-                  id="first-name"
-                  name="first-name"
+                  id="name"
+                  name="name"
                   required
                 />
               </div>
               <div class="col-md-6 mb-3">
-                <label for="last-name" class="form-label">Email</label>
+                <label for="email" class="form-label">Email</label>
                 <input
                   type="text"
                   class="form-control"
-                  id="last-name"
-                  name="last-name"
+                  id="email"
+                  name="email"
                   required
                 />
               </div>
             </div>
             <div class="mb-3">
-              <label for="email" class="form-label">Password</label>
+              <label for="password" class="form-label">Password</label>
               <input
-                type="email"
+                type="password"
                 class="form-control"
-                id="email"
-                name="email"
+                id="password"
+                name="password"
                 required
               />
             </div>
 
             <div class="mb-3">
-              <label for="email" class="form-label">Confirm Password</label>
+              <label for="confirm_password" class="form-label"
+                >Confirm Password</label
+              >
               <input
-                type="email"
+                type="confirm_password"
                 class="form-control"
-                id="email"
-                name="email"
+                id="confirm_password"
+                name="confirm_password"
                 required
               />
             </div>
 
             <div class="text-center">
-              <button type="submit" class="btn btn-primary">Register</button>
+              <button type="submit" class="btn btn-primary" id="addButton">
+                Register
+              </button>
+
               <a href="/public/html/login.html" class="btn btn-secondary"
                 >Back to Home</a
               >
@@ -72,5 +77,6 @@
         </div>
       </div>
     </div>
+    <script src="../js/register.js"></script>
   </body>
 </html>

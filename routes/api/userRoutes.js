@@ -52,5 +52,18 @@ router.post("/logout", (req, res) => {
   }
 });
 
+// Adding a new user and password to the DB
+
+// Add a new user to the database
+router.post("/register", async (req, res) => {
+  try {
+    const userNewName = await User.create(req.body);
+    res.status(201).json(userNewName);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ message: "Internal Server Error" });
+  }
+});
+
 // Export this data so it can be used in other parts of the codebase
 module.exports = router;
