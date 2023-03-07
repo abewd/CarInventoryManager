@@ -30,7 +30,7 @@ router.get("/editInventory", (req, res) => {
 });
 
 router.get("/register", (req, res) => {
-  res.sendFile(path.join(__dirname, "../public.html/register.html"));
+  res.sendFile(path.join(__dirname, "../public/html/register.html"));
 });
 
 // Export this data so it can be used in other parts of the codebase
