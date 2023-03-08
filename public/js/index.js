@@ -229,6 +229,7 @@ const generateCardTemplate = (data) => {
     imgEl.classList.add("card-img-top");
     imgEl.src = `${element.image_url}`;
     // abewd: this is how we display the user id
+    console.log(element);
     let userEmail = element.user.email;
     let userName = element.user.name;
     // console.log(userEmail);
@@ -320,86 +321,20 @@ const generateCardTemplate = (data) => {
     // Create a div element for the card body and set its class attribute
     const cardBodyDiv2 = document.createElement("div");
     cardBodyDiv2.classList.add("card-body");
+    cardBodyDiv2.classList.add("text-center");
     cardDiv.appendChild(cardBodyDiv2);
 
     // Create two a elements for card links, set their class attributes,
     // Create a modal element
     const button = document.createElement("button");
-    button.innerText = "View More";
+    button.innerText = "Contact Seller";
     button.setAttribute("class", "btn btn-link");
     button.setAttribute("value", element.id);
     // Creates event listener to generate modal
-    button.addEventListener("click", function () {
-      const modalId = button.value;
-      const modal = document.createElement("div");
-      modal.classList.add("modal");
-      modal.classList.add("modal-c");
-      modal.classList.add("viewMoreModal");
-
-      // Creates a div to hold modal content
-      const modalContent = document.createElement("div");
-      modalContent.classList.add("modal-content");
-      modalContent.classList.add("viewMoreContent");
-      modalContent.classList.add("center-content");
-
-      const closeBtn = document.createElement("span");
-      closeBtn.classList.add("close");
-      closeBtn.innerHTML = "&times;";
-      modalContent.appendChild(closeBtn);
-
-      // Displays the make on the modal
-      const carMakeEl = document.createElement("h2");
-      carMakeEl.textContent = `${element.make.toUpperCase()} ${element.model}`;
-      modalContent.appendChild(carMakeEl);
-
-      // Displays the image on the modal
-      const carImageEl = document.createElement("img");
-      carImageEl.src = element.imageUrl;
-      carImageEl.alt = `${element.make} ${element.model} image`;
-      modalContent.appendChild(carImageEl);
-
-      // Creates a container
-      const infoContainer = document.createElement("div");
-      infoContainer.classList.add("info-container");
-      infoContainer.style.display = "flex";
-      infoContainer.style.flexDirection = "column";
-
-      // Displays the price on the modal
-      const carPriceEl = document.createElement("h3");
-      carPriceEl.textContent = `${element.price}`;
-      carPriceEl.style.display = "block";
-      infoContainer.appendChild(carPriceEl);
-
-      // Displays the mileage on the modal
-      const carMileageEl = document.createElement("p");
-      carMileageEl.textContent = `${element.mileage}km`;
-      carMileageEl.style.display = "block";
-      infoContainer.appendChild(carMileageEl);
-
-      // Displays the fuel on the modal
-      const carFuelEl = document.createElement("p");
-      carFuelEl.textContent = `${element.fuel_type}`;
-      carFuelEl.style.display = "block";
-      infoContainer.appendChild(carFuelEl);
-
-      // Displays the transmission on the modal
-      const carTransmissionEl = document.createElement("p");
-      carTransmissionEl.textContent = `${element.transmission}`;
-      carTransmissionEl.style.display = "block";
-      infoContainer.appendChild(carTransmissionEl);
-
-      // Displays the cylinders on the modal
-      const carCylindersEl = document.createElement("p");
-      carCylindersEl.textContent = `${element.cylinders}`;
-      carCylindersEl.style.display = "block";
-      infoContainer.appendChild(carCylindersEl);
-
-      modalContent.appendChild(infoContainer);
-
-      modal.appendChild(modalContent);
-      document.body.appendChild(modal);
-
-      modal.style.display = "block";
+    button.addEventListener("click", function() {
+      const email = "amiko2k20@aol.com";
+      const subject = "Car Inquiry";
+      window.location.href = "mailto:" + email + "?subject=" + encodeURIComponent(subject);
     });
 
     cardBodyDiv2.appendChild(button);
@@ -417,13 +352,6 @@ const generateCardTemplate = (data) => {
         event.target.remove();
       }
     });
-
-    // Im not sure what this other link is meant to be, maybe a "contact seller" form
-    const cardLink2 = document.createElement("a");
-    cardLink2.href = "#";
-    cardLink2.classList.add("card-link");
-    cardLink2.textContent = "Another link";
-    cardBodyDiv2.appendChild(cardLink2);
 
     const containerEl = document.querySelector("#card-container");
     containerEl.appendChild(cardDiv);
