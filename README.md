@@ -8,15 +8,15 @@ This is a full stack application for a car sales website that allows users to vi
 
 The technologies used in this project include:
 
--JavaScript
--HTML
--CSS
--bootstrap
--Node.js
--Express
--MYSQL database
--Azure
--Heroku
+- JavaScript
+- HTML
+- CSS
+- bootstrap
+- Node.js
+- Express
+- MYSQL database
+- Azure
+- Heroku
 
 ## Table of contents
 
