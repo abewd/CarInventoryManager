@@ -54,7 +54,6 @@
 .form-outline {
   width: 350px !important;
 }
-
 .suggestion {
   width: 350px !important;
   background-color: white;
@@ -140,7 +139,7 @@
 
 .sidebar .btn-primary {
   width: 100%;
-} 
+}
 
 .sidebar .modal-dialog {
   margin-top: 10%;
@@ -149,7 +148,8 @@
 
 .sidebar .modal-content {
   border-radius: 0;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);}
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
 
 .sidebar .modal-header {
   border-bottom: none;
@@ -163,7 +163,7 @@
 .sidebar .modal-footer {
   padding-top: 0;
   padding-bottom: 0;
-} 
+}
 
 .sidebar .list-group-item {
   padding: 0.5rem 0;
