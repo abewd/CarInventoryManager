@@ -1,128 +1,58 @@
-# 15 Project 2: Interactive Full-Stack Application
+# Car Inventory Manager <img src = 'https://img.shields.io/badge/license-MIT-red'/>
 
-Projects play a key role in your journey to becoming a full-stack web developer. As you enter the last phase of the boot camp, you’ll begin to apply for development jobs. If you want to land interviews, your portfolio must feature high-quality deployed examples of your work—-and you can use your finished projects for that very purpose.
+## description
 
-As your first opportunity to show employers your collaborative skills and coding abilities, this particular project will be a focal point of your portfolio. Employers want to see what you can do, but they also want to see how you work with other developers. The more examples of deployed collaborative work you have in your portfolio, the more likely you are to get an interview and a job.
+This is a full stack application for a car sales website that allows users to view, add, edit, and delete car listings. The application is built using Node.js and Express for the backend, and JavaScript, HTML, and CSS for the frontend. The application uses the MYSQL database to store and retrieve data. 
 
-## Project Requirements
+## Technologies 
 
-You and your group will use everything you’ve learned over the past six modules to create a real-world full-stack application that you’ll be able to showcase to potential employers. The user story and acceptance criteria will depend on the project that you create, but your project must fulfil the following requirements:
+The technologies used in this project include:
 
-* Use Node.js and Express.js to create a RESTful API.
+- JavaScript
+- HTML
+- CSS
+- bootstrap
+- Node.js
+- Express
+- MYSQL database
+- Azure
+- Heroku
 
-* May use Handlebars.js as the template engine (OPTIONAL).
+## Table of contents
 
-* Use MySQL and the Sequelize ORM for the database.
+- [description](#description)
+- [Technologies](#technologies)
+- [installation](#installation)
+- [usage](#usage)
+- [license](#license)
+- [contributors](#contributors)
+- [tests](#tests)
+- [questions](#questions)
 
-* Have both GET and POST routes for retrieving and adding new data.
+## Installation
 
-* Use at least one new library, package, or technology that we haven’t discussed in class.
 
-* Have a folder structure that meets the MVC paradigm.
 
-* Include authentication (express-session and cookies).
+## usage
 
-* Protect API keys and sensitive information with environment variables.
 
-* Be deployed using Heroku (with seeded data).
 
-* Have a polished UI.
 
-* Be responsive.
+## license
 
-* Be interactive (i.e., accept and respond to user input).
+MIT
 
-* Meet good-quality coding standards (file structure, naming conventions, follows best practices for class/id naming conventions, indentation, quality comments, etc.).
+## contributors
 
-* Have a professional README (with unique name, description, technologies used, screenshot, and link to deployed application).
 
-## Presentation Requirements
 
-Use this [project presentation template](https://docs.google.com/presentation/d/10QaO9KH8HtUXj__81ve0SZcpO5DbMbqqQr4iPpbwKks/edit?usp=sharing) to address the following: 
+## tests
 
-* Elevator pitch: a one minute description of your application
 
-* Concept: What is your user story? What was your motivation for development?
 
-* Process: What were the technologies used? How were tasks and roles broken down and assigned? What challenges did you encounter? What were your successes?
+## questions
 
-* Demo: Show your stuff!
 
-* Directions for Future Development
 
-* Links to the deployed application and the GitHub repository. Use the [Guide to Deploy with Heroku and MySQL](https://coding-boot-camp.github.io/full-stack/heroku/deploy-with-heroku-and-mysql) on The Full-Stack Blog if you need a reminder on how to deploy to Heroku.
+to contact me use the email below
 
-## Grading Requirements
-
-This project is graded based on the following criteria:
-
-### Technical Acceptance Criteria: 25%
-
-* Satisfies the following code requirements:
-
-  * Application uses a Node.js and Express.js back end and uses both GET and POST routes for retrieving and adding new data.
-
-  * Application has a folder structure that meets the MVC paradigm and uses Handlebars.js as the template engine.
-
-  * Application is backed by a MySQL database with a Sequelize ORM and protects API keys and sensitive information with environment variables.
-
-  * Application includes user authentication (express-session and cookies).
-
-  * Application uses at least one new library, package, or technology not covered in class.
-
-### Concept 10%
-
-* Application should be a unique and novel idea.
-
-* Your group should clearly and concisely articulate your project idea.
-
-### Deployment: 20%
-
-* Application deployed at live URL on Heroku and loads with no errors.
-
-* Application GitHub URL submitted.
-
-### Repository Quality: 10%
-
-* Repository has a unique name.
-
-* Repository follows best practices for file structure and naming conventions.
-
-* Repository follows best practices for class/id-naming conventions, indentation, quality comments, etc.
-
-* Repository contains multiple descriptive commit messages.
-
-* Repository contains quality README file with description, screenshot, and link to deployed application.
-
-### Application Quality: 15%
-
-* Application user experience is intuitive and easy to navigate.
-
-* Application user interface style is clean and polished.
-
-* Application is responsive.
-
-### Presentation 10%
-
-* Your group should present using a slide deck.
-
-* Every group member should speak during the presentation.
-
-* Your presentation should follow the [Project Presentation Template](https://docs.google.com/presentation/d/10QaO9KH8HtUXj__81ve0SZcpO5DbMbqqQr4iPpbwKks/edit?usp=sharing).
-
-### Collaboration 10%
-
-* There are no major disparities in the number of GitHub contributions between group members.
-
-## How to Submit Your Interactive Full-Stack Project
-
-**Each member of your group** is required to submit the following for review:
-
-* The URL of the deployed application.
-
-* The URL of the GitHub repository, with a unique name and a README describing the project.
-
-* Link to presentation slides (Direct link to Google Slides or link to folder in the GitHub repository).
-
----
-© 2023 Trilogy Education Services, LLC, a 2U, Inc. brand. Confidential and Proprietary. All Rights Reserved.
