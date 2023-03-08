@@ -331,10 +331,11 @@ const generateCardTemplate = (data) => {
     button.setAttribute("class", "btn btn-link");
     button.setAttribute("value", element.id);
     // Creates event listener to generate modal
-    button.addEventListener("click", function() {
+    button.addEventListener("click", function () {
       const email = "amiko2k20@aol.com";
       const subject = "Car Inquiry";
-      window.location.href = "mailto:" + email + "?subject=" + encodeURIComponent(subject);
+      window.location.href =
+        "mailto:" + email + "?subject=" + encodeURIComponent(subject);
     });
 
     cardBodyDiv2.appendChild(button);
