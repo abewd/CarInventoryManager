@@ -15,6 +15,7 @@ router.get("/inventory", async (req, res) => {
         model: User,
       },
     });
+    console.error("in this one");
 
     res.status(200).json(carsOnLot);
   } catch (err) {
@@ -324,11 +325,15 @@ router.get("/search/all", async (req, res) => {
         [Op.in]: body_type.split(","),
       };
     }
+    console.log("we're in here");
     // Find all parameters for all the cars and display in json
     const cars = await Cars.findAll({
       where: whereClause,
+      include: {
+        model: User,
+      },
     });
-    res.json(cars);
+    res.status(200).json(cars);
   } catch (error) {
     console.error(error);
     // Error message if not constructed
