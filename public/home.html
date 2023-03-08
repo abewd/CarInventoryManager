@@ -29,31 +29,40 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
+        <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/">Home</a>
+            <a class="nav-link" href="/">Home</a>
           </li>
-          <!-- <li class="nav-item">
-            <a class="nav-link" href="/about">About</a>
-          </li> -->
-          <li class="nav-item" id = "edit-inventory"> 
-            <a class="nav-link" href="/editInventory">Edit a listing</a>
+          <li class="nav-item" id="edit-inventory"> 
+            <a class="nav-link" href="/editInventory">Edit Inventory</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/contact">Contact</a>
+            <a class="nav-link" href="/contact">Contact Us</a>
           </li>
           <li class="nav-item" id="logout">
             <a class="nav-link" href="#">Logout</a>
           </li>
-          <li class="nav-item">
-            
-          </li>
-          
         </ul>
+        <div class="input-group search-bar">
+          <div class="form-outline">
+            <input type="search" id="search-input" placeholder="Search" class="form-control" />
+            <label class="form-label" for="search-input"></label>
+          </div>
+          <button type="submit" class="btn btn-primary">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+              <path d="M10.838 11.485a6.5 6.5 0 1 0-.353.353l3.8 3.8a.5.5 0 0 0 .707-.708l-3.8-3.8zm-4.333-1.158a5 5 0 1 1 0-7.072 5 5 0 0 1 0 7.072z"/>
+            </svg>
+          </button>
+          <div class="dropdown" id="autofill-container">
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton"></div>
+          </div>  
+        </div>
       </div>
     </div>
   </nav>
-  <div class="input-group search-bar">
+  
+  
+  <!-- <div class="input-group search-bar">
     <div class="form-outline">
       <input type="search" id="search-input" placeholder="search" class="form-control" />
       <label class="form-label" for="search-input"></label>
@@ -64,7 +73,7 @@
     <div class="dropdown" id="autofill-container">
       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton"></div>
     </div>  
-  </div>
+  </div> -->
   
     
     
@@ -74,7 +83,7 @@
   <!-- Side Bar -->
   <div class="container-fluid">
     <div class="row">
-      <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+      <nav class="col-md-2 bg-light sidebar">
         <div class="sidebar-sticky">
           <ul class="nav flex-column">
               <!-- search bar -->
