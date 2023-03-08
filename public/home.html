@@ -31,20 +31,20 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-            <a class="nav-link" href="/">Home</a>
+            <a class="nav-link text-dark" href="/">Home</a>
           </li>
-          <li class="nav-item" id="edit-inventory"> 
-            <a class="nav-link" href="/editInventory">Edit Inventory</a>
+          <li class="nav-item " id="edit-inventory"> 
+            <a class="nav-link text-dark" href="/editInventory">Edit Inventory</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/contact">Contact Us</a>
+            <a class="nav-link text-dark" href="/contact">Contact Us</a>
           </li>
           <li class="nav-item" id="logout">
-            <a class="nav-link" href="#">Logout</a>
+            <a class="nav-link text-dark" href="#">Logout</a>
           </li>
         </ul>
-        <div class="input-group search-bar">
-          <div class="form-outline">
+        <div class="input-group search-bar d-flex justify-content-center align-items-center">
+          <div class="form-outline d-flex justify-content-center align-items-center">
             <input type="search" id="search-input" placeholder="Search" class="form-control" />
             <label class="form-label" for="search-input"></label>
           </div>
@@ -95,7 +95,7 @@
               
 
               <!-- Button trigger modal -->
-              <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#makeModal">
+              <button type="button" class="btn btn-link text-dark btn-zoom" data-bs-toggle="modal" data-bs-target="#makeModal">
                 Make
               </button>
 
@@ -122,7 +122,7 @@
               </li>
 
               <li class="nav-item">
-                <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#modelModal">
+                <button type="button" class="btn btn-link text-dark btn-zoom" data-bs-toggle="modal" data-bs-target="#modelModal">
                   Model
                 </button>    
   
@@ -153,7 +153,7 @@
             <li class="nav-item">
 
               <!-- Button trigger modal -->
-              <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#body_typeModal">
+              <button type="button" class="btn btn-link text-dark btn-zoom" data-bs-toggle="modal" data-bs-target="#body_typeModal">
                 Body Type
               </button>
 
@@ -182,7 +182,7 @@
             <li class="nav-item">
 
               <!-- Button trigger modal -->
-              <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#yearModal">
+              <button type="button" class="btn btn-link text-dark btn-zoom" data-bs-toggle="modal" data-bs-target="#yearModal">
                 Year
               </button>
 
@@ -222,10 +222,8 @@
             <li class="nav-item">
 
               <!-- Button trigger modal -->
-              <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#priceModal">
-                Price
-              </button>
-
+              <button type="button" class="btn btn-link text-dark btn-zoom" data-bs-toggle="modal" data-bs-target="#priceModal" >Price</button>
+              
               <!-- Modal -->
               <div class="modal fade" id="priceModal" tabindex="-1" role="dialog" aria-labelledby="priceModalLabel"
                 aria-hidden="true">
@@ -270,7 +268,7 @@
             <li class="nav-item">
 
               <!-- Button trigger modal -->
-              <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#mileageModal">
+              <button type="button" class="btn btn-link text-dark btn-zoom" data-bs-toggle="modal" data-bs-target="#mileageModal">
                 Mileage
               </button>
 
@@ -311,89 +309,6 @@
                     <div class="modal-footer">
                       <button type="button" class="btn btn-primary" id="milage-search">Go</button>
                     </div>
-                  </div>
-                </div>
-              </div>
-
-            </li>
-            <li class="nav-item">
-
-              <!-- Button trigger modal -->
-              <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#engingeModal">
-                Engine
-              </button>
-
-              <!-- Modal -->
-              <div class="modal fade" id="engingeModal" tabindex="-1" role="dialog" aria-labelledby="engingeModalLabel"
-                aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="engingeModalLabel">Engine</h5>
-                      <!-- <button type="button" class="btn-close" data-ds-dismiss="modal" aria-label="Close"></button> -->
-                  </div>
-                  <div class="modal-body">
-                    <div class="mb-3">
-                      <label for="from" class="form-label">Fuel Type</label>
-                      <select class="form-select" id="from">
-                        <option value="petrol">Petrol</option>
-                        <option value="electric">Electric</option>
-                      </select>
-                    </div>
-                    <div class="mb-3">
-                      <label for="to" class="form-label">Cylinders</label>
-                      <select class="form-select" id="to">
-                        <option value="6">6</option>
-                        <option value="8">8</option>
-                        <option value="12">12</option>
-                      </select>
-                    </div>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                  </div>
-                </div>
-              </div>
-
-            </li>
-            <li class="nav-item">
-
-              <!-- Button trigger modal -->
-              <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#transmissionModal">
-                Transmission
-              </button>
-
-              <!-- Modal -->
-              <div class="modal fade" id="transmissionModal" tabindex="-1" role="dialog" aria-labelledby="transmissionModalLabel"
-                aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="transmissionModalLabel">Transmission</h5>
-                      <!-- <button type="button" class="btn-close" data-ds-dismiss="modal" aria-label="Close"></button> -->
-                    </div>
-                  <div class="modal-body">
-                    <ul class="list-group list-group-flush">
-                      <li class="list-group-item">
-                        <span class="toggle-btn">
-                          <input type="radio" id="item1" name="car-brand">
-                          <label for="item1"></label>
-                        </span>
-                        Automatic <!--transmission choices auto or manual, instead of accidentally saying 'transmission' as a choice-->
-                      </li>
-                      <li class="list-group-item">
-                        <span class="toggle-btn">
-                          <input type="radio" id="item2" name="car-brand">
-                          <label for="item2"></label>
-                        </span>
-                        Manual
-                      </li>
-                    </ul>
-
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-primary">Save changes</button>
                   </div>
                 </div>
               </div>
