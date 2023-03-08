@@ -7,6 +7,6 @@ $(document).ready(function () {
     var phone = $("#phone").val();
     var message = $("#message").val();
 
-    window.location.href = `mailto:abdullahalfadhly@gmail.com?body=${firstName} ${lastName}\n${email}\n${phone}\n${message}`;
+    window.location.href = `mailto:abdullahalfadhly@gmail.com?body=Hi my name is ${firstName} ${lastName} and my email is ${email}, you can reach me on ${phone}. My enquiry is ${message}`;
   });
 });
