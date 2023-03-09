@@ -337,7 +337,7 @@ const generateCardTemplate = (data) => {
     button.setAttribute("value", element.id);
     // Creates event listener to generate modal
     button.addEventListener("click", function () {
-      const email = "amiko2k20@aol.com";
+      const email = element.user.email;
       const subject = "Car Inquiry";
       window.location.href =
         "mailto:" + email + "?subject=" + encodeURIComponent(subject);

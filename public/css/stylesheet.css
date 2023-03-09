@@ -1,129 +1,162 @@
+body {  
+  background-image: url("../car-pics-links/image\ \(2\).png");  
+  background-attachment: fixed;  
+  background-size: cover;  
+  background-repeat: no-repeat;  
+  min-height: 800px;
+}
+/* Styling for spacing between cards */
 .card-spacing {
   margin-right: 100px;
   margin-bottom: 45px;
-}
-
-#card-container {
+  }
+  
+  /* Flexbox styling for card container */
+  #card-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-}
-
-.dropdown-menu {
+  }
+  
+  /* Styling for dropdown menu */
+  .dropdown-menu {
   max-height: 200px;
   overflow-y: auto;
-}
-
-.suggestion {
+  }
+  
+  /* Styling for suggestions in search bar */
+  .suggestion {
   padding: 10px;
   cursor: pointer;
-}
-
-.search-bar {
+  }
+  
+  /* Styling for search bar */
+  .search-bar {
   max-width: 400px;
   margin-left: auto;
   margin-right: 0;
   z-index: 2;
-}
-
-
-.form-outline {
+  }
+  
+  /* Flexbox styling for form outline */
+  .form-outline {
   display: flex;
-}
-
-#autofill-container {
+  }
+  
+  /* Styling for autofill container */
+  #autofill-container {
   position: absolute;
   top: 100%;
   left: 0;
   right: 0;
   max-height: 200px;
   overflow-y: auto;
-}
-
-.btn-primary {
+  }
+  
+  /* Bootstrap button styling */
+  .btn-primary {
   padding: 0.375rem 0.75rem;
   margin-top: 0;
   border-top-right-radius: 0.25rem !important;
   border-bottom-right-radius: 0.25rem !important;
-}
-
- .form-control {
+  }
+  
+  /* Flexbox styling for form control */
+  .form-control {
   flex: 1;
-}
-
-.form-outline {
+  }
+  
+  /* Width of form outline */
+  .form-outline {
   width: 350px !important;
-}
-.suggestion {
+  }
+  
+  /* Width of suggestions with white background */
+  .suggestion {
   width: 350px !important;
   background-color: white;
-}
-
-
-.search-bar .form-outline {
+  }
+  
+  /* Flexbox styling for search bar form outline */
+  .search-bar .form-outline {
   flex: 1;
   margin-right: 0;
-}
-
-.search-bar .form-control {
+  }
+  
+  /* Styling for search bar form control */
+  .search-bar .form-control {
   height: 40px;
   border-radius: 0;
-}
-
-.search-bar button {
+  }
+  
+  /* Styling for search bar button */
+  .search-bar button {
   height: 40px;
   border-radius: 0;
-}
-
-.search-bar .dropdown-menu {
+  }
+  
+  /* Styling for dropdown menu in search bar */
+  .search-bar .dropdown-menu {
   max-height: 200px;
   overflow-y: scroll;
-}
-
-.navbar {
+  }
+  
+  /* Styling for navbar */
+  .navbar {
   background-color: #ffffff;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-}
-
-.navbar-brand {
+  }
+  
+  /* Styling for navbar brand */
+  .navbar-brand {
   font-size: 1.5rem;
   font-weight: bold;
-}
-
-.navbar-nav .nav-link {
+  }
+  
+  /* Styling for navbar links */
+  .navbar-nav .nav-link {
   font-size: 1.2rem;
   font-weight: 500;
   color: #333333;
   text-transform: uppercase;
-}
-
-.navbar-nav .nav-link:hover {
+  }
+  
+  /* Hover styling for navbar links */
+  .navbar-nav .nav-link:hover {
   font-weight: bold;
   transform: scale(1.1);
-}
-
-.search-bar .form-control:focus {
+  }
+  
+  /* Styling for search bar form control when in focus */
+  .search-bar .form-control:focus {
   border-color: #0066cc;
   box-shadow: none;
-}
-
-.dropdown-menu {
+  }
+  
+  /* Styling for dropdown menu */
+  .dropdown-menu {
   border: none;
   border-radius: 0;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-}
-
-.dropdown-item {
+  }
+  
+  /* Styling for dropdown menu items */
+  .dropdown-item {
   font-size: 1.2rem;
   font-weight: 500;
   color: #333333;
   text-transform: uppercase;
-}
-
-.dropdown-item:hover {
+  }
+  
+  /* Hover styling for dropdown menu items */
+  .dropdown-item:hover {
   background-color: #f7f7f7;
   color: #0066cc;
-}
+  }
+  
+  .sidebar {
+    background-color: transparent;
+  }
 
 .sidebar .nav-link {
   font-weight: 500;
@@ -215,12 +248,6 @@
 .modalimg img {
   width: 700px;
 }
-/* Resizing images .card-img-top {
-  float: left !important;
-  width: 150px !important;
-  height: 100px !important;
-  object-fit: cover !important;
-} */
 
 .card {
   border-radius: 10px;
@@ -273,3 +300,4 @@
   transform: scale(1.1);
   font-weight: bold;
 }
+
