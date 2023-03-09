@@ -52,11 +52,10 @@ It fulfils the function of viewing and oberseving inventory, whilst narrowing do
 
 The first step is to register yourself as a user on our login page, if you don't already have a user login:
 
-![Alt text](../../../../../C:/Users/Abewd/Desktop/CarInventoryManager/assets/photosReadMe/img1.png)
+![img1](https://user-images.githubusercontent.com/116496332/223927885-8305bfec-3bc8-4ae8-ae21-682f88417762.png)
 
 Alternatively, this is the register page where you can create a name, email and a minimum of an 8 digit password:
 
-![Alt text](../img2.png)
 
 After you login, you can see our interface and available cars:
 
