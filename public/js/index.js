@@ -293,7 +293,7 @@ const generateCardTemplate = (data) => {
     const mileageLi = document.createElement("li");
     mileageLi.id = "mileage";
     mileageLi.classList.add("list-group-item");
-    mileageLi.textContent = `${element.mileage} km`;
+    mileageLi.textContent = `Milage: ${element.mileage} km`;
     listGroupUl.appendChild(mileageLi);
 
     // Create li elements for the transmission group, set their ids and class attributes,
@@ -301,9 +301,9 @@ const generateCardTemplate = (data) => {
     const automaticLi = document.createElement("li");
     automaticLi.classList.add("list-group-item");
     if (element.automatic) {
-      automaticLi.textContent = "Automatic";
+      automaticLi.textContent = "Transmission: Automatic";
     } else {
-      automaticLi.textContent = "Manual";
+      automaticLi.textContent = "Transmission: Manual";
     }
     listGroupUl.appendChild(automaticLi);
 
@@ -311,7 +311,7 @@ const generateCardTemplate = (data) => {
     // and add them to the list group
     const bodyTypeLi = document.createElement("li");
     bodyTypeLi.classList.add("list-group-item");
-    bodyTypeLi.textContent = `${element.body_type}`;
+    bodyTypeLi.textContent = `Body-type: ${element.body_type}`;
     listGroupUl.appendChild(bodyTypeLi);
 
     const userDetailsli = document.createElement("li");
@@ -640,7 +640,7 @@ searchInput.addEventListener("input", (e) => {
 
           // Displays the price on the modal
           const carPriceEl = document.createElement("h3");
-          carPriceEl.textContent = `${filteredCar.price}`;
+          carPriceEl.textContent = `${filteredCar.price.toLocaleString()}`;
           carPriceEl.style.display = "block";
           infoContainer.appendChild(carPriceEl);
 

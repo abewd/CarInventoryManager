@@ -7,6 +7,7 @@ $(document).ready(function () {
       alert("Please enter a car ID");
       return;
     }
+
     // Fetch the data from the server using the car ID
     fetch(`/api/${carId}`, {
       method: "GET",
@@ -18,6 +19,10 @@ $(document).ready(function () {
       .then((data) => {
         console.log(data);
         // Load the car data into the edit modal
+        if (data.user.id != localStorage.getItem("user_id")) {
+          alert("You do not match the requirements to edit this car. sorry!");
+          return;
+        }
         var carMake = data.make;
         var carModel = data.model;
         var carYear = data.year;
@@ -170,25 +175,43 @@ $(document).ready(function () {
 $(document).ready(function () {
   $("#deleteButton").click(function () {
     var carId = $("#carIdInput").val();
-    console.log(carId);
-
-    // Make a Fetch request to the server to delete the car with the specified ID
     fetch(`/api/${carId}`, {
-      method: "DELETE",
+      method: "GET",
+      headers: { "Content-Type": "application/json" },
     })
-      .then(function (response) {
-        if (response.status === 204) {
-          alert("Car with ID " + carId + " has been deleted.");
-          $("#deleteModal").modal("hide");
-        } else if (response.status === 404) {
-          alert("Car not found.");
-        } else {
-          throw new Error("Error deleting car.");
-        }
+      .then((response) => {
+        return response.json();
       })
-      .catch(function (error) {
-        console.error(error);
-        alert("Error deleting car: " + error);
+      .then((data) => {
+        if (!data.user) {
+          alert("Sorry, no car matches that ID");
+          return;
+        }
+        console.log(data);
+        // Load the car data into the edit modal
+        if (data.user.id != localStorage.getItem("user_id")) {
+          alert("You do not match the requirements to edit this car. sorry!");
+          return;
+        }
+
+        // Make a Fetch request to the server to delete the car with the specified ID
+        fetch(`/api/${carId}`, {
+          method: "DELETE",
+        })
+          .then(function (response) {
+            if (response.status === 204) {
+              alert("Car with ID " + carId + " has been deleted.");
+              $("#deleteModal").modal("hide");
+            } else if (response.status === 404) {
+              alert("Car not found.");
+            } else {
+              throw new Error("Error deleting car.");
+            }
+          })
+          .catch(function (error) {
+            console.error(error);
+            alert("Error deleting car: " + error);
+          });
       });
   });
 });
