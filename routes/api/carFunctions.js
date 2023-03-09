@@ -319,7 +319,7 @@ router.get("/search/all", async (req, res) => {
         [Op.eq]: engine_cylinders,
       };
     }
-    // Check what body type it is (STRING)
+    // Check what body type it is (STRING).
     if (body_type) {
       whereClause.body_type = {
         [Op.in]: body_type.split(","),
