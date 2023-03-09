@@ -627,8 +627,9 @@ searchInput.addEventListener("input", (e) => {
 
           // Displays the image on the modal
           const carImageEl = document.createElement("img");
-          carImageEl.src = filteredCar.imageUrl;
+          carImageEl.src = filteredCar.image_url;
           carImageEl.alt = `${filteredCar.make} ${filteredCar.model} image`;
+          carImageEl.style.maxWidth = "200px";
           modalContent.appendChild(carImageEl);
 
           // Creates a container
@@ -677,6 +678,7 @@ searchInput.addEventListener("input", (e) => {
           modal.appendChild(modalContent);
           document.body.appendChild(modal);
           modal.style.display = "block";
+          modalContent.style.maxWidth = "50%";
         }
         document.addEventListener("click", function (event) {
           if (
