@@ -335,7 +335,7 @@ const generateCardTemplate = (data) => {
     button.innerText = "Contact Seller";
     button.setAttribute("class", "btn btn-link");
     button.setAttribute("value", element.id);
-    // Creates event listener to generate modal
+    // Creates event listener to generate modal..
     button.addEventListener("click", function () {
       const email = element.user.email;
       const subject = "Car Inquiry";
@@ -613,7 +613,7 @@ searchInput.addEventListener("input", (e) => {
           modalContent.classList.add("modal-content");
           modalContent.classList.add("viewMoreContent");
           modalContent.classList.add("center-content");
-          
+
           // Displays the image on the modal
           const carImageEl = document.createElement("img");
           carImageEl.classList.add("rounded", "mx-auto", "d-block");
@@ -625,9 +625,10 @@ searchInput.addEventListener("input", (e) => {
           // Displays the make on the modal
           const carMakeEl = document.createElement("h2");
           carMakeEl.classList.add("font-weight-bold", "text-center");
-          carMakeEl.textContent = `${filteredCar.make.toUpperCase()} ${filteredCar.model}`;
+          carMakeEl.textContent = `${filteredCar.make.toUpperCase()} ${
+            filteredCar.model
+          }`;
           modalContent.appendChild(carMakeEl);
-
 
           // Creates a container
           const infoContainer = document.createElement("div");
