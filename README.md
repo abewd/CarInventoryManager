@@ -56,22 +56,27 @@ The first step is to register yourself as a user on our login page, if you don't
 
 Alternatively, this is the register page where you can create a name, email and a minimum of an 8 digit password:
 
+![img2](https://user-images.githubusercontent.com/116496332/223927942-3c916942-14f1-452c-8891-1bc041bda8bd.png)
+
 
 After you login, you can see our interface and available cars:
 
-You can search using the side navbar, you can go to home, edit the inventory, contact the developers of the page, and logout from this page. You can also contact the unique seller for each unique car on this page also.
+![img3](https://user-images.githubusercontent.com/116496332/223927985-8b322769-36fb-44d7-a8fe-b952b086613b.png)
 
-![Alt text](../img4.png)
+You can search using the side navbar, you can go to home, edit the inventory, contact the developers of the page, and logout from this page. You can also contact the unique seller for each unique car on this page also.
 
 You can add, edit and remove cars if you are the creator of them:
 
-![Alt text](../img5.png)
+![img5](https://user-images.githubusercontent.com/116496332/223928065-baa51751-0616-48e4-be1d-1d2ea9b7eadb.png)
 
 You can contact the admins of the page and the developers using this form:
 
-![Alt text](../img6.png)
+![img6](https://user-images.githubusercontent.com/116496332/223928080-bea58a03-cd92-45da-9b75-ca8ef40534f6.png)
 
 And finally, in the navbar you can logout.
+
+![img7](https://user-images.githubusercontent.com/116496332/223928288-5ebb856f-42ae-4a1e-8fd0-0b64db088301.png)
+
 
 ## License
 
