@@ -1,3 +1,21 @@
-.modal-body {
-  overflow-y: auto;
+.navbar {
+  background-color: #ffffff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.navbar-nav .nav-link {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #333333;
+  text-transform: uppercase;
+}
+
+.navbar-nav .nav-link:hover {
+  font-weight: bold;
+  transform: scale(1.1);
 }
