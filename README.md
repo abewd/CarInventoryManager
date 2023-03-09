@@ -52,7 +52,8 @@ It fulfils the function of viewing and oberseving inventory, whilst narrowing do
 
 The first step is to register yourself as a user on our login page, if you don't already have a user login:
 
-C:\Users\Abewd\Desktop\CarInventoryManager\assets\photosReadMe\img1.png
+assets\photosReadMe\img1.png
+
 Alternatively, this is the register page where you can create a name, email and a minimum of an 8 digit password:
 
 ![Alt text](../img2.png)
